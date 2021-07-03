@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Thu Jun 10 17:41:12 2021
+-- Date        : Sat Jul  3 15:25:27 2021
 -- Host        : DESKTOP-V0OL22A running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top reset_sys -prefix
---               reset_sys_ reset_sys_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/reset_sys/reset_sys_sim_netlist.vhdl
 -- Design      : reset_sys
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -25,6 +25,8 @@ entity reset_sys_cdc_sync is
     aux_reset_in : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of reset_sys_cdc_sync : entity is "cdc_sync";
 end reset_sys_cdc_sync;
 
 architecture STRUCTURE of reset_sys_cdc_sync is
@@ -233,6 +235,8 @@ entity reset_sys_upcnt_n is
     seq_cnt_en : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of reset_sys_upcnt_n : entity is "upcnt_n";
 end reset_sys_upcnt_n;
 
 architecture STRUCTURE of reset_sys_upcnt_n is
@@ -397,6 +401,8 @@ entity reset_sys_lpf is
     ext_reset_in : in STD_LOGIC;
     aux_reset_in : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of reset_sys_lpf : entity is "lpf";
 end reset_sys_lpf;
 
 architecture STRUCTURE of reset_sys_lpf is
@@ -578,6 +584,8 @@ entity reset_sys_sequence_psr is
     lpf_int : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of reset_sys_sequence_psr : entity is "sequence_psr";
 end reset_sys_sequence_psr;
 
 architecture STRUCTURE of reset_sys_sequence_psr is
@@ -916,6 +924,8 @@ entity reset_sys_proc_sys_reset is
   attribute C_NUM_PERP_ARESETN of reset_sys_proc_sys_reset : entity is 1;
   attribute C_NUM_PERP_RST : integer;
   attribute C_NUM_PERP_RST of reset_sys_proc_sys_reset : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of reset_sys_proc_sys_reset : entity is "proc_sys_reset";
 end reset_sys_proc_sys_reset;
 
 architecture STRUCTURE of reset_sys_proc_sys_reset is

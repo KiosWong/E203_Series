@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 
+`include "e203_defines.v"
+
 module custom_icb_mig_wrapper
 #(
 	parameter DATA_WIDTH = 16,
@@ -7,16 +9,16 @@ module custom_icb_mig_wrapper
 	parameter APP_DATA_WIDTH = 128
 )
 (
-	input                      	i_icb_cmd_valid,
-	output                     	o_icb_cmd_ready,
-	input  [32-1:0]            	i_icb_cmd_addr, 
-	input                      	i_icb_cmd_read, 
-	input  [32-1:0]            	i_icb_cmd_wdata,
-	input  [32-1:0]            	i_icb_cmd_wmask,
+	input                      		i_icb_cmd_valid,
+	output                     		o_icb_cmd_ready,
+	input  [`E203_ADDR_SIZE-1:0]	i_icb_cmd_addr, 
+	input                      		i_icb_cmd_read, 
+	input  [`E203_XLEN-1:0]      	i_icb_cmd_wdata,
+	input  [`E203_XLEN/8-1:0]   	i_icb_cmd_wmask,
 	
-	output                   	o_icb_rsp_valid,
-	input                      	i_icb_rsp_ready,
-	output [32-1:0]        		o_icb_rsp_rdata,
+	output                   		o_icb_rsp_valid,
+	input                      		i_icb_rsp_ready,
+	output [`E203_XLEN-1:0]        	o_icb_rsp_rdata,
 	
 	input           ddr3_clk,
     inout [15:0]    ddr3_dq,
@@ -42,8 +44,7 @@ module custom_icb_mig_wrapper
 
 wire mem_rd_req;
 wire mem_wr_req;
-wire [ADDR_WIDTH-1:0]mem_rd_addr;
-wire [ADDR_WIDTH-1:0]mem_wr_addr;
+wire [ADDR_WIDTH-1:0]mem_rw_addr;
 
 wire mem_rd_done_ui_clk_domain;
 wire mem_wr_done_ui_clk_domain;
@@ -54,11 +55,11 @@ wire init_calib_complete;
 
 assign mem_rd_req = (init_calib_complete & (i_icb_cmd_valid & i_icb_cmd_read));
 assign mem_wr_req = (init_calib_complete & (i_icb_cmd_valid & ~i_icb_cmd_read));
-assign mem_wr_data = i_icb_cmd_wdata;
-assign mem_rd_addr = (init_calib_complete & (i_icb_cmd_valid & i_icb_cmd_read)) ? i_icb_cmd_addr[ADDR_WIDTH-1:0] : {ADDR_WIDTH{1'b0}};
-assign mem_wr_addr = (init_calib_complete & (i_icb_cmd_valid & ~i_icb_cmd_read)) ? i_icb_cmd_addr[ADDR_WIDTH-1:0] : {ADDR_WIDTH{1'b0}};
+assign mem_wr_data = {96'd0, i_icb_cmd_wdata};
+assign mem_rw_addr = (init_calib_complete) ? i_icb_cmd_addr[ADDR_WIDTH-1:0] : {ADDR_WIDTH{1'b0}};
 
-assign mem_wr_mask = i_icb_cmd_wmask;
+
+assign mem_wr_mask = {{(APP_DATA_WIDTH/8 - `E203_XLEN/8){1'b0}}, i_icb_cmd_wmask};
 assign o_icb_rsp_rdata = mem_rd_data[31:0];
 
 reg r_icb_rsp_valid;
@@ -110,8 +111,7 @@ u_custom_icb_mig
 	.mem_wr_req(mem_wr_req),
 	.mem_rd_done(mem_rd_done_ui_clk_domain),
 	.mem_wr_done(mem_wr_done_ui_clk_domain),
-	.mem_rd_addr(mem_rd_addr),
-	.mem_wr_addr(mem_wr_addr),
+	.mem_rw_addr(mem_rw_addr),
 	.mem_rd_data_o(mem_rd_data),
 	.mem_wr_data_i(mem_wr_data),
 	.mem_wr_mask_i(mem_wr_mask),

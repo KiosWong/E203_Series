@@ -40,6 +40,7 @@ module hdmi_display_wrapper(
     output TMDS_clk_p,
     output [2:0]TMDS_data_n,
     output [2:0]TMDS_data_p,
+    
     input sys_clk
 );
 

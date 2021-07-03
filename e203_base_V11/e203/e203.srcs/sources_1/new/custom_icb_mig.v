@@ -12,8 +12,7 @@ module custom_icb_mig
 	input  mem_wr_req,
 	output mem_rd_done,
 	output mem_wr_done,
-	input  [ADDR_WIDTH-1:0] mem_rd_addr,
-	input  [ADDR_WIDTH-1:0] mem_wr_addr,
+	input  [ADDR_WIDTH-1:0] mem_rw_addr,
 	output [APP_DATA_WIDTH-1:0]mem_rd_data_o,
 	input  [APP_DATA_WIDTH-1:0]mem_wr_data_i,
 	input  [APP_DATA_WIDTH/8-1:0]mem_wr_mask_i,
@@ -98,6 +97,8 @@ reg 	[27:0]r_app_wr_addr;
 reg		[APP_DATA_WIDTH-1:0] r_app_rd_data;
 reg		[APP_DATA_WIDTH-1:0] r_app_wr_data;
 reg		[APP_DATA_WIDTH/8-1:0]r_app_wr_mask;
+wire 	[ADDR_WIDTH-1:0]app_addr_offset;
+reg 	[ADDR_WIDTH-1:0]r_app_addr_offset;
 
 reg		[ADDR_WIDTH-1:0] r_app_addr;
 reg 	r_app_en;
@@ -109,6 +110,7 @@ assign 	app_addr = r_app_addr;
 assign 	app_en = r_app_en;
 assign 	app_wdf_end = r_app_wdf_end;
 assign 	app_wdf_data = r_app_wr_data;
+assign  app_addr_offset = mem_rw_addr & 28'h000_000c;
 
 assign	app_wdf_wren = r_app_wdf_wren & app_wdf_rdy;
 assign 	mem_rd_data_o = r_app_rd_data;
@@ -166,15 +168,16 @@ always @(posedge ui_clk or posedge ui_rst) begin
                 if(app_rd_req) begin
                     app_state <= MEM_READ;
                     r_app_cmd <= CMD_READ;
-                    r_app_addr <= mem_rd_addr;
+                    r_app_addr <= {mem_rw_addr[27:4], 4'b0} >> 1;
+                    r_app_addr_offset <= app_addr_offset;
                     r_app_en <= 1'b1;
                 end
                 else if(app_wr_req) begin
                 	app_state <= MEM_WRITE;
                 	r_app_cmd <= CMD_WRITE;
-                	r_app_addr <= mem_wr_addr;
-                	r_app_wr_data <= mem_wr_data_i;
-                	r_app_wr_mask <= {{(APP_MASK_WIDTH-BUS_DATA_WIDTH/8){1'b1}}, ~mem_wr_mask_i};
+                	r_app_addr <= {mem_rw_addr[27:4], 4'b0} >> 1;
+                	r_app_wr_data <= (mem_wr_data_i << (app_addr_offset << 3));
+                	r_app_wr_mask <= ((~mem_wr_mask_i) << app_addr_offset);
                 	r_app_en <= 1'b1;
             		r_app_wdf_wren <= 1'b1;
                 	r_app_wdf_end <= 1'b1;
@@ -189,7 +192,7 @@ always @(posedge ui_clk or posedge ui_rst) begin
             MEM_READ_WAIT: begin
             	if(app_rd_data_valid) begin
             		app_state <= MEM_READ_END;
-            		r_app_rd_data <= app_rd_data;
+            		r_app_rd_data <= (app_rd_data >> (r_app_addr_offset << 3));
             	end
             end
             
@@ -223,6 +226,7 @@ always @(posedge ui_clk or posedge ui_rst) begin
             end
             MEM_READ_END: begin
             	r_app_addr = 28'd0;
+            	r_app_addr_offset <= 28'd0;
             	app_state <= IDLE;
             end
             default: begin
@@ -232,14 +236,26 @@ always @(posedge ui_clk or posedge ui_rst) begin
     end
 end 
 
-//ila_mig u_ila_mig (
-//	.clk(sys_clk_i), // input wire clk
-//	.probe0(app_rdy), // input wire [0:0]  probe0  
-//	.probe1(app_rd_data_valid), // input wire [0:0]  probe1 
-//	.probe2(r_app_wr_mask), // input wire [15:0]  probe2 
-//	.probe3(app_state), // input wire [2:0]  probe3 
-//	.probe4(32'd0) // input wire [31:0]  probe4
-//);
+ila_0 u_ila_0 (
+	.clk(ui_clk), // input wire clk
+
+
+	.probe0(app_wr_req), // input wire [0:0]  probe0  
+	.probe1(app_rd_req), // input wire [0:0]  probe1 
+	.probe2(mem_rw_addr), // input wire [27:0]  probe2 
+	.probe3(r_app_addr), // input wire [27:0]  probe3 
+	.probe4(r_app_wr_mask), // input wire [15:0]  probe4 
+	.probe5(mem_wr_mask_i), // input wire [15:0]  probe5 
+	.probe6(app_addr_offset), // input wire [27:0]  probe6 
+	.probe7(r_app_wr_data), // input wire [127:0]  probe7 
+	.probe8(app_rd_data), // input wire [127:0]  probe8 
+	.probe9(r_app_rd_data), // input wire [127:0]  probe9
+	.probe10(mem_wr_data_i[31:0]), // input wire [31:0]  probe10 
+	.probe11(mem_rd_done), // input wire [0:0]  probe11 
+	.probe12(mem_wr_done), // input wire [0:0]  probe12,
+	.probe13(r_app_addr_offset), // input wire [27:0]  probe13
+	.probe14(r_app_rd_data)	// input wire [128:0]  probe14
+);
 
 mig_7series_0 u_mig_7series_0
 (

@@ -1,0 +1,81 @@
+$date
+        2021-Jul-03 19:49:16
+$end
+$version
+        Vivado v2019.1 (64-bit)
+$end
+$timescale
+        1ps
+$end
+$scope module dut $end
+$var reg 1 " dut/u_custom_icb_mig/u_custom_icb_mig/app_wr_req $end
+$var reg 1 # dut/u_custom_icb_mig/u_custom_icb_mig/app_rd_req $end
+$var reg 2 $ dut/u_custom_icb_mig/u_custom_icb_mig/mem_rw_addr_1 [1:0] $end
+$var reg 2 & dut/u_custom_icb_mig/u_custom_icb_mig/app_addr_offset_1 [3:2] $end
+$var reg 24 ( dut/u_custom_icb_mig/u_custom_icb_mig/mem_rw_addr [27:4] $end
+$var reg 28 @ dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr [27:0] $end
+$var reg 16 \ dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask [15:0] $end
+$var reg 16 l dut/u_custom_icb_mig/u_custom_icb_mig/mem_wr_mask_i [15:0] $end
+$var reg 28 | dut/u_custom_icb_mig/u_custom_icb_mig/app_addr_offset [27:0] $end
+$var reg 128 :" dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_data [127:0] $end
+$var reg 128 \# dut/u_custom_icb_mig/u_custom_icb_mig/app_rd_data [127:0] $end
+$var reg 128 ~$ dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data_1 [127:0] $end
+$var reg 32 B& dut/u_custom_icb_mig/u_custom_icb_mig/mem_wr_data_i [31:0] $end
+$var reg 1 b& dut/u_custom_icb_mig/u_custom_icb_mig/mem_rd_done $end
+$var reg 1 c& dut/u_custom_icb_mig/u_custom_icb_mig/mem_wr_done $end
+$var reg 28 d& dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset [27:0] $end
+$var reg 128 "' dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data [127:0] $end
+$var reg 1 D( _TRIGGER $end
+$var reg 1 E( _WINDOW $end
+$var reg 1 F( _GAP $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0"
+0#
+b0 $
+b0 &
+b0 (
+b0 @
+b0 \
+b0 l
+b0 |
+b0 :"
+b1000000010000000100000001111111101111111011111110111111100000000100000001000000010000000111111110111111100110000101100000 \#
+b11110000111000001101000011000000000000000000000000000000000000000000000001100000010100000100 ~$
+b0 B&
+0b&
+0c&
+b0 d&
+b11110000111000001101000011000000000000000000000000000000000000000000000001100000010100000100 "'
+0D(
+1E(
+0F(
+$end
+#511
+b11 $
+b1 &
+b1000 l
+b100 |
+#512
+1#
+1D(
+#513
+0#
+b100 d&
+#517
+b0 $
+b0 &
+b0 l
+b0 |
+#536
+b1111000011100000110100001100000000000000000000000000000000000000011100000110000001010000010000000000000000000000000000000000 \#
+#537
+b1000000010000000100000001111111101111111011111110111111100000000100000001000000010000000111111110011000100110000101100000 \#
+b11110000111000001101000011000000000000000000000000000000000000000111000001100000010100000100 ~$
+1b&
+b11110000111000001101000011000000000000000000000000000000000000000111000001100000010100000100 "'
+#538
+0b&
+b0 d&

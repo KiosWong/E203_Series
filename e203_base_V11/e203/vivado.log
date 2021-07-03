@@ -1,0 +1,444 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Jul  3 11:39:40 2021
+# Process ID: 29664
+# Current directory: E:/Projects/SoC/e203_series/e203_base_V11/e203
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14060 E:\Projects\SoC\e203_series\e203_base_V11\e203\e203.xpr
+# Log file: E:/Projects/SoC/e203_series/e203_base_V11/e203/vivado.log
+# Journal file: E:/Projects/SoC/e203_series/e203_base_V11/e203\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.xpr
+INFO: [Project 1-313] Project file moved from 'E:/Projects/SoC/e203_series/e203_base_V10/e203' since last save.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/bd/axi_mig/ip/axi_mig_mig_7series_0_0/mig_a.prj', nor could it be found using path 'E:/Projects/SoC/e203_series/e203_base_V10/e203/e203.srcs/sources_1/bd/axi_mig/ip/axi_mig_mig_7series_0_0/mig_a.prj'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Program/Vivado/Vivado/2019.1/data/ip'.
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Sat Jul  3 15:24:56 2021] Launched mig_7series_0_synth_1, reset_sys_synth_1, mmcm_synth_1, video_pll_synth_1, hdmi_ram_synth_1, hdmi_ram_2_synth_1, synth_1...
+Run output will be captured here:
+mig_7series_0_synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/mig_7series_0_synth_1/runme.log
+reset_sys_synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/reset_sys_synth_1/runme.log
+mmcm_synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/mmcm_synth_1/runme.log
+video_pll_synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/video_pll_synth_1/runme.log
+hdmi_ram_synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/hdmi_ram_synth_1/runme.log
+hdmi_ram_2_synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/hdmi_ram_2_synth_1/runme.log
+synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/runme.log
+[Sat Jul  3 15:24:57 2021] Launched impl_1...
+Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/runme.log
+open_hw
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:24 . Memory (MB): peak = 1145.219 ; gain = 0.000
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210249855394]
+set_property PARAM.FREQUENCY 5000000 [get_hw_targets */xilinx_tcf/Digilent/210249855394]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249855394
+set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+create_hw_cfgmem -hw_device [get_hw_devices xc7a100t_0] -mem_dev [lindex [get_cfgmem_parts {mt25ql128-spi-x1_x2_x4}] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2249.980 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name ila_0 -dir e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip
+set_property -dict [list CONFIG.C_PROBE9_WIDTH {128} CONFIG.C_PROBE8_WIDTH {128} CONFIG.C_PROBE7_WIDTH {128} CONFIG.C_PROBE6_WIDTH {28} CONFIG.C_PROBE5_WIDTH {16} CONFIG.C_PROBE4_WIDTH {16} CONFIG.C_PROBE3_WIDTH {28} CONFIG.C_PROBE2_WIDTH {28} CONFIG.C_NUM_OF_PROBES {10}] [get_ips ila_0]
+generate_target {instantiation_template} [get_files e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_0'...
+generate_target all [get_files  e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_0'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_0'...
+catch { config_ip_cache -export [get_ips -all ila_0] }
+export_ip_user_files -of_objects [get_files e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci]
+launch_runs -jobs 16 ila_0_synth_1
+[Sat Jul  3 16:29:06 2021] Launched ila_0_synth_1...
+Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_0_synth_1/runme.log
+export_simulation -of_objects [get_files e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci] -directory E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/sim_scripts -ip_user_files_dir E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files -ipstatic_source_dir E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/modelsim} {questa=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/questa} {riviera=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/riviera} {activehdl=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Sat Jul  3 16:31:26 2021] Launched synth_1...
+Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/runme.log
+[Sat Jul  3 16:31:26 2021] Launched impl_1...
+Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/runme.log
+set_property PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 5475.316 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+WARNING: Simulation object dut/u_custom_icb_mig/u_custom_icb_mig/app_rdy was not found in the design.
+WARNING: Simulation object dut/u_custom_icb_mig/u_custom_icb_mig/app_state was not found in the design.
+WARNING: Simulation object dut/u_custom_icb_mig/u_custom_icb_mig/app_rd_data_valid was not found in the design.
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {dut/u_custom_icb_mig/u_custom_icb_mig/app_addr_offset} {dut/u_custom_icb_mig/u_custom_icb_mig/app_addr_offset_1} {dut/u_custom_icb_mig/u_custom_icb_mig/app_rd_data} {dut/u_custom_icb_mig/u_custom_icb_mig/app_rd_req} {dut/u_custom_icb_mig/u_custom_icb_mig/app_wr_req} {dut/u_custom_icb_mig/u_custom_icb_mig/mem_rw_addr} {dut/u_custom_icb_mig/u_custom_icb_mig/mem_rw_addr_1} {dut/u_custom_icb_mig/u_custom_icb_mig/mem_wr_mask_i} {dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr} {dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data} {dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_data} {dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask} }
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes dut/u_custom_icb_mig/u_custom_icb_mig/app_wr_req -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 16:46:19
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 16:46:25
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 16:47:19
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 16:47:21
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 16:49:09
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 16:49:11
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 16:51:27
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 16:51:35
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Sat Jul  3 16:53:13 2021] Launched synth_1...
+Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/runme.log
+[Sat Jul  3 16:53:13 2021] Launched impl_1...
+Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/runme.log
+set_property PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 5518.406 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+refresh_hw_device: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 5518.406 ; gain = 0.000
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:17:19
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:17:21
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr} }
+set_property PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 5518.406 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+refresh_hw_device: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 5518.406 ; gain = 0.000
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:20:17
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2021-Jul-03 17:20:32
+WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes dut/u_custom_icb_mig/u_custom_icb_mig/app_rd_req -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+set_property CONTROL.TRIGGER_CONDITION OR [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:20:41
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:21:00
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:21:34
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:21:36
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:21:44
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:21:47
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 5518.406 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+refresh_hw_device: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 5518.406 ; gain = 0.000
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:23:01
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:23:06
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:23:22
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:23:23
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:23:54
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:23:57
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:25:36
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:25:38
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:25:58
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:26:01
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:26:19
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:26:21
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:27:07
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:27:09
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:27:33
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:27:40
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:28:09
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:28:14
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:28:57
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:28:59
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:30:11
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:30:12
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:30:23
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:30:25
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+reset_run synth_1
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.C_PROBE10_WIDTH {32} CONFIG.C_NUM_OF_PROBES {13}] [get_ips ila_0]
+generate_target all [get_files  e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_0'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_0'...
+catch { config_ip_cache -export [get_ips -all ila_0] }
+export_ip_user_files -of_objects [get_files e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci] -no_script -sync -force -quiet
+reset_run ila_0_synth_1
+launch_runs -jobs 16 ila_0_synth_1
+[Sat Jul  3 17:35:05 2021] Launched ila_0_synth_1...
+Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_0_synth_1/runme.log
+export_simulation -of_objects [get_files e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci] -directory E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/sim_scripts -ip_user_files_dir E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files -ipstatic_source_dir E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/modelsim} {questa=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/questa} {riviera=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/riviera} {activehdl=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Sat Jul  3 17:38:02 2021] Launched synth_1...
+Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/runme.log
+[Sat Jul  3 17:38:02 2021] Launched impl_1...
+Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/runme.log
+set_property PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 5559.066 ; gain = 0.531
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+refresh_hw_device: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 5565.676 ; gain = 6.609
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {dut/u_custom_icb_mig/u_custom_icb_mig/mem_rd_done} {dut/u_custom_icb_mig/u_custom_icb_mig/mem_wr_data_i} {dut/u_custom_icb_mig/u_custom_icb_mig/mem_wr_done} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:31:51
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:32:01
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 5565.676 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+refresh_hw_device: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 5565.676 ; gain = 0.000
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:32:58
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:33:22
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:33:34
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:33:36
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:33:55
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:33:57
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:34:13
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:34:16
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.C_PROBE14_WIDTH {128} CONFIG.C_PROBE13_WIDTH {28} CONFIG.C_NUM_OF_PROBES {15}] [get_ips ila_0]
+generate_target all [get_files  e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_0'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_0'...
+catch { config_ip_cache -export [get_ips -all ila_0] }
+export_ip_user_files -of_objects [get_files e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci] -no_script -sync -force -quiet
+reset_run ila_0_synth_1
+launch_runs -jobs 16 ila_0_synth_1
+[Sat Jul  3 18:36:50 2021] Launched ila_0_synth_1...
+Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_0_synth_1/runme.log
+export_simulation -of_objects [get_files e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci] -directory E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/sim_scripts -ip_user_files_dir E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files -ipstatic_source_dir E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/modelsim} {questa=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/questa} {riviera=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/riviera} {activehdl=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Sat Jul  3 18:37:45 2021] Launched ila_0_synth_1, synth_1...
+Run output will be captured here:
+ila_0_synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_0_synth_1/runme.log
+synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/runme.log
+[Sat Jul  3 18:37:45 2021] Launched impl_1...
+Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/runme.log
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:38:01
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:38:03
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:38:18
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:38:20
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:38:51
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:38:53
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:39:17
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:39:19
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:40:36
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:40:38
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:41:04
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:41:06
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:41:32
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:41:34
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:42:29
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:42:31
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:42:47
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:42:50
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+reset_run impl_1 -prev_step 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Sat Jul  3 18:48:54 2021] Launched synth_1...
+Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/runme.log
+[Sat Jul  3 18:48:54 2021] Launched impl_1...
+Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/runme.log
+set_property PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 5584.234 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+refresh_hw_device: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 5584.234 ; gain = 0.000
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset} {dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data_1} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 19:48:41
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 19:48:43
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 19:49:12
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 19:49:14
+INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.

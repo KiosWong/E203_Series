@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Jul  3 15:24:58 2021
+# Process ID: 26156
+# Current directory: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/reset_sys_synth_1
+# Command line: vivado.exe -log reset_sys.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source reset_sys.tcl
+# Log file: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/reset_sys_synth_1/reset_sys.vds
+# Journal file: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/reset_sys_synth_1\vivado.jou
+#-----------------------------------------------------------
+source reset_sys.tcl -notrace
