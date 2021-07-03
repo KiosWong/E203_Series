@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Sat Jul  3 20:07:55 2021
+| Date         : Sat Jul  3 20:25:10 2021
 | Host         : DESKTOP-V0OL22A running 64-bit major release  (build 9200)
 | Command      : report_drc -file e203_system_wrapper_drc_routed.rpt -pb e203_system_wrapper_drc_routed.pb -rpx e203_system_wrapper_drc_routed.rpx
 | Design       : e203_system_wrapper
@@ -24,19 +24,18 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 207
+             Violations found: 34
 +-------------+----------+-------------------------------------------------------------+------------+
 | Rule        | Severity | Description                                                 | Violations |
 +-------------+----------+-------------------------------------------------------------+------------+
 | BUFC-1      | Warning  | Input Buffer Connections                                    | 3          |
 | CFGBVS-1    | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties         | 1          |
 | CHECK-3     | Warning  | Report rule limit reached                                   | 1          |
-| PDRC-153    | Warning  | Gated clock check                                           | 177        |
+| PDRC-153    | Warning  | Gated clock check                                           | 5          |
 | PLCK-12     | Warning  | Clock Placer Checks                                         | 2          |
 | PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 1          |
 | REQP-1709   | Warning  | Clock output buffering                                      | 1          |
 | REQP-1839   | Warning  | RAMB36 async control check                                  | 20         |
-| RTSTAT-10   | Warning  | No routable loads                                           | 1          |
 +-------------+----------+-------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -76,885 +75,25 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[0]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[0]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[0]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/clk1_sync_r_reg[1]_10 is a gated clock net sourced by a combinational pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/enb_reg_i_2__7/O, cell dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/enb_reg_i_2__7. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[10]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[10]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[10]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/clk1_sync_r_reg[1]_5 is a gated clock net sourced by a combinational pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/enb_reg_i_2__5/O, cell dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/enb_reg_i_2__5. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[11]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[11]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[11]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/clk1_sync_r_reg[1]_8 is a gated clock net sourced by a combinational pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/enb_reg_i_2__6/O, cell dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/enb_reg_i_2__6. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[12]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[12]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[12]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#5 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[13]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[13]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[13]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#6 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[14]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[14]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[14]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#7 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[15]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[15]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[15]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#8 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[16]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[16]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[16]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#9 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[17]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[17]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[17]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#10 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[18]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[18]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[18]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#11 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[19]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[19]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[19]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#12 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[1]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[1]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[1]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#13 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[20]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[20]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[20]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#14 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[21]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[21]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[21]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#15 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[22]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[22]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[22]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#16 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[23]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[23]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[23]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#17 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[24]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[24]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[24]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#18 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[25]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[25]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[25]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#19 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[26]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[26]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[26]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#20 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[27]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[27]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[27]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#21 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[2]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[2]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[2]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#22 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[3]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[3]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[3]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#23 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[4]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[4]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[4]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#24 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[5]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[5]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[5]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#25 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[6]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[6]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[6]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#26 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[7]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[7]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[7]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#27 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[8]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[8]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[8]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#28 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[9]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[9]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[9]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#29 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[0]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[0]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[0]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#30 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[100]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[100]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[100]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#31 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[101]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[101]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[101]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#32 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[102]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[102]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[102]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#33 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[103]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[103]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[103]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#34 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[104]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[104]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[104]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#35 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[105]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[105]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[105]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#36 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[106]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[106]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[106]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#37 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[107]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[107]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[107]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#38 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[108]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[108]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[108]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#39 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[109]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[109]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[109]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#40 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[10]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[10]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[10]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#41 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[110]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[110]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[110]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#42 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[111]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[111]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[111]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#43 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[112]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[112]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[112]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#44 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[113]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[113]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[113]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#45 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[114]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[114]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[114]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#46 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[115]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[115]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[115]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#47 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[116]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[116]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[116]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#48 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[117]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[117]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[117]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#49 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[118]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[118]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[118]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#50 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[119]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[119]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[119]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#51 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[11]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[11]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[11]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#52 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[120]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[120]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[120]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#53 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[121]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[121]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[121]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#54 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[122]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[122]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[122]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#55 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[123]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[123]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[123]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#56 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[124]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[124]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[124]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#57 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[125]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[125]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[125]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#58 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[126]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[126]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[126]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#59 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[127]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[127]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[127]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#60 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[12]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[12]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[12]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#61 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[13]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[13]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[13]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#62 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[14]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[14]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[14]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#63 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[15]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[15]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[15]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#64 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[16]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[16]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[16]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#65 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[17]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[17]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[17]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#66 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[18]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[18]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[18]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#67 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[19]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[19]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[19]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#68 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[1]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[1]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[1]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#69 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[20]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[20]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[20]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#70 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[21]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[21]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[21]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#71 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[22]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[22]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[22]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#72 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[23]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[23]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[23]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#73 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[24]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[24]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[24]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#74 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[25]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[25]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[25]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#75 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[26]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[26]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[26]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#76 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[27]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[27]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[27]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#77 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[28]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[28]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[28]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#78 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[29]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[29]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[29]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#79 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[2]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[2]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[2]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#80 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[30]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[30]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[30]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#81 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[31]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[31]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[31]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#82 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[32]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[32]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[32]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#83 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[33]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[33]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[33]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#84 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[34]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[34]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[34]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#85 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[35]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[35]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[35]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#86 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[36]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[36]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[36]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#87 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[37]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[37]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[37]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#88 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[38]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[38]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[38]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#89 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[39]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[39]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[39]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#90 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[3]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[3]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[3]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#91 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[40]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[40]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[40]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#92 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[41]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[41]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[41]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#93 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[42]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[42]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[42]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#94 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[43]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[43]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[43]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#95 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[44]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[44]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[44]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#96 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[45]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[45]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[45]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#97 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[46]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[46]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[46]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#98 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[47]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[47]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[47]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#99 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[48]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[48]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[48]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#100 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[49]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[49]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[49]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#101 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[4]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[4]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[4]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#102 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[50]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[50]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[50]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#103 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[51]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[51]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[51]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#104 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[52]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[52]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[52]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#105 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[53]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[53]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[53]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#106 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[54]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[54]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[54]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#107 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[55]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[55]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[55]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#108 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[56]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[56]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[56]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#109 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[57]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[57]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[57]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#110 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[58]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[58]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[58]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#111 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[59]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[59]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[59]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#112 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[5]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[5]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[5]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#113 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[60]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[60]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[60]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#114 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[61]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[61]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[61]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#115 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[62]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[62]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[62]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#116 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[63]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[63]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[63]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#117 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[64]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[64]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[64]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#118 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[65]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[65]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[65]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#119 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[66]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[66]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[66]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#120 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[67]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[67]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[67]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#121 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[68]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[68]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[68]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#122 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[69]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[69]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[69]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#123 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[6]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[6]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[6]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#124 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[70]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[70]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[70]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#125 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[71]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[71]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[71]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#126 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[72]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[72]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[72]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#127 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[73]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[73]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[73]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#128 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[74]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[74]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[74]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#129 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[75]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[75]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[75]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#130 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[76]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[76]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[76]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#131 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[77]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[77]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[77]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#132 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[78]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[78]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[78]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#133 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[79]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[79]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[79]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#134 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[7]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[7]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[7]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#135 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[80]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[80]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[80]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#136 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[81]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[81]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[81]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#137 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[82]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[82]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[82]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#138 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[83]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[83]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[83]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#139 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[84]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[84]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[84]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#140 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[85]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[85]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[85]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#141 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[86]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[86]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[86]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#142 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[87]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[87]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[87]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#143 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[88]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[88]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[88]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#144 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[89]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[89]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[89]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#145 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[8]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[8]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[8]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#146 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[90]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[90]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[90]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#147 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[91]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[91]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[91]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#148 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[92]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[92]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[92]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#149 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[93]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[93]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[93]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#150 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[94]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[94]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[94]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#151 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[95]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[95]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[95]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#152 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[96]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[96]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[96]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#153 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[97]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[97]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[97]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#154 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[98]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[98]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[98]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#155 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[99]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[99]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[99]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#156 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[9]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[9]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data[9]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#157 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[0]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[0]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[0]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#158 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[10]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[10]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[10]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#159 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[11]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[11]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[11]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#160 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[12]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[12]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[12]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#161 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[13]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[13]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[13]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#162 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[14]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[14]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[14]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#163 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[15]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[15]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[15]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#164 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[1]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[1]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[1]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#165 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[2]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[2]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[2]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#166 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[3]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[3]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[3]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#167 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[4]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[4]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[4]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#168 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[5]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[5]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[5]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#169 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[6]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[6]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[6]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#170 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[7]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[7]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[7]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#171 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[8]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[8]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[8]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#172 Warning
-Gated clock check  
-Net dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[9]_i_3_n_0 is a gated clock net sourced by a combinational pin dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[9]_i_3/O, cell dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask[9]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#173 Warning
-Gated clock check  
-Net dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/clk1_sync_r_reg[1]_10 is a gated clock net sourced by a combinational pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/enb_reg_i_2__7/O, cell dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/enb_reg_i_2__7. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#174 Warning
-Gated clock check  
-Net dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/clk1_sync_r_reg[1]_5 is a gated clock net sourced by a combinational pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/enb_reg_i_2__5/O, cell dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/enb_reg_i_2__5. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#175 Warning
-Gated clock check  
-Net dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/clk1_sync_r_reg[1]_8 is a gated clock net sourced by a combinational pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/enb_reg_i_2__6/O, cell dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk1_clkgate/enb_reg_i_2__6. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#176 Warning
-Gated clock check  
 Net dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_pllclkdiv/u_pllclkdiv_clkgate/CLK is a gated clock net sourced by a combinational pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_pllclkdiv/u_pllclkdiv_clkgate/clk0_sync_r[2]_i_1/O, cell dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_pllclkdiv/u_pllclkdiv_clkgate/clk0_sync_r[2]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
-PDRC-153#177 Warning
+PDRC-153#5 Warning
 Gated clock check  
 Net dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_pllclkdiv/u_pllclkdiv_clkgate/enb_reg_0 is a gated clock net sourced by a combinational pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_pllclkdiv/u_pllclkdiv_clkgate/enb_reg_i_1__5/O, cell dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_pllclkdiv/u_pllclkdiv_clkgate/enb_reg_i_1__5. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
@@ -994,107 +133,102 @@ Related violations: <none>
 
 REQP-1839#1 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_lsuagu/icb_leftover_err_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_biu/u_biu_icb_arbt/arbt_num_gt_1_gen.dp_1.u_sirv_gnrl_rspid_fifo/dp_gt_0.vld_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#2 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_lsuagu/icb_state_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_biu/u_sirv_gnrl_icb_buffer/u_sirv_gnrl_cmd_fifo/dp_gt0.vec_31_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#3 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_lsuagu/icb_state_dfflr/qout_r_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_biu/u_sirv_gnrl_icb_buffer/u_sirv_gnrl_rsp_fifo/dp_gt0.vec_31_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#4 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_lsuagu/icb_state_dfflr/qout_r_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_lsuagu/icb_leftover_err_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#5 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/exec_cnt_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_lsuagu/icb_state_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#6 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/exec_cnt_dfflr/qout_r_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_lsuagu/icb_state_dfflr/qout_r_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#7 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/exec_cnt_dfflr/qout_r_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_lsuagu/icb_state_dfflr/qout_r_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#8 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/exec_cnt_dfflr/qout_r_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/exec_cnt_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#9 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/exec_cnt_dfflr/qout_r_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/exec_cnt_dfflr/qout_r_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#10 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/exec_cnt_dfflr/qout_r_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/exec_cnt_dfflr/qout_r_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#11 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/muldiv_state_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/exec_cnt_dfflr/qout_r_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#12 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/muldiv_state_dfflr/qout_r_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/exec_cnt_dfflr/qout_r_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#13 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/muldiv_state_dfflr/qout_r_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/exec_cnt_dfflr/qout_r_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#14 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/part_prdt_sft1_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/muldiv_state_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#15 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/part_remd_sft1_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/muldiv_state_dfflr/qout_r_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#16 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_commit/u_e203_exu_excp/step_req_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/muldiv_state_dfflr/qout_r_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#17 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_commit/u_e203_exu_excp/wfi_halt_req_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/part_prdt_sft1_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#18 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_csr/mie_dfflr/qout_r_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_muldiv/part_remd_sft1_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#19 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_csr/mie_dfflr/qout_r_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_commit/u_e203_exu_excp/step_req_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#20 Warning
 RAMB36 async control check  
-The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_csr/status_mie_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-RTSTAT-10#1 Warning
-No routable loads  
-25 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/s_bscan_tms, dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0/inst/ila_core_inst/u_ila_regs/U_XSDB_SLAVE/s_daddr_o[13], dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0/inst/ila_core_inst/u_ila_regs/U_XSDB_SLAVE/s_daddr_o[14] (the first 15 of 23 listed).
+The RAMB36E1 dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 has an input control pin dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0/ADDRARDADDR[14] (net: dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3_1[13]) which is driven by a register (dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_core/u_e203_exu/u_e203_exu_commit/u_e203_exu_excp/wfi_halt_req_dfflr/qout_r_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 

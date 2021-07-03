@@ -1374,13 +1374,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/decoder38.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/e203/perips/i2c_master_defines.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/e200_opensource-master/rtl/e203/perips/i2c_master_defines.v"/>

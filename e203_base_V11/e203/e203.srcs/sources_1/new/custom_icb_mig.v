@@ -236,26 +236,26 @@ always @(posedge ui_clk or posedge ui_rst) begin
     end
 end 
 
-ila_0 u_ila_0 (
-	.clk(ui_clk), // input wire clk
+//ila_0 u_ila_0 (
+//	.clk(ui_clk), // input wire clk
 
 
-	.probe0(app_wr_req), // input wire [0:0]  probe0  
-	.probe1(app_rd_req), // input wire [0:0]  probe1 
-	.probe2(mem_rw_addr), // input wire [27:0]  probe2 
-	.probe3(r_app_addr), // input wire [27:0]  probe3 
-	.probe4(r_app_wr_mask), // input wire [15:0]  probe4 
-	.probe5(mem_wr_mask_i), // input wire [15:0]  probe5 
-	.probe6(app_addr_offset), // input wire [27:0]  probe6 
-	.probe7(r_app_wr_data), // input wire [127:0]  probe7 
-	.probe8(app_rd_data), // input wire [127:0]  probe8 
-	.probe9(r_app_rd_data), // input wire [127:0]  probe9
-	.probe10(mem_wr_data_i[31:0]), // input wire [31:0]  probe10 
-	.probe11(mem_rd_done), // input wire [0:0]  probe11 
-	.probe12(mem_wr_done), // input wire [0:0]  probe12,
-	.probe13(r_app_addr_offset), // input wire [27:0]  probe13
-	.probe14(r_app_rd_data)	// input wire [128:0]  probe14
-);
+//	.probe0(app_wr_req), // input wire [0:0]  probe0  
+//	.probe1(app_rd_req), // input wire [0:0]  probe1 
+//	.probe2(mem_rw_addr), // input wire [27:0]  probe2 
+//	.probe3(r_app_addr), // input wire [27:0]  probe3 
+//	.probe4(r_app_wr_mask), // input wire [15:0]  probe4 
+//	.probe5(mem_wr_mask_i), // input wire [15:0]  probe5 
+//	.probe6(app_addr_offset), // input wire [27:0]  probe6 
+//	.probe7(r_app_wr_data), // input wire [127:0]  probe7 
+//	.probe8(app_rd_data), // input wire [127:0]  probe8 
+//	.probe9(r_app_rd_data), // input wire [127:0]  probe9
+//	.probe10(mem_wr_data_i[31:0]), // input wire [31:0]  probe10 
+//	.probe11(mem_rd_done), // input wire [0:0]  probe11 
+//	.probe12(mem_wr_done), // input wire [0:0]  probe12,
+//	.probe13(r_app_addr_offset), // input wire [27:0]  probe13
+//	.probe14(r_app_rd_data)	// input wire [128:0]  probe14
+//);
 
 mig_7series_0 u_mig_7series_0
 (
