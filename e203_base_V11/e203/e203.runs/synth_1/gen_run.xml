@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tfgg676-2" LaunchTime="1625314615">
+<GenRun Id="synth_1" LaunchPart="xc7a100tfgg676-2" LaunchTime="1625821960">
   <File Type="PA-TCL" Name="e203_system_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="e203_system_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="e203_system_wrapper_reports.tcl"/>
@@ -1324,13 +1324,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/decoder38.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/e203/perips/i2c_master_defines.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../RISC-V/e200_opensource-master/rtl/e203/perips/i2c_master_defines.v"/>
@@ -1415,6 +1408,41 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/icb_dmac_core.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/icb_dmac_defines.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/icb_dmac_invoker.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/icb_dmac_receiver.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/icb_dmac.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="e203_system_wrapper"/>
@@ -1447,6 +1475,7 @@
   <BlockFileSet Type="BlockSrcs" Name="reset_sys"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_ram_2"/>
   <BlockFileSet Type="BlockSrcs" Name="mmcm"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_dmac"/>
   <BlockFileSet Type="BlockSrcs" Name="video_pll"/>
   <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_ram"/>

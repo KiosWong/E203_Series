@@ -1,0 +1,12 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../e203.srcs/sources_1/new/vhd/SyncAsync.vhd" \
+"../../../../e203.srcs/sources_1/new/vhd/SyncAsyncReset.vhd" \
+"../../../../e203.srcs/sources_1/new/vhd/ClockGen.vhd" \
+"../../../../e203.srcs/sources_1/new/vhd/DVI_Constants.vhd" \
+"../../../../e203.srcs/sources_1/new/vhd/OutputSERDES.vhd" \
+"../../../../e203.srcs/sources_1/new/vhd/TMDS_Encoder.vhd" \
+"../../../../e203.srcs/sources_1/new/vhd/rgb2dvi.vhd" \
+
+# Do not sort compile order
+nosort

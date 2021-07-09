@@ -20,8 +20,8 @@
   </ObjectList>
   <ObjectList object_type="hw_device" gui_info="">
     <Object name="xc7a100t_0" gui_info="">
-      <Properties Property="FULL_PROBES.FILE" value=""/>
-      <Properties Property="PROBES.FILE" value=""/>
+      <Properties Property="FULL_PROBES.FILE" value="$_project_name_.runs/impl_1/$_project_name__system_wrapper.ltx"/>
+      <Properties Property="PROBES.FILE" value="$_project_name_.runs/impl_1/$_project_name__system_wrapper.ltx"/>
       <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/$_project_name__system_wrapper.bit"/>
       <Properties Property="PROGRAM.HW_CFGMEM_PART" value="mt25ql128-spi-x1_x2_x4"/>
       <Properties Property="SLR.COUNT" value="1"/>
@@ -65,6 +65,10 @@
       <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
     </Object>
     <Object name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_custom_axi_mig_ddr/u_ila_3" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+    <Object name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/u_ila_dmac" gui_info="">
       <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
       <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
     </Object>
@@ -120,6 +124,7 @@
     <Object name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_custom_axi_mig_ddr/u_custom_icb_mig/app_wdf_wren" gui_info="Trigger Setup=0"/>
     <Object name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_custom_axi_mig_ddr/u_custom_icb_mig/app_wr_req" gui_info=""/>
     <Object name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_custom_axi_mig_ddr/u_custom_icb_mig/mem_wr_req" gui_info="Trigger Setup=0"/>
+    <Object name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_valid_i" gui_info="Trigger Setup=0"/>
     <Object name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_mems/i_icb_cmd_valid" gui_info="Trigger Setup=0"/>
   </ObjectList>
   <probeset name="hw project" active="false">
@@ -2651,7 +2656,7 @@
         <net name="dut/u_custom_icb_mig/u_custom_icb_mig/&lt;const0>_9"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq28&apos;hXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq28&apos;hXXX_XXXX"/>
@@ -2699,7 +2704,7 @@
         <net name="dut/u_custom_icb_mig/u_custom_icb_mig/app_addr_offset[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq2&apos;hX"/>
         <Option Id="COMPARE_VALUE.0" value="eq2&apos;hX"/>
@@ -2721,7 +2726,7 @@
         <net name="dut/u_custom_icb_mig/u_custom_icb_mig/app_addr_offset_1[2]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -3068,7 +3073,7 @@
         <net name="dut/u_custom_icb_mig/u_custom_icb_mig/mem_rw_addr[4]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq2&apos;hX"/>
         <Option Id="COMPARE_VALUE.0" value="eq2&apos;hX"/>
@@ -3163,7 +3168,7 @@
         <net name="dut/u_custom_icb_mig/u_custom_icb_mig/mem_wr_done"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq16&apos;hXXXX"/>
@@ -3199,7 +3204,7 @@
         <net name="dut/u_custom_icb_mig/u_custom_icb_mig/mem_wr_mask_i[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq28&apos;hXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq28&apos;hXXX_XXXX"/>
@@ -3295,7 +3300,7 @@
         <net name="dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -3591,7 +3596,7 @@
         <net name="dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data_1[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -3739,7 +3744,7 @@
         <net name="dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_data[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq16&apos;hXXXX"/>
@@ -9492,6 +9497,380 @@
       </probeOptions>
       <nets>
         <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_custom_axi_mig_ddr/u_custom_icb_mig/slow_clk_i"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq16&apos;hXXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe4[15:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[15]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[14]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[13]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[12]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[11]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[10]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[9]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[8]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[7]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[6]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[5]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[4]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[3]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[2]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[1]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/ccr[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe6[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[31]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[30]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[29]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[28]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[27]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[26]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[25]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[24]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[23]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[22]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[21]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[20]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[19]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[18]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[17]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[16]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[15]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[14]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[13]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[12]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[11]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[10]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[9]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[8]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[7]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[6]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[5]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[4]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[3]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[2]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[1]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cdar[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq16&apos;hXXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe7[15:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[15]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[14]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[13]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[12]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[11]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[10]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[9]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[8]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[7]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[6]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[5]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[4]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[3]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[2]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[1]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/cmdtr[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe5[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[31]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[30]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[29]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[28]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[27]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[26]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[25]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[24]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[23]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[22]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[21]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[20]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[19]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[18]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[17]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[16]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[15]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[14]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[13]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[12]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[11]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[10]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[9]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[8]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[7]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[6]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[5]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[4]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[3]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[2]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[1]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/csar[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe2[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[31]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[30]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[29]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[28]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[27]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[26]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[25]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[24]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[23]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[22]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[21]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[20]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[19]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[18]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[17]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[16]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[15]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[14]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[13]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[12]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[11]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[10]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[9]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[8]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[7]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[6]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[5]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[4]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[3]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[2]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[1]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_addr_i[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b1"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe1[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b1"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_valid_i"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_valid_i_1"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe3[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[31]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[30]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[29]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[28]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[27]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[26]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[25]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[24]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[23]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[22]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[21]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[20]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[19]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[18]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[17]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[16]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[15]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[14]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[13]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[12]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[11]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[10]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[9]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[8]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[7]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[6]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[5]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[4]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[3]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[2]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[1]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/s_host_icb_cmd_wdata_i[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe2[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[31]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[30]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[29]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[28]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[27]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[26]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[25]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[24]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[23]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[22]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[21]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[20]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[19]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[18]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[17]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[16]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[15]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[14]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[13]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[12]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[11]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[10]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[9]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[8]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[7]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[6]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[5]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[4]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[3]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[2]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[1]"/>
+        <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_dmac/u_icb_dmac_core/w_dmac_core_region_addr[0]"/>
       </nets>
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">

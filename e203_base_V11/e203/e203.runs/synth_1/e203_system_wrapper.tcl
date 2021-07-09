@@ -37,6 +37,7 @@ set_property ip_cache_permissions {read write} [current_project]
 set_property include_dirs {
   E:/Projects/SoC/e203_series/RISC-V/e200_opensource-master/rtl/e203/core
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new
 } [current_fileset]
 add_files E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/raw_img.coe
 add_files E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vis_img.coe
@@ -184,13 +185,17 @@ read_verilog -library xil_defaultlib {
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/sirv_uarttx.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/sirv_wdog.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/e203_soc_wrapper.v
-  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/decoder38.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/i2c_master_defines.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/i2c_master_bit_ctrl.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/i2c_master_byte_ctrl.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/i2c_master_top.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/sirv_expl_apb_slv.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_xchecker.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/icb_dmac_core.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/icb_dmac_defines.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/icb_dmac_invoker.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/icb_dmac_receiver.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/icb_dmac.v
 }
 read_vhdl -library xil_defaultlib {
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/SyncAsync.vhd
@@ -231,6 +236,12 @@ set_property used_in_synthesis false [get_files -all e:/Projects/SoC/e203_series
 set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
 set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc]
+
+read_ip -quiet E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac.xci
+set_property used_in_synthesis false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

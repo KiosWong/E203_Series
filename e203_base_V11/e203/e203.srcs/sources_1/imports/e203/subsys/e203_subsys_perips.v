@@ -29,64 +29,79 @@
 
 
 module e203_subsys_perips(
-	input                          ppi_icb_cmd_valid,
-	output                         ppi_icb_cmd_ready,
-	input  [`E203_ADDR_SIZE-1:0]   ppi_icb_cmd_addr, 
-	input                          ppi_icb_cmd_read, 
-	input  [`E203_XLEN-1:0]        ppi_icb_cmd_wdata,
-	input  [`E203_XLEN/8-1:0]      ppi_icb_cmd_wmask,
-	//
-	output                         ppi_icb_rsp_valid,
-	input                          ppi_icb_rsp_ready,
-	output                         ppi_icb_rsp_err,
-	output [`E203_XLEN-1:0]        ppi_icb_rsp_rdata,
+	input                          	ppi_icb_cmd_valid,
+	output                         	ppi_icb_cmd_ready,
+	input  [`E203_ADDR_SIZE-1:0]   	ppi_icb_cmd_addr, 
+	input                          	ppi_icb_cmd_read, 
+	input  [`E203_XLEN-1:0]        	ppi_icb_cmd_wdata,
+	input  [`E203_XLEN/8-1:0]      	ppi_icb_cmd_wmask,
+
+	output                         	ppi_icb_rsp_valid,
+	input                          	ppi_icb_rsp_ready,
+	output                         	ppi_icb_rsp_err,
+	output [`E203_XLEN-1:0]        	ppi_icb_rsp_rdata,
 	
 	//////////////////////////////////////////////////////////
-	output                         sysper_icb_cmd_valid,
-	input                          sysper_icb_cmd_ready,
-	output [`E203_ADDR_SIZE-1:0]   sysper_icb_cmd_addr, 
-	output                         sysper_icb_cmd_read, 
-	output [`E203_XLEN-1:0]        sysper_icb_cmd_wdata,
-	output [`E203_XLEN/8-1:0]      sysper_icb_cmd_wmask,
+	output                        	sysper_icb_cmd_valid,
+	input                          	sysper_icb_cmd_ready,
+	output [`E203_ADDR_SIZE-1:0]   	sysper_icb_cmd_addr, 
+	output                         	sysper_icb_cmd_read, 
+	output [`E203_XLEN-1:0]        	sysper_icb_cmd_wdata,
+	output [`E203_XLEN/8-1:0]      	sysper_icb_cmd_wmask,
 	//
-	input                          sysper_icb_rsp_valid,
-	output                         sysper_icb_rsp_ready,
-	input                          sysper_icb_rsp_err,
-	input  [`E203_XLEN-1:0]        sysper_icb_rsp_rdata,
+	input                          	sysper_icb_rsp_valid,
+	output                         	sysper_icb_rsp_ready,
+	input                          	sysper_icb_rsp_err,
+	input  [`E203_XLEN-1:0]        	sysper_icb_rsp_rdata,
 	
 	//////////////////////////////////////////////////////////
-	output                         aon_icb_cmd_valid,
-	input                          aon_icb_cmd_ready,
-	output [`E203_ADDR_SIZE-1:0]   aon_icb_cmd_addr, 
-	output                         aon_icb_cmd_read, 
-	output [`E203_XLEN-1:0]        aon_icb_cmd_wdata,
-	//
-	input                          aon_icb_rsp_valid,
-	output                         aon_icb_rsp_ready,
-	input                          aon_icb_rsp_err,
-	input  [`E203_XLEN-1:0]        aon_icb_rsp_rdata,
+	output                         	aon_icb_cmd_valid,
+	input                          	aon_icb_cmd_ready,
+	output [`E203_ADDR_SIZE-1:0]   	aon_icb_cmd_addr, 
+	output                         	aon_icb_cmd_read, 
+	output [`E203_XLEN-1:0]        	aon_icb_cmd_wdata,
 	
-	input                      qspi0_ro_icb_cmd_valid,
-	output                     qspi0_ro_icb_cmd_ready,
-	input  [32-1:0]            qspi0_ro_icb_cmd_addr, 
-	input                      qspi0_ro_icb_cmd_read, 
-	input  [32-1:0]            qspi0_ro_icb_cmd_wdata,
+	input                          	aon_icb_rsp_valid,
+	output                         	aon_icb_rsp_ready,
+	input                          	aon_icb_rsp_err,
+	input  [`E203_XLEN-1:0]        	aon_icb_rsp_rdata,
 	
-	output                     qspi0_ro_icb_rsp_valid,
-	input                      qspi0_ro_icb_rsp_ready,
-	output [32-1:0]            qspi0_ro_icb_rsp_rdata,
+	//////////////////////////////////////////////////////////
+	input							qspi0_ro_icb_cmd_valid,
+	output							qspi0_ro_icb_cmd_ready,
+	input  [`E203_ADDR_SIZE-1:0]	qspi0_ro_icb_cmd_addr, 
+	input							qspi0_ro_icb_cmd_read, 
+	input  [`E203_XLEN-1:0]			qspi0_ro_icb_cmd_wdata,
 	
+	output							qspi0_ro_icb_rsp_valid,
+	input							qspi0_ro_icb_rsp_ready,
+	output [`E203_XLEN-1:0]			qspi0_ro_icb_rsp_rdata,
 	
-	input                      otp_ro_icb_cmd_valid,
-	output                     otp_ro_icb_cmd_ready,
-	input  [32-1:0]            otp_ro_icb_cmd_addr, 
-	input                      otp_ro_icb_cmd_read, 
-	input  [32-1:0]            otp_ro_icb_cmd_wdata,
+	//////////////////////////////////////////////////////////
+	input                      		otp_ro_icb_cmd_valid,
+	output                     		otp_ro_icb_cmd_ready,
+	input  [`E203_ADDR_SIZE-1:0]    otp_ro_icb_cmd_addr, 
+	input                      		otp_ro_icb_cmd_read, 
+	input  [`E203_XLEN-1:0]			otp_ro_icb_cmd_wdata,
 	
-	output                     otp_ro_icb_rsp_valid,
-	input                      otp_ro_icb_rsp_ready,
-	output [32-1:0]            otp_ro_icb_rsp_rdata,
+	output							otp_ro_icb_rsp_valid,
+	input							otp_ro_icb_rsp_ready,
+	output [`E203_XLEN-1:0]			otp_ro_icb_rsp_rdata,
 	
+	//////////////////////////////////////////////////////////
+	//dmac memory access i/f
+	output                      	dmac_mems_icb_cmd_valid,
+	input                     		dmac_mems_icb_cmd_ready,
+	output  [`E203_ADDR_SIZE-1:0]	dmac_mems_icb_cmd_addr, 
+	output                      	dmac_mems_icb_cmd_read, 
+	output  [`E203_XLEN-1:0]      	dmac_mems_icb_cmd_wdata,
+	output  [`E203_XLEN/8-1:0]   	dmac_mems_icb_cmd_wmask,
+	
+	input                   		dmac_mems_icb_rsp_valid,
+	output                      	dmac_mems_icb_rsp_ready,
+	input                         	dmac_mems_icb_rsp_err,
+  	input                         	dmac_mems_icb_rsp_excl_ok,
+	input [`E203_XLEN-1:0]        	dmac_mems_icb_rsp_rdata,	
 	
 	input  io_pads_gpio_0_i_ival,
 	output io_pads_gpio_0_o_oval,
@@ -1459,17 +1474,165 @@ module e203_subsys_perips(
 	wire                     hclkgen_icb_rsp_err;
 
 /*************************custom peripheral wire start*************************/
-	wire                     icb_hdmi_cmd_valid;
-	wire                     icb_hdmi_cmd_ready;
-	wire [32-1:0]            icb_hdmi_cmd_addr; 
-	wire                     icb_hdmi_cmd_read; 
-	wire [32-1:0]            icb_hdmi_cmd_wdata;
-	wire [4 -1:0]            icb_hdmi_cmd_wmask;
+//icb hdmi 
+wire                     	icb_hdmi_cmd_valid;
+wire                     	icb_hdmi_cmd_ready;
+wire [32-1:0]            	icb_hdmi_cmd_addr; 
+wire                     	icb_hdmi_cmd_read; 
+wire [32-1:0]            	icb_hdmi_cmd_wdata;
+wire [4 -1:0]            	icb_hdmi_cmd_wmask;
+
+wire                     	icb_hdmi_rsp_valid;
+wire                     	icb_hdmi_rsp_ready;
+wire [32-1:0]            	icb_hdmi_rsp_rdata;
+wire                     	icb_hdmi_rsp_err;
+
+//icb dmac 
+wire  						dmac_host_icb_cmd_valid;
+wire 						dmac_host_icb_cmd_ready;
+wire  [`E203_ADDR_SIZE-1:0] dmac_host_icb_cmd_addr; 
+wire  						dmac_host_icb_cmd_read; 
+wire  [`E203_XLEN-1:0] 		dmac_host_icb_cmd_wdata;
+wire  [`E203_XLEN/8-1:0] 	dmac_host_icb_cmd_wmask;
+
+wire 						dmac_host_icb_rsp_valid;
+wire  						dmac_host_icb_rsp_ready;
+wire  						dmac_host_icb_rsp_err;
+wire [`E203_XLEN-1:0] 		dmac_host_icb_rsp_rdata;
+
+//dmac peripheral access i/f
+wire                      	dmac_perips_icb_cmd_valid;
+wire                     	dmac_perips_icb_cmd_ready;
+wire  [`E203_ADDR_SIZE-1:0]	dmac_perips_icb_cmd_addr;
+wire                      	dmac_perips_icb_cmd_read;
+wire  [`E203_XLEN-1:0]      dmac_perips_icb_cmd_wdata;
+wire  [`E203_XLEN/8-1:0]   	dmac_perips_icb_cmd_wmask;
+
+wire                   		dmac_perips_icb_rsp_valid;
+wire                      	dmac_perips_icb_rsp_ready;
+wire                        dmac_perips_icb_rsp_err;
+wire                        dmac_perips_icb_rsp_excl_ok;
+wire [`E203_XLEN-1:0]       dmac_perips_icb_rsp_rdata;
+
+wire 						dmac_periphs_dma_req;
+wire 						dmac_periphs_dma_rsp;
 	
-	wire                     icb_hdmi_rsp_valid;
-	wire                     icb_hdmi_rsp_ready;
-	wire [32-1:0]            icb_hdmi_rsp_rdata;
-	wire                     icb_hdmi_rsp_err;
+/*************************custom peripheral wire end*************************/	
+
+wire arbt_icb_cmd_valid;
+wire arbt_icb_cmd_ready;
+wire [`E203_ADDR_SIZE-1:0] arbt_icb_cmd_addr;
+wire arbt_icb_cmd_read;
+wire [`E203_XLEN-1:0] arbt_icb_cmd_wdata;
+wire [`E203_XLEN/8-1:0] arbt_icb_cmd_wmask;
+wire [1:0] arbt_icb_cmd_burst;
+wire [1:0] arbt_icb_cmd_beat;
+wire arbt_icb_cmd_lock;
+wire arbt_icb_cmd_excl;
+wire [1:0] arbt_icb_cmd_size;
+wire arbt_icb_cmd_usr;
+
+wire arbt_icb_rsp_valid;
+wire arbt_icb_rsp_ready;
+wire arbt_icb_rsp_err;
+wire arbt_icb_rsp_excl_ok;
+wire [`E203_XLEN-1:0] arbt_icb_rsp_rdata;
+
+wire [2*1-1:0] arbt_bus_icb_cmd_valid;
+wire [2*1-1:0] arbt_bus_icb_cmd_ready;
+wire [2*`E203_ADDR_SIZE-1:0] arbt_bus_icb_cmd_addr;
+wire [2*1-1:0] arbt_bus_icb_cmd_read;
+wire [2*`E203_XLEN-1:0] arbt_bus_icb_cmd_wdata;
+wire [2*`E203_XLEN/8-1:0] arbt_bus_icb_cmd_wmask;
+wire [2*2-1:0] arbt_bus_icb_cmd_burst;
+wire [2*2-1:0] arbt_bus_icb_cmd_beat;
+wire [2*1-1:0] arbt_bus_icb_cmd_lock;
+wire [2*1-1:0] arbt_bus_icb_cmd_excl;
+wire [2*2-1:0] arbt_bus_icb_cmd_size;
+wire [2*1-1:0] arbt_bus_icb_cmd_usr;
+
+wire [2*1-1:0] arbt_bus_icb_rsp_valid;
+wire [2*1-1:0] arbt_bus_icb_rsp_ready;
+wire [2*1-1:0] arbt_bus_icb_rsp_err;
+wire [2*1-1:0] arbt_bus_icb_rsp_excl_ok;
+wire [2*`E203_XLEN-1:0] arbt_bus_icb_rsp_rdata;
+	
+//CMD Channel
+assign arbt_bus_icb_cmd_valid = {dmac_perips_icb_cmd_valid, ppi_icb_cmd_valid} ;
+
+assign arbt_bus_icb_cmd_addr = {dmac_perips_icb_cmd_addr, ppi_icb_cmd_addr};
+assign arbt_bus_icb_cmd_read = {dmac_perips_icb_cmd_read, ppi_icb_cmd_read};
+
+assign arbt_bus_icb_cmd_wdata = {dmac_perips_icb_cmd_wdata, ppi_icb_cmd_wdata};
+assign arbt_bus_icb_cmd_wmask = {dmac_perips_icb_cmd_wmask, ppi_icb_cmd_wmask};
+assign arbt_bus_icb_cmd_burst = {2'd0, 2'd0};
+assign arbt_bus_icb_cmd_beat = {2'd0, 2'd0};
+assign arbt_bus_icb_cmd_lock = {1'b0, 1'b0};
+assign arbt_bus_icb_cmd_excl = {1'b0, 1'b0};
+assign arbt_bus_icb_cmd_size = {2'd0, 2'd0};
+assign arbt_bus_icb_cmd_usr = {1'b0, 1'b0};
+assign {dmac_perips_icb_cmd_ready, ppi_icb_cmd_ready} = arbt_bus_icb_cmd_ready;
+  //RSP Channel
+assign {dmac_perips_icb_rsp_valid, ppi_icb_rsp_valid} = arbt_bus_icb_rsp_valid;
+assign {dmac_perips_icb_rsp_err, ppi_icb_rsp_err} = arbt_bus_icb_rsp_err;
+assign {dmac_perips_icb_rsp_rdata, ppi_icb_rsp_rdata} = arbt_bus_icb_rsp_rdata;
+assign arbt_bus_icb_rsp_ready = {dmac_perips_icb_rsp_ready, ppi_icb_rsp_ready};
+	
+sirv_gnrl_icb_arbt # (
+	.ARBT_SCHEME (0),// Priority based
+	.ALLOW_0CYCL_RSP (1),// Dont allow the 0 cycle response because in BIU we always have CMD_DP larger than 0
+				   //   when the response come back from the external bus, it is at least 1 cycle later
+	.FIFO_OUTS_NUM   (`E203_BIU_OUTS_NUM),
+	.FIFO_CUT_READY  (`E203_BIU_CMD_CUT_READY),
+	.ARBT_NUM   (2),
+	.ARBT_PTR_W (1),
+	.USR_W      (1),
+	.AW         (`E203_ADDR_SIZE),
+	.DW         (`E203_XLEN) 
+) u_biu_icb_arbt(
+	.o_icb_cmd_valid        (arbt_icb_cmd_valid )     ,
+	.o_icb_cmd_ready        (arbt_icb_cmd_ready )     ,
+	.o_icb_cmd_read         (arbt_icb_cmd_read )      ,
+	.o_icb_cmd_addr         (arbt_icb_cmd_addr )      ,
+	.o_icb_cmd_wdata        (arbt_icb_cmd_wdata )     ,
+	.o_icb_cmd_wmask        (arbt_icb_cmd_wmask)      ,
+	.o_icb_cmd_burst        (arbt_icb_cmd_burst)     ,
+	.o_icb_cmd_beat         (arbt_icb_cmd_beat )     ,
+	.o_icb_cmd_excl         (arbt_icb_cmd_excl )     ,
+	.o_icb_cmd_lock         (arbt_icb_cmd_lock )     ,
+	.o_icb_cmd_size         (arbt_icb_cmd_size )     ,
+	.o_icb_cmd_usr          (arbt_icb_cmd_usr  )     ,
+							
+	.o_icb_rsp_valid        (arbt_icb_rsp_valid )     ,
+	.o_icb_rsp_ready        (arbt_icb_rsp_ready )     ,
+	.o_icb_rsp_err          (arbt_icb_rsp_err)        ,
+	.o_icb_rsp_excl_ok      (arbt_icb_rsp_excl_ok)    ,
+	.o_icb_rsp_rdata        (arbt_icb_rsp_rdata )     ,
+	.o_icb_rsp_usr          (1'b0   )     ,
+						   
+	.i_bus_icb_cmd_ready    (arbt_bus_icb_cmd_ready ) ,
+	.i_bus_icb_cmd_valid    (arbt_bus_icb_cmd_valid ) ,
+	.i_bus_icb_cmd_read     (arbt_bus_icb_cmd_read )  ,
+	.i_bus_icb_cmd_addr     (arbt_bus_icb_cmd_addr )  ,
+	.i_bus_icb_cmd_wdata    (arbt_bus_icb_cmd_wdata ) ,
+	.i_bus_icb_cmd_wmask    (arbt_bus_icb_cmd_wmask)  ,
+	.i_bus_icb_cmd_burst    (arbt_bus_icb_cmd_burst),
+	.i_bus_icb_cmd_beat     (arbt_bus_icb_cmd_beat ),
+	.i_bus_icb_cmd_excl     (arbt_bus_icb_cmd_excl ),
+	.i_bus_icb_cmd_lock     (arbt_bus_icb_cmd_lock ),
+	.i_bus_icb_cmd_size     (arbt_bus_icb_cmd_size ),
+	.i_bus_icb_cmd_usr      (arbt_bus_icb_cmd_usr ),
+							
+	.i_bus_icb_rsp_valid    (arbt_bus_icb_rsp_valid ) ,
+	.i_bus_icb_rsp_ready    (arbt_bus_icb_rsp_ready ) ,
+	.i_bus_icb_rsp_err      (arbt_bus_icb_rsp_err)    ,
+	.i_bus_icb_rsp_excl_ok  (arbt_bus_icb_rsp_excl_ok),
+	.i_bus_icb_rsp_rdata    (arbt_bus_icb_rsp_rdata ) ,
+	.i_bus_icb_rsp_usr      () ,
+						 
+	.clk                    (clk  )                     ,
+	.rst_n                  (rst_n)
+);
 	
 /*************************custom peripheral wire end*************************/
 
@@ -1555,23 +1718,23 @@ module e203_subsys_perips(
 
   )u_sirv_ppi_fab(
 
-    .i_icb_cmd_valid  (ppi_icb_cmd_valid),
-    .i_icb_cmd_ready  (ppi_icb_cmd_ready),
-    .i_icb_cmd_addr   (ppi_icb_cmd_addr ),
-    .i_icb_cmd_read   (ppi_icb_cmd_read ),
-    .i_icb_cmd_wdata  (ppi_icb_cmd_wdata),
-    .i_icb_cmd_wmask  (ppi_icb_cmd_wmask),
+    .i_icb_cmd_valid  (arbt_icb_cmd_valid),
+    .i_icb_cmd_ready  (arbt_icb_cmd_ready),
+    .i_icb_cmd_addr   (arbt_icb_cmd_addr ),
+    .i_icb_cmd_read   (arbt_icb_cmd_read ),
+    .i_icb_cmd_wdata  (arbt_icb_cmd_wdata),
+    .i_icb_cmd_wmask  (arbt_icb_cmd_wmask),
     .i_icb_cmd_lock   (1'b0),
     .i_icb_cmd_excl   (1'b0 ),
     .i_icb_cmd_size   (2'b0 ),
     .i_icb_cmd_burst  (2'b0 ),
     .i_icb_cmd_beat   (2'b0 ),
     
-    .i_icb_rsp_valid  (ppi_icb_rsp_valid),
-    .i_icb_rsp_ready  (ppi_icb_rsp_ready),
-    .i_icb_rsp_err    (ppi_icb_rsp_err  ),
+    .i_icb_rsp_valid  (arbt_icb_rsp_valid),
+    .i_icb_rsp_ready  (arbt_icb_rsp_ready),
+    .i_icb_rsp_err    (arbt_icb_rsp_err  ),
     .i_icb_rsp_excl_ok(),
-    .i_icb_rsp_rdata  (ppi_icb_rsp_rdata),
+    .i_icb_rsp_rdata  (arbt_icb_rsp_rdata),
     
   //  * AON 
     .o0_icb_enable     (1'b1),
@@ -1878,13 +2041,13 @@ module e203_subsys_perips(
     .o13_icb_rsp_excl_ok(1'b0  ),
     .o13_icb_rsp_rdata  (icb_hdmi_rsp_rdata),
 
-    .o14_icb_enable     (1'b0),
-    .o14_icb_cmd_valid  (),
-    .o14_icb_cmd_ready  (),
-    .o14_icb_cmd_addr   ( ),
-    .o14_icb_cmd_read   ( ),
-    .o14_icb_cmd_wdata  (),
-    .o14_icb_cmd_wmask  (),
+    .o14_icb_enable     (1'b1),
+    .o14_icb_cmd_valid  (dmac_host_icb_cmd_valid),
+    .o14_icb_cmd_ready  (dmac_host_icb_cmd_ready),
+    .o14_icb_cmd_addr   (dmac_host_icb_cmd_addr),
+    .o14_icb_cmd_read   (dmac_host_icb_cmd_read),
+    .o14_icb_cmd_wdata  (dmac_host_icb_cmd_wdata),
+    .o14_icb_cmd_wmask  (dmac_host_icb_cmd_wmask),
 
     .o14_icb_cmd_lock   (),
     .o14_icb_cmd_excl   (),
@@ -1892,11 +2055,11 @@ module e203_subsys_perips(
     .o14_icb_cmd_burst  (),
     .o14_icb_cmd_beat   (),
     
-    .o14_icb_rsp_valid  (),
-    .o14_icb_rsp_ready  (),
-    .o14_icb_rsp_err    (),
+    .o14_icb_rsp_valid  (dmac_host_icb_rsp_valid),
+    .o14_icb_rsp_ready  (dmac_host_icb_rsp_ready),
+    .o14_icb_rsp_err    (dmac_host_icb_rsp_err),
     .o14_icb_rsp_excl_ok(1'b0  ),
-    .o14_icb_rsp_rdata  (),
+    .o14_icb_rsp_rdata  (dmac_host_icb_rsp_rdata),
 
    //  * I2C WishBone    
     .o15_icb_enable     (1'b0),
@@ -3162,5 +3325,58 @@ hdmi_display_wrapper u_hdmi_display_wrapper(
    .TMDS_data_p(TMDS_data_p),
    .sys_clk(clk)
 );
+
+icb_dmac
+#(
+	.DMAC_CORE_ID(0)
+)
+u_icb_dmac
+(
+	.s_dmac_host_icb_cmd_valid_i(dmac_host_icb_cmd_valid),
+	.s_dmac_host_icb_cmd_ready_o(dmac_host_icb_cmd_ready),
+	.s_dmac_host_icb_cmd_addr_i(dmac_host_icb_cmd_addr), 
+	.s_dmac_host_icb_cmd_read_i(dmac_host_icb_cmd_read), 
+	.s_dmac_host_icb_cmd_wdata_i(dmac_host_icb_cmd_wdata),
+	.s_dmac_host_icb_cmd_wmask_i(dmac_host_icb_cmd_wmask),
+
+	.s_dmac_host_icb_rsp_valid_o(dmac_host_icb_rsp_valid),
+	.s_dmac_host_icb_rsp_ready_i(dmac_host_icb_rsp_ready),
+	.s_dmac_host_icb_rsp_err_o(dmac_host_icb_rsp_err),
+	.s_dmac_host_icb_rsp_rdata_o(dmac_host_icb_rsp_rdata),
+
+	.m_dmac_mems_icb_cmd_valid_o(dmac_mems_icb_cmd_valid),
+	.m_dmac_mems_icb_cmd_ready_i(dmac_mems_icb_cmd_ready),
+	.m_dmac_mems_icb_cmd_addr_o(dmac_mems_icb_cmd_addr), 
+	.m_dmac_mems_icb_cmd_read_o(dmac_mems_icb_cmd_read), 
+	.m_dmac_mems_icb_cmd_wdata_o(dmac_mems_icb_cmd_wdata),
+	.m_dmac_mems_icb_cmd_wmask_o(dmac_mems_icb_cmd_wmask),
+
+	.m_dmac_mems_icb_rsp_valid_i(dmac_mems_icb_rsp_valid),
+	.m_dmac_mems_icb_rsp_ready_o(dmac_mems_icb_rsp_ready),
+	.m_dmac_mems_icb_rsp_err(),
+	.m_dmac_mems_icb_rsp_excl_ok(),
+	.m_dmac_mems_icb_rsp_rdata_i(dmac_mems_icb_rsp_rdata),	
+
+	.m_dmac_perips_icb_cmd_valid_o(dmac_perips_icb_cmd_valid),
+	.m_dmac_perips_icb_cmd_ready_i(dmac_perips_icb_cmd_ready),
+	.m_dmac_perips_icb_cmd_addr_o(dmac_perips_icb_cmd_addr), 
+	.m_dmac_perips_icb_cmd_read_o(dmac_perips_icb_cmd_read), 
+	.m_dmac_perips_icb_cmd_wdata_o(dmac_perips_icb_cmd_wdata),
+	.m_dmac_perips_icb_cmd_wmask_o(dmac_perips_icb_cmd_wmask),
+
+	.m_dmac_perips_icb_rsp_valid_i(dmac_perips_icb_rsp_valid),
+	.m_dmac_perips_icb_rsp_ready_o(dmac_perips_icb_rsp_ready),
+	.m_dmac_perips_icb_rsp_err(dmac_perips_icb_rsp_err),
+	.m_dmac_perips_icb_rsp_excl_ok(),
+	.m_dmac_perips_icb_rsp_rdata_i(dmac_perips_icb_rsp_rdata),
+
+	.dmac_periphs_dma_req_i(dmac_periphs_dma_req),
+	.dmac_periphs_dma_rsp_o(dmac_periphs_dma_rsp),
+
+	.dmac_transaction_done_o(),
+	.clk(clk),
+	.rst_n(rst_n)
+);
+
 
 endmodule

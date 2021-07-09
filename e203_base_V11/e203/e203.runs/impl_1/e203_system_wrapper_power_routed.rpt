@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Sat Jul  3 20:25:26 2021
+| Date             : Fri Jul  9 17:30:21 2021
 | Host             : DESKTOP-V0OL22A running 64-bit major release  (build 9200)
 | Command          : report_power -file e203_system_wrapper_power_routed.rpt -pb e203_system_wrapper_power_summary_routed.pb -rpx e203_system_wrapper_power_routed.rpx
 | Design           : e203_system_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.167        |
+| Total On-Chip Power (W)  | 1.169        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.058        |
+| Dynamic (W)              | 1.060        |
 | Device Static (W)        | 0.109        |
 | Effective TJA (C/W)      | 2.6          |
 | Max Ambient (C)          | 81.9         |
@@ -52,25 +52,25 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.048 |       29 |       --- |             --- |
-| Slice Logic              |     0.015 |    30432 |       --- |             --- |
-|   LUT as Logic           |     0.014 |    14232 |     63400 |           22.45 |
-|   Register               |    <0.001 |    11186 |    126800 |            8.82 |
-|   CARRY4                 |    <0.001 |      355 |     15850 |            2.24 |
-|   LUT as Distributed RAM |    <0.001 |      600 |     19000 |            3.16 |
-|   LUT as Shift Register  |    <0.001 |       21 |     19000 |            0.11 |
-|   F7/F8 Muxes            |    <0.001 |      420 |     63400 |            0.66 |
+| Clocks                   |     0.048 |       30 |       --- |             --- |
+| Slice Logic              |     0.016 |    36332 |       --- |             --- |
+|   LUT as Logic           |     0.014 |    16014 |     63400 |           25.26 |
+|   Register               |    <0.001 |    14185 |    126800 |           11.19 |
+|   CARRY4                 |    <0.001 |      434 |     15850 |            2.74 |
+|   LUT as Distributed RAM |    <0.001 |      624 |     19000 |            3.28 |
+|   F7/F8 Muxes            |    <0.001 |      451 |     63400 |            0.71 |
+|   LUT as Shift Register  |    <0.001 |      254 |     19000 |            1.34 |
 |   BUFG                   |    <0.001 |        2 |        32 |            6.25 |
-|   Others                 |     0.000 |      903 |       --- |             --- |
-| Signals                  |     0.016 |    24587 |       --- |             --- |
-| Block RAM                |     0.009 |       92 |       135 |           68.15 |
+|   Others                 |     0.000 |     1263 |       --- |             --- |
+| Signals                  |     0.017 |    28951 |       --- |             --- |
+| Block RAM                |     0.010 |       97 |       135 |           71.85 |
 | MMCM                     |     0.324 |        3 |         6 |           50.00 |
 | PLL                      |     0.092 |        1 |         6 |           16.67 |
 | I/O                      |     0.415 |       98 |       300 |           32.67 |
 | PHASER                   |     0.134 |       14 |       --- |             --- |
 | XADC                     |     0.004 |        1 |       --- |             --- |
 | Static Power             |     0.109 |          |           |                 |
-| Total                    |     1.167 |          |           |                 |
+| Total                    |     1.169 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -80,8 +80,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.155 |       0.136 |      0.019 |
-| Vccaux    |       1.800 |     0.361 |       0.343 |      0.018 |
+| Vccint    |       1.000 |     0.157 |       0.138 |      0.019 |
+| Vccaux    |       1.800 |     0.361 |       0.342 |      0.018 |
 | Vcco33    |       3.300 |     0.048 |       0.044 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -89,7 +89,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.121 |       0.117 |      0.004 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.003 |       0.001 |      0.003 |
+| Vccbram   |       1.000 |     0.004 |       0.001 |      0.003 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.022 |       0.002 |      0.020 |
@@ -145,6 +145,7 @@ Table of Contents
 | clk_pll_i                                                                                                                                                 | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/clk_pll_i                                                                                                                                    |            10.0 |
 | clkfbout_mmcm                                                                                                                                             | ip_mmcm/inst/clkfbout_mmcm                                                                                                                                                                                                                   |            20.0 |
 | clkfbout_video_pll                                                                                                                                        | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_hdmi_display_wrapper/video_pll_m0/inst/clkfbout_video_pll                                                                                                                    |            62.5 |
+| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK                                                                | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/tck_bs                                                                                                                                                                         |            33.0 |
 | freq_refclk                                                                                                                                               | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/freq_refclk                                                                                                                                  |             1.3 |
 | iserdes_clkdiv                                                                                                                                            | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/iserdes_clkdiv       |            10.0 |
 | iserdes_clkdiv_1                                                                                                                                          | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/iserdes_clkdiv       |            10.0 |
@@ -175,14 +176,17 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| e203_system_wrapper      |     1.058 |
+| e203_system_wrapper      |     1.060 |
 |   IOBUF_jtag_TDO         |     0.005 |
+|   dbg_hub                |     0.002 |
+|     inst                 |     0.002 |
+|       BSCANID.u_xsdbm_id |     0.002 |
 |   dut                    |     0.929 |
-|     u_custom_icb_mig     |     0.643 |
-|       u_custom_icb_mig   |     0.643 |
-|     u_e203_subsys_top    |     0.286 |
-|       u_e203_subsys_main |     0.282 |
-|       u_sirv_aon_top     |     0.004 |
+|     u_custom_icb_mig     |     0.640 |
+|       u_custom_icb_mig   |     0.640 |
+|     u_e203_subsys_top    |     0.289 |
+|       u_e203_subsys_main |     0.284 |
+|       u_sirv_aon_top     |     0.005 |
 |   ip_mmcm                |     0.123 |
 |     inst                 |     0.123 |
 +--------------------------+-----------+

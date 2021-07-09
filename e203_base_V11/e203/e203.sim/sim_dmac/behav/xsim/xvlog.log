@@ -1,0 +1,292 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_ctrl_addr_decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_ctrl_addr_decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_ctrl_read.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_ctrl_read
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_ctrl_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_ctrl_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_ctrl_reg_bank.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_ctrl_reg_bank
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_ctrl_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_ctrl_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_ctrl_write.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_ctrl_write
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_mc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_mc
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_mc_ar_channel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_mc_ar_channel
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_mc_aw_channel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_mc_aw_channel
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_mc_b_channel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_mc_b_channel
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_mc_cmd_arbiter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_mc_cmd_arbiter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_mc_cmd_fsm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_mc_cmd_fsm
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_mc_cmd_translator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_mc_cmd_translator
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_mc_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_mc_fifo
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_mc_incr_cmd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_mc_incr_cmd
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_mc_r_channel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_mc_r_channel
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_mc_simple_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_mc_simple_fifo
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_mc_wrap_cmd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_mc_wrap_cmd
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_mc_wr_cmd_fsm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_mc_wr_cmd_fsm
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_axi_mc_w_channel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_axi_mc_w_channel
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_axic_register_slice.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_axic_register_slice
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_axi_register_slice.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_axi_register_slice
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_axi_upsizer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_axi_upsizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_a_upsizer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_a_upsizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_carry_and.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_carry_and
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_carry_latch_and.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_carry_latch_and
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_carry_latch_or.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_carry_latch_or
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_carry_or.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_carry_or
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_command_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_command_fifo
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_comparator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_comparator
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_comparator_sel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_comparator_sel
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_comparator_sel_static.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_comparator_sel_static
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_r_upsizer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_r_upsizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_w_upsizer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_w_upsizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_clk_ibuf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_clk_ibuf
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_infrastructure.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_infrastructure
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_iodelay_ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_iodelay_ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_tempmon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_tempmon
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_arb_mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_row_col.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_arb_row_col
+WARNING: [VRFC 10-2654] begin/end is required for generate-for in this mode of verilog [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_row_col.v:252]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_select.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_arb_select
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_bank_cntrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_common.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_bank_common
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_compare.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_bank_compare
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_mach.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_bank_mach
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_bank_queue
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_bank_state
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_col_mach.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_col_mach
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_mc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_mc
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_cntrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_rank_cntrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_common.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_rank_common
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_mach.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_rank_mach
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_round_robin_arb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_2_ecc_buf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ecc_buf
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_2_ecc_dec_fix.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ecc_dec_fix
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_2_ecc_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ecc_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_2_ecc_merge_enc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ecc_merge_enc
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ecc/mig_7series_v4_2_fi_xor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_fi_xor
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_2_memc_ui_top_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_memc_ui_top_axi
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_2_memc_ui_top_std.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_memc_ui_top_std
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_2_mem_intfc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_mem_intfc
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_byte_group_io
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_byte_lane
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_calib_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_if_post_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_if_post_fifo
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_mc_phy
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_mc_phy_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_of_pre_fifo
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_4lanes.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_4lanes
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_dqs_found_cal.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_dqs_found_cal
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_dqs_found_cal_hr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_init
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_ocd_cntlr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_ocd_cntlr
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_ocd_data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_ocd_data
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_ocd_edge.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_ocd_edge
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_ocd_lim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_ocd_lim
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_ocd_mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_ocd_mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_ocd_po_cntlr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_ocd_po_cntlr
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_ocd_samp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_ocd_samp
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_oclkdelay_cal.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_oclkdelay_cal
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_prbs_rdlvl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_prbs_rdlvl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_rdlvl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_rdlvl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_tempmon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_tempmon
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrcal.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_wrcal
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrlvl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_wrlvl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrlvl_off_delay.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_phy_wrlvl_off_delay
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_prbs_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_prbs_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_skip_calib_tap.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ddr_skip_calib_tap
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_poc_cc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_poc_cc
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_poc_edge_store.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_poc_edge_store
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_poc_meta.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_poc_meta
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_poc_pd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_poc_pd
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_poc_tap_base.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_poc_tap_base
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_poc_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_poc_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_cmd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ui_cmd
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_rd_data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ui_rd_data
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ui_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_wr_data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_v4_2_ui_wr_data
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0_mig_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_0_mig
+INFO: [VRFC 10-2458] undeclared symbol dbg_sel_po_incdec, assumed default net type wire [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0_mig_sim.v:1093]
+INFO: [VRFC 10-2458] undeclared symbol dbg_po_f_inc, assumed default net type wire [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0_mig_sim.v:1097]
+INFO: [VRFC 10-2458] undeclared symbol dbg_po_f_stg23_sel, assumed default net type wire [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0_mig_sim.v:1098]
+INFO: [VRFC 10-2458] undeclared symbol dbg_po_f_dec, assumed default net type wire [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0_mig_sim.v:1099]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mig_7series_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/reset_sys/reset_sys_sim_netlist.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reset_sys
+INFO: [VRFC 10-311] analyzing module reset_sys_cdc_sync
+INFO: [VRFC 10-311] analyzing module reset_sys_cdc_sync_0
+INFO: [VRFC 10-311] analyzing module reset_sys_lpf
+INFO: [VRFC 10-311] analyzing module reset_sys_proc_sys_reset
+INFO: [VRFC 10-311] analyzing module reset_sys_sequence_psr
+INFO: [VRFC 10-311] analyzing module reset_sys_upcnt_n
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mmcm/mmcm_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmcm_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mmcm/mmcm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmcm
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/video_pll_1/video_pll_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module video_pll_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/video_pll_1/video_pll.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module video_pll
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/hdmi_ram_1/sim/hdmi_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hdmi_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/hdmi_ram_2_1/sim/hdmi_ram_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hdmi_ram_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/sim/ila_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ila_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/clock_divider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock_divider
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/custom_icb_mig.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module custom_icb_mig
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/custom_icb_mig_wrapper_.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module custom_icb_mig_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_defines.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/config.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_biu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_biu
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_clk_ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_clk_ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_clkgate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_clkgate
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_cpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_cpu
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_cpu_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_cpu_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_dtcm_ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_dtcm_ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_dtcm_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_dtcm_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_extend_csr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_extend_csr
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_exu
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_exu_alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_bjp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_exu_alu_bjp
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_csrctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_exu_alu_csrctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_dpath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_exu_alu_dpath
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_lsuagu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_exu_alu_lsuagu
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module e203_exu_alu_muldiv
+ERROR: [VRFC 10-4982] syntax error near ':' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:551]
+ERROR: [VRFC 10-4982] syntax error near 'assert' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:552]
+ERROR: [VRFC 10-2790] Verilog 2000 keyword disable used in incorrect context [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:552]
+ERROR: [VRFC 10-4982] syntax error near ':' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:571]
+ERROR: [VRFC 10-4982] syntax error near 'assert' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:572]
+ERROR: [VRFC 10-2790] Verilog 2000 keyword disable used in incorrect context [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:572]
+ERROR: [VRFC 10-2934] 'property' is already declared [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:572]
+ERROR: [VRFC 10-4982] syntax error near ':' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:612]
+ERROR: [VRFC 10-4982] syntax error near 'assert' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:614]
+ERROR: [VRFC 10-2790] Verilog 2000 keyword disable used in incorrect context [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:614]
+ERROR: [VRFC 10-2934] 'property' is already declared [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:614]
+ERROR: [VRFC 10-4982] syntax error near '$display' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:619]
+ERROR: [VRFC 10-4982] syntax error near '$display' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:620]
+ERROR: [VRFC 10-4982] syntax error near '$display' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:621]
+ERROR: [VRFC 10-4982] syntax error near '$display' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:622]
+ERROR: [VRFC 10-4982] syntax error near '$display' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:623]
+WARNING: [VRFC 10-2377] elaboration system task fatal violates IEEE 1800 (2005) syntax [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:624]
+ERROR: [VRFC 10-4982] syntax error near 'end' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:625]
+ERROR: [VRFC 10-2790] Verilog 2000 keyword end used in incorrect context [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:625]
+ERROR: [VRFC 10-2865] module 'e203_exu_alu_muldiv' ignored due to previous errors [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:32]

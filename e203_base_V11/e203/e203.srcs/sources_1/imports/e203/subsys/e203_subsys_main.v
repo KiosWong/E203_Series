@@ -436,6 +436,19 @@ module e203_subsys_main(
   input                          sysmem_icb_rsp_err  ,
   input  [`E203_XLEN-1:0]        sysmem_icb_rsp_rdata,
   `endif//}
+  
+  output                      	dmac_mems_icb_cmd_valid,
+  input                     	dmac_mems_icb_cmd_ready,
+  output  [`E203_ADDR_SIZE-1:0]	dmac_mems_icb_cmd_addr, 
+  output                      	dmac_mems_icb_cmd_read, 
+  output  [`E203_XLEN-1:0]      dmac_mems_icb_cmd_wdata,
+  output  [`E203_XLEN/8-1:0]   	dmac_mems_icb_cmd_wmask,
+  
+  input                   		dmac_mems_icb_rsp_valid,
+  output                      	dmac_mems_icb_rsp_ready,
+  input                         dmac_mems_icb_rsp_err,
+  input                         dmac_mems_icb_rsp_excl_ok,
+  input [`E203_XLEN-1:0]        dmac_mems_icb_rsp_rdata,
 
   input  test_mode,
 
@@ -1306,6 +1319,19 @@ e203_subsys_clint u_e203_subsys_clint(
     .aon_icb_rsp_ready     (aon_icb_rsp_ready),
     .aon_icb_rsp_err       (aon_icb_rsp_err  ),
     .aon_icb_rsp_rdata     (aon_icb_rsp_rdata),
+    
+    .dmac_mems_icb_cmd_valid(dmac_mems_icb_cmd_valid),
+	.dmac_mems_icb_cmd_ready(dmac_mems_icb_cmd_ready),
+	.dmac_mems_icb_cmd_addr(dmac_mems_icb_cmd_addr), 
+	.dmac_mems_icb_cmd_read(dmac_mems_icb_cmd_read), 
+	.dmac_mems_icb_cmd_wdata(dmac_mems_icb_cmd_wdata),
+	.dmac_mems_icb_cmd_wmask(dmac_mems_icb_cmd_wmask),
+
+	.dmac_mems_icb_rsp_valid(dmac_mems_icb_rsp_valid),
+	.dmac_mems_icb_rsp_ready(dmac_mems_icb_rsp_ready),
+	.dmac_mems_icb_rsp_err(),
+	.dmac_mems_icb_rsp_excl_ok(),
+	.dmac_mems_icb_rsp_rdata(dmac_mems_icb_rsp_rdata),	
 
 `ifdef FAKE_FLASH_MODEL//{
     .qspi0_ro_icb_cmd_valid  (1'b0), 

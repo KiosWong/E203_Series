@@ -2,443 +2,1104 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sat Jul  3 11:39:40 2021
-# Process ID: 29664
+# Start of session at: Sun Jul  4 09:50:35 2021
+# Process ID: 32716
 # Current directory: E:/Projects/SoC/e203_series/e203_base_V11/e203
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14060 E:\Projects\SoC\e203_series\e203_base_V11\e203\e203.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13692 E:\Projects\SoC\e203_series\e203_base_V11\e203\e203.xpr
 # Log file: E:/Projects/SoC/e203_series/e203_base_V11/e203/vivado.log
 # Journal file: E:/Projects/SoC/e203_series/e203_base_V11/e203\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.xpr
-INFO: [Project 1-313] Project file moved from 'E:/Projects/SoC/e203_series/e203_base_V10/e203' since last save.
-CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/bd/axi_mig/ip/axi_mig_mig_7series_0_0/mig_a.prj', nor could it be found using path 'E:/Projects/SoC/e203_series/e203_base_V10/e203/e203.srcs/sources_1/bd/axi_mig/ip/axi_mig_mig_7series_0_0/mig_a.prj'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/bd/axi_mig/ip/axi_mig_mig_7series_0_0/mig_a.prj'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Program/Vivado/Vivado/2019.1/data/ip'.
-launch_runs impl_1 -to_step write_bitstream -jobs 16
-[Sat Jul  3 15:24:56 2021] Launched mig_7series_0_synth_1, reset_sys_synth_1, mmcm_synth_1, video_pll_synth_1, hdmi_ram_synth_1, hdmi_ram_2_synth_1, synth_1...
-Run output will be captured here:
-mig_7series_0_synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/mig_7series_0_synth_1/runme.log
-reset_sys_synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/reset_sys_synth_1/runme.log
-mmcm_synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/mmcm_synth_1/runme.log
-video_pll_synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/video_pll_synth_1/runme.log
-hdmi_ram_synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/hdmi_ram_synth_1/runme.log
-hdmi_ram_2_synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/hdmi_ram_2_synth_1/runme.log
-synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/runme.log
-[Sat Jul  3 15:24:57 2021] Launched impl_1...
-Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/runme.log
-open_hw
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-INFO: [Labtools 27-2222] Launching hw_server...
-INFO: [Labtools 27-2221] Launch Output:
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 946.203 ; gain = 270.387
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a100tfgg676-2
+Top: e203_system_wrapper
+INFO: [Device 21-403] Loading part xc7a100tfgg676-2
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1687.117 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'e203_system_wrapper' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/e203_soc_wrapper.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mmcm' [E:/Projects/SoC/e203_series/e203_base_V11/e203/.Xil/Vivado-32716-DESKTOP-V0OL22A/realtime/mmcm_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mmcm' (1#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/.Xil/Vivado-32716-DESKTOP-V0OL22A/realtime/mmcm_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/clock_divider.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (2#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/clock_divider.v:22]
+INFO: [Synth 8-6157] synthesizing module 'reset_sys' [E:/Projects/SoC/e203_series/e203_base_V11/e203/.Xil/Vivado-32716-DESKTOP-V0OL22A/realtime/reset_sys_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'reset_sys' (3#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/.Xil/Vivado-32716-DESKTOP-V0OL22A/realtime/reset_sys_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'PULLUP' [D:/Program/Vivado/Vivado/2019.1/scripts/rt/data/unisim_comp.v:69747]
+INFO: [Synth 8-6155] done synthesizing module 'PULLUP' (4#1) [D:/Program/Vivado/Vivado/2019.1/scripts/rt/data/unisim_comp.v:69747]
+INFO: [Synth 8-6157] synthesizing module 'IOBUF' [D:/Program/Vivado/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (5#1) [D:/Program/Vivado/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115]
+INFO: [Synth 8-6157] synthesizing module 'IOBUF__parameterized0' [D:/Program/Vivado/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF__parameterized0' (5#1) [D:/Program/Vivado/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115]
+INFO: [Synth 8-6157] synthesizing module 'e203_soc_top' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/soc/e203_soc_top.v:19]
+INFO: [Synth 8-6157] synthesizing module 'e203_subsys_top' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_top.v:31]
+INFO: [Synth 8-6157] synthesizing module 'e203_subsys_main' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_main.v:32]
+INFO: [Synth 8-6157] synthesizing module 'sirv_ResetCatchAndSync_2' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/sirv_ResetCatchAndSync_2.v:19]
+INFO: [Synth 8-6157] synthesizing module 'sirv_AsyncResetRegVec_129' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/sirv_AsyncResetRegVec_129.v:19]
+INFO: [Synth 8-6157] synthesizing module 'sirv_AsyncResetReg' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/sirv_AsyncResetReg.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_AsyncResetReg' (6#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/sirv_AsyncResetReg.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_AsyncResetRegVec_129' (7#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/sirv_AsyncResetRegVec_129.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_ResetCatchAndSync_2' (8#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/sirv_ResetCatchAndSync_2.v:19]
+INFO: [Synth 8-6157] synthesizing module 'e203_subsys_hclkgen' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_hclkgen.v:31]
+INFO: [Synth 8-6157] synthesizing module 'e203_subsys_pll' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_pll.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'e203_subsys_pll' (9#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_pll.v:31]
+INFO: [Synth 8-6157] synthesizing module 'e203_subsys_hclkgen_rstsync' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_hclkgen_rstsync.v:29]
+	Parameter RST_SYNC_LEVEL bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'e203_subsys_hclkgen_rstsync' (10#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_hclkgen_rstsync.v:29]
+INFO: [Synth 8-6157] synthesizing module 'e203_subsys_pllclkdiv' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_pllclkdiv.v:31]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dfflr' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+	Parameter DW bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dfflr' (11#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dfflr__parameterized0' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+	Parameter DW bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dfflr__parameterized0' (11#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+INFO: [Synth 8-6157] synthesizing module 'e203_clkgate' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_clkgate.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'e203_clkgate' (12#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_clkgate.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'e203_subsys_pllclkdiv' (13#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_pllclkdiv.v:31]
+INFO: [Synth 8-6157] synthesizing module 'e203_subsys_gfcm' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_gfcm.v:31]
+	Parameter SYNC_LEVEL bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'e203_subsys_gfcm' (14#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_gfcm.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'e203_subsys_hclkgen' (15#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_hclkgen.v:31]
+INFO: [Synth 8-6157] synthesizing module 'e203_cpu_top' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_cpu_top.v:30]
+INFO: [Synth 8-6157] synthesizing module 'e203_cpu' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_cpu.v:30]
+	Parameter MASTER bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'e203_reset_ctrl' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_reset_ctrl.v:29]
+	Parameter MASTER bound to: 1 - type: integer 
+	Parameter RST_SYNC_LEVEL bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'e203_reset_ctrl' (16#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_reset_ctrl.v:29]
+INFO: [Synth 8-6157] synthesizing module 'e203_clk_ctrl' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_clk_ctrl.v:30]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dffr' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:209]
+	Parameter DW bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dffr' (17#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:209]
+INFO: [Synth 8-6155] done synthesizing module 'e203_clk_ctrl' (18#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_clk_ctrl.v:30]
+INFO: [Synth 8-6157] synthesizing module 'e203_irq_sync' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_irq_sync.v:29]
+	Parameter MASTER bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_sync' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:99]
+	Parameter DP bound to: 2 - type: integer 
+	Parameter DW bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_sync' (19#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:99]
+INFO: [Synth 8-6155] done synthesizing module 'e203_irq_sync' (20#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_irq_sync.v:29]
+INFO: [Synth 8-6157] synthesizing module 'e203_extend_csr' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_extend_csr.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'e203_extend_csr' (21#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_extend_csr.v:32]
+INFO: [Synth 8-6157] synthesizing module 'e203_core' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_core.v:30]
+INFO: [Synth 8-6157] synthesizing module 'e203_ifu' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_ifu.v:29]
+INFO: [Synth 8-6157] synthesizing module 'e203_ifu_ifetch' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_ifu_ifetch.v:29]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dffrs' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:177]
+	Parameter DW bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dffrs' (22#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:177]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dfflr__parameterized1' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+	Parameter DW bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dfflr__parameterized1' (22#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dfflr__parameterized2' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+	Parameter DW bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dfflr__parameterized2' (22#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dfflr__parameterized3' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+	Parameter DW bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dfflr__parameterized3' (22#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+INFO: [Synth 8-6157] synthesizing module 'e203_ifu_minidec' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_ifu_minidec.v:28]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_decode' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_decode.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_decode' (23#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_decode.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'e203_ifu_minidec' (24#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_ifu_minidec.v:28]
+INFO: [Synth 8-6157] synthesizing module 'e203_ifu_litebpu' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_ifu_litebpu.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'e203_ifu_litebpu' (25#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_ifu_litebpu.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'e203_ifu_ifetch' (26#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_ifu_ifetch.v:29]
+INFO: [Synth 8-6157] synthesizing module 'e203_ifu_ift2icb' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_ifu_ift2icb.v:30]
+	Parameter ICB_STATE_WIDTH bound to: 2 - type: integer 
+	Parameter ICB_STATE_IDLE bound to: 2'b00 
+	Parameter ICB_STATE_1ST bound to: 2'b01 
+	Parameter ICB_STATE_WAIT2ND bound to: 2'b10 
+	Parameter ICB_STATE_2ND bound to: 2'b11 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_bypbuf' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:306]
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 33 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_fifo' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:381]
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter MSKO bound to: 0 - type: integer 
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 33 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dffl' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+	Parameter DW bound to: 33 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dffl' (27#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dfflrs' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:40]
+	Parameter DW bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dfflrs' (28#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:40]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_fifo' (29#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:381]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_bypbuf' (30#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:306]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dfflr__parameterized4' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+	Parameter DW bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dfflr__parameterized4' (30#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dffl__parameterized0' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+	Parameter DW bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dffl__parameterized0' (30#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dffl__parameterized1' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+	Parameter DW bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dffl__parameterized1' (30#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'e203_ifu_ift2icb' (31#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_ifu_ift2icb.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'e203_ifu' (32#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_ifu.v:29]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu.v:29]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_regfile' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_regfile.v:28]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dffl__parameterized2' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+	Parameter DW bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dffl__parameterized2' (32#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_regfile' (33#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_regfile.v:28]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_disp' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_disp.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_disp' (34#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_disp.v:29]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_oitf' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_oitf.v:29]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dffl__parameterized3' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+	Parameter DW bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dffl__parameterized3' (34#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dffl__parameterized4' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+	Parameter DW bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dffl__parameterized4' (34#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_oitf' (35#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_oitf.v:29]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_alu' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu.v:32]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_alu_csrctrl' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_csrctrl.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_alu_csrctrl' (36#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_csrctrl.v:29]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_alu_bjp' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_bjp.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_alu_bjp' (37#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_bjp.v:32]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_alu_lsuagu' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_lsuagu.v:32]
+	Parameter ICB_STATE_WIDTH bound to: 4 - type: integer 
+	Parameter ICB_STATE_IDLE bound to: 4'b0000 
+	Parameter ICB_STATE_1ST bound to: 4'b0001 
+	Parameter ICB_STATE_WAIT2ND bound to: 4'b0010 
+	Parameter ICB_STATE_2ND bound to: 4'b0011 
+	Parameter ICB_STATE_AMOALU bound to: 4'b0100 
+	Parameter ICB_STATE_AMORDY bound to: 4'b0101 
+	Parameter ICB_STATE_WBCK bound to: 4'b0110 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dfflr__parameterized5' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+	Parameter DW bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dfflr__parameterized5' (37#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_alu_lsuagu' (38#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_lsuagu.v:32]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_alu_rglr' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_rglr.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_alu_rglr' (39#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_rglr.v:30]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_alu_muldiv' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:32]
+	Parameter MULDIV_STATE_WIDTH bound to: 3 - type: integer 
+	Parameter MULDIV_STATE_0TH bound to: 3'b000 
+	Parameter MULDIV_STATE_EXEC bound to: 3'b001 
+	Parameter MULDIV_STATE_REMD_CHCK bound to: 3'b010 
+	Parameter MULDIV_STATE_QUOT_CORR bound to: 3'b011 
+	Parameter MULDIV_STATE_REMD_CORR bound to: 3'b100 
+	Parameter EXEC_CNT_W bound to: 6 - type: integer 
+	Parameter EXEC_CNT_1 bound to: 6'b000001 
+	Parameter EXEC_CNT_16 bound to: 6'b010000 
+	Parameter EXEC_CNT_32 bound to: 6'b100000 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dfflr__parameterized6' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+	Parameter DW bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dfflr__parameterized6' (39#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:87]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_alu_muldiv' (40#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_muldiv.v:32]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_alu_dpath' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_dpath.v:29]
+	Parameter DPATH_MUX_WIDTH bound to: 85 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_alu_dpath' (41#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu_dpath.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_alu' (42#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_alu.v:32]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_longpwbck' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_longpwbck.v:30]
+WARNING: [Synth 8-693] zero replication count - replication ignored [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_longpwbck.v:125]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_longpwbck' (43#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_longpwbck.v:30]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_wbck' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_wbck.v:30]
+WARNING: [Synth 8-693] zero replication count - replication ignored [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_wbck.v:93]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_wbck' (44#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_wbck.v:30]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_commit' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_commit.v:31]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_branchslv' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_branchslv.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_branchslv' (45#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_branchslv.v:30]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_excp' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_excp.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_excp' (46#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_excp.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_commit' (47#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_commit.v:31]
+INFO: [Synth 8-6157] synthesizing module 'e203_exu_csr' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_csr.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu_csr' (48#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu_csr.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'e203_exu' (49#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_exu.v:29]
+INFO: [Synth 8-6157] synthesizing module 'e203_lsu' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_lsu.v:28]
+INFO: [Synth 8-6157] synthesizing module 'e203_lsu_ctrl' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_lsu_ctrl.v:28]
+	Parameter LSU_ARBT_I_NUM bound to: 2 - type: integer 
+	Parameter LSU_ARBT_I_PTR_W bound to: 1 - type: integer 
+	Parameter USR_W bound to: 39 - type: integer 
+	Parameter USR_PACK_EXCL bound to: 0 - type: integer 
+	Parameter SPLT_FIFO_W bound to: 44 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_icb_arbt' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_icbs.v:37]
+	Parameter AW bound to: 32 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter USR_W bound to: 39 - type: integer 
+	Parameter ARBT_SCHEME bound to: 0 - type: integer 
+	Parameter FIFO_OUTS_NUM bound to: 1 - type: integer 
+	Parameter FIFO_CUT_READY bound to: 0 - type: integer 
+	Parameter ARBT_NUM bound to: 2 - type: integer 
+	Parameter ALLOW_0CYCL_RSP bound to: 0 - type: integer 
+	Parameter ARBT_PTR_W bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_pipe_stage' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:28]
+	Parameter CUT_READY bound to: 0 - type: integer 
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_pipe_stage' (50#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_icb_arbt' (51#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_icbs.v:37]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_pipe_stage__parameterized0' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:28]
+	Parameter CUT_READY bound to: 0 - type: integer 
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 44 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dffl__parameterized5' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+	Parameter DW bound to: 44 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dffl__parameterized5' (51#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_pipe_stage__parameterized0' (51#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'e203_lsu_ctrl' (52#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_lsu_ctrl.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'e203_lsu' (53#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_lsu.v:28]
+INFO: [Synth 8-6157] synthesizing module 'e203_biu' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_biu.v:29]
+	Parameter BIU_ARBT_I_NUM bound to: 2 - type: integer 
+	Parameter BIU_ARBT_I_PTR_W bound to: 1 - type: integer 
+	Parameter BIU_SPLT_I_NUM_0 bound to: 4 - type: integer 
+	Parameter BIU_SPLT_I_NUM_1 bound to: 5 - type: integer 
+	Parameter BIU_SPLT_I_NUM_2 bound to: 6 - type: integer 
+	Parameter BIU_SPLT_I_NUM bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_icb_arbt__parameterized0' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_icbs.v:37]
+	Parameter AW bound to: 32 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter USR_W bound to: 1 - type: integer 
+	Parameter ARBT_SCHEME bound to: 0 - type: integer 
+	Parameter FIFO_OUTS_NUM bound to: 1 - type: integer 
+	Parameter FIFO_CUT_READY bound to: 1 - type: integer 
+	Parameter ARBT_NUM bound to: 2 - type: integer 
+	Parameter ALLOW_0CYCL_RSP bound to: 0 - type: integer 
+	Parameter ARBT_PTR_W bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_pipe_stage__parameterized1' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:28]
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_pipe_stage__parameterized1' (53#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_icb_arbt__parameterized0' (53#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_icbs.v:37]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_icb_buffer' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_icbs.v:351]
+	Parameter OUTS_CNT_W bound to: 1 - type: integer 
+	Parameter AW bound to: 32 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter CMD_CUT_READY bound to: 1 - type: integer 
+	Parameter RSP_CUT_READY bound to: 1 - type: integer 
+	Parameter CMD_DP bound to: 1 - type: integer 
+	Parameter RSP_DP bound to: 1 - type: integer 
+	Parameter USR_W bound to: 1 - type: integer 
+	Parameter CMD_PACK_W bound to: 78 - type: integer 
+	Parameter RSP_PACK_W bound to: 35 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_fifo__parameterized0' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:381]
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter MSKO bound to: 0 - type: integer 
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 78 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dffl__parameterized6' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+	Parameter DW bound to: 78 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dffl__parameterized6' (53#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_fifo__parameterized0' (53#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:381]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_fifo__parameterized1' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:381]
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter MSKO bound to: 0 - type: integer 
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 35 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dffl__parameterized7' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+	Parameter DW bound to: 35 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dffl__parameterized7' (53#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_fifo__parameterized1' (53#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:381]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_icb_buffer' (54#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_icbs.v:351]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_icb_splt' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_icbs.v:648]
+	Parameter AW bound to: 32 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter FIFO_OUTS_NUM bound to: 1 - type: integer 
+	Parameter FIFO_CUT_READY bound to: 1 - type: integer 
+	Parameter SPLT_NUM bound to: 6 - type: integer 
+	Parameter SPLT_PTR_1HOT bound to: 1 - type: integer 
+	Parameter SPLT_PTR_W bound to: 6 - type: integer 
+	Parameter ALLOW_DIFF bound to: 0 - type: integer 
+	Parameter ALLOW_0CYCL_RSP bound to: 1 - type: integer 
+	Parameter VLD_MSK_PAYLOAD bound to: 0 - type: integer 
+	Parameter USR_W bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_pipe_stage__parameterized2' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:28]
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dffl__parameterized8' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+	Parameter DW bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dffl__parameterized8' (54#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_pipe_stage__parameterized2' (54#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_icb_splt' (55#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_icbs.v:648]
+INFO: [Synth 8-6155] done synthesizing module 'e203_biu' (56#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_biu.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'e203_core' (57#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_core.v:30]
+INFO: [Synth 8-6157] synthesizing module 'e203_itcm_ctrl' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_itcm_ctrl.v:31]
+	Parameter ITCM_ARBT_I_NUM bound to: 2 - type: integer 
+	Parameter ITCM_ARBT_I_PTR_W bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_icb_n2w' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_icbs.v:503]
+	Parameter AW bound to: 16 - type: integer 
+	Parameter USR_W bound to: 1 - type: integer 
+	Parameter FIFO_OUTS_NUM bound to: 1 - type: integer 
+	Parameter FIFO_CUT_READY bound to: 0 - type: integer 
+	Parameter X_W bound to: 32 - type: integer 
+	Parameter Y_W bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_icb_n2w' (58#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_icbs.v:503]
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_icb_arbt__parameterized1' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_icbs.v:37]
+	Parameter AW bound to: 16 - type: integer 
+	Parameter DW bound to: 64 - type: integer 
+	Parameter USR_W bound to: 1 - type: integer 
+	Parameter ARBT_SCHEME bound to: 0 - type: integer 
+	Parameter FIFO_OUTS_NUM bound to: 1 - type: integer 
+	Parameter FIFO_CUT_READY bound to: 0 - type: integer 
+	Parameter ARBT_NUM bound to: 2 - type: integer 
+	Parameter ALLOW_0CYCL_RSP bound to: 0 - type: integer 
+	Parameter ARBT_PTR_W bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_icb_arbt__parameterized1' (58#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_icbs.v:37]
+INFO: [Synth 8-6157] synthesizing module 'sirv_sram_icb_ctrl' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_sram_icb_ctrl.v:29]
+	Parameter DW bound to: 64 - type: integer 
+	Parameter MW bound to: 8 - type: integer 
+	Parameter AW bound to: 16 - type: integer 
+	Parameter AW_LSB bound to: 3 - type: integer 
+	Parameter USR_W bound to: 2 - type: integer 
+	Parameter BUF_CMD_PACK_W bound to: 91 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_bypbuf__parameterized0' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:306]
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 91 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_fifo__parameterized2' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:381]
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter MSKO bound to: 0 - type: integer 
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 91 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_dffl__parameterized9' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+	Parameter DW bound to: 91 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dffl__parameterized9' (58#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_fifo__parameterized2' (58#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:381]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_bypbuf__parameterized0' (58#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:306]
+INFO: [Synth 8-6157] synthesizing module 'sirv_1cyc_sram_ctrl' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_1cyc_sram_ctrl.v:29]
+	Parameter DW bound to: 64 - type: integer 
+	Parameter MW bound to: 8 - type: integer 
+	Parameter AW bound to: 16 - type: integer 
+	Parameter AW_LSB bound to: 3 - type: integer 
+	Parameter USR_W bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_pipe_stage__parameterized3' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:28]
+	Parameter CUT_READY bound to: 0 - type: integer 
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_pipe_stage__parameterized3' (58#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_1cyc_sram_ctrl' (59#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_1cyc_sram_ctrl.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_sram_icb_ctrl' (60#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_sram_icb_ctrl.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'e203_itcm_ctrl' (61#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_itcm_ctrl.v:31]
+INFO: [Synth 8-6157] synthesizing module 'e203_dtcm_ctrl' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_dtcm_ctrl.v:31]
+	Parameter DTCM_ARBT_I_NUM bound to: 2 - type: integer 
+	Parameter DTCM_ARBT_I_PTR_W bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_icb_arbt__parameterized2' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_icbs.v:37]
+	Parameter AW bound to: 16 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter USR_W bound to: 1 - type: integer 
+	Parameter ARBT_SCHEME bound to: 0 - type: integer 
+	Parameter FIFO_OUTS_NUM bound to: 1 - type: integer 
+	Parameter FIFO_CUT_READY bound to: 0 - type: integer 
+	Parameter ARBT_NUM bound to: 2 - type: integer 
+	Parameter ALLOW_0CYCL_RSP bound to: 0 - type: integer 
+	Parameter ARBT_PTR_W bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_icb_arbt__parameterized2' (61#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_icbs.v:37]
+INFO: [Synth 8-6157] synthesizing module 'sirv_sram_icb_ctrl__parameterized0' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_sram_icb_ctrl.v:29]
+	Parameter DW bound to: 32 - type: integer 
+	Parameter MW bound to: 4 - type: integer 
+	Parameter AW bound to: 16 - type: integer 
+	Parameter AW_LSB bound to: 2 - type: integer 
+	Parameter USR_W bound to: 1 - type: integer 
+	Parameter BUF_CMD_PACK_W bound to: 54 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_bypbuf__parameterized1' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:306]
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 54 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sirv_gnrl_fifo__parameterized3' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:381]
+INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter MSKO bound to: 0 - type: integer 
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 54 - type: integer 
+	Parameter DW bound to: 54 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_dffl__parameterized10' (61#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_dffs.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_fifo__parameterized3' (61#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:381]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_bypbuf__parameterized1' (61#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_bufs.v:306]
+	Parameter DW bound to: 32 - type: integer 
+	Parameter MW bound to: 4 - type: integer 
+	Parameter AW bound to: 16 - type: integer 
+	Parameter AW_LSB bound to: 2 - type: integer 
+	Parameter USR_W bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sirv_1cyc_sram_ctrl__parameterized0' (61#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_1cyc_sram_ctrl.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_sram_icb_ctrl__parameterized0' (61#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_sram_icb_ctrl.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'e203_dtcm_ctrl' (62#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_dtcm_ctrl.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'e203_cpu' (63#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_cpu.v:30]
+	Parameter DP bound to: 8192 - type: integer 
+	Parameter DW bound to: 64 - type: integer 
+	Parameter FORCE_X2ZERO bound to: 0 - type: integer 
+	Parameter MW bound to: 8 - type: integer 
+	Parameter AW bound to: 13 - type: integer 
+	Parameter DP bound to: 8192 - type: integer 
+	Parameter FORCE_X2ZERO bound to: 0 - type: integer 
+	Parameter DW bound to: 64 - type: integer 
+	Parameter MW bound to: 8 - type: integer 
+	Parameter AW bound to: 13 - type: integer 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'D:/Projects/SoC/e203/e203.srcs/data/test.hex'; please make sure the file is added to project and has read permission, ignoring [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_sim_ram.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_sim_ram' (64#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_sim_ram.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'sirv_gnrl_ram' (65#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_gnrl_ram.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'e203_itcm_ram' (66#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core/e203_itcm_ram.v:30]
+INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter DP bound to: 16384 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter FORCE_X2ZERO bound to: 1 - type: integer 
+	Parameter MW bound to: 4 - type: integer 
+	Parameter AW bound to: 14 - type: integer 
+	Parameter DP bound to: 16384 - type: integer 
+	Parameter FORCE_X2ZERO bound to: 1 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter MW bound to: 4 - type: integer 
+	Parameter AW bound to: 14 - type: integer 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'D:/Projects/SoC/e203/e203.srcs/data/test.hex'; please make sure the file is added to project and has read permission, ignoring [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/general/sirv_sim_ram.v:53]
+	Parameter PLIC_IRQ_NUM bound to: 53 - type: integer 
+	Parameter PLIC_PRIO_WIDTH bound to: 3 - type: integer 
+	Parameter PLIC_IRQ_NUM bound to: 53 - type: integer 
+	Parameter PLIC_IRQ_NUM_LOG2 bound to: 6 - type: integer 
+	Parameter PLIC_ICB_RSP_FLOP bound to: 1 - type: integer 
+	Parameter PLIC_IRQ_I_FLOP bound to: 1 - type: integer 
+	Parameter PLIC_IRQ_O_FLOP bound to: 1 - type: integer 
+	Parameter PLIC_PEND_ARRAY bound to: 2 - type: integer 
+	Parameter DW bound to: 53 - type: integer 
+	Parameter DW bound to: 6 - type: integer 
+	Parameter DW bound to: 3 - type: integer 
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter CMD_PACK_W bound to: 65 - type: integer 
+	Parameter RSP_PACK_W bound to: 33 - type: integer 
+	Parameter ICB_FIFO_DP bound to: 2 - type: integer 
+	Parameter ICB_FIFO_CUT_READY bound to: 1 - type: integer 
+	Parameter AW bound to: 32 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter SPLT_FIFO_OUTS_NUM bound to: 1 - type: integer 
+	Parameter SPLT_FIFO_CUT_READY bound to: 1 - type: integer 
+	Parameter O0_BASE_ADDR bound to: 268435456 - type: integer 
+	Parameter O0_BASE_REGION_LSB bound to: 15 - type: integer 
+	Parameter O1_BASE_ADDR bound to: 268468224 - type: integer 
+	Parameter O1_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O2_BASE_ADDR bound to: 268500992 - type: integer 
+	Parameter O2_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O3_BASE_ADDR bound to: 268509184 - type: integer 
+	Parameter O3_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O4_BASE_ADDR bound to: 268513280 - type: integer 
+	Parameter O4_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O5_BASE_ADDR bound to: 268517376 - type: integer 
+	Parameter O5_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O6_BASE_ADDR bound to: 268521472 - type: integer 
+	Parameter O6_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O7_BASE_ADDR bound to: 268578816 - type: integer 
+	Parameter O7_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O8_BASE_ADDR bound to: 268582912 - type: integer 
+	Parameter O8_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O9_BASE_ADDR bound to: 268587008 - type: integer 
+	Parameter O9_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O10_BASE_ADDR bound to: 268648448 - type: integer 
+	Parameter O10_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O11_BASE_ADDR bound to: 268652544 - type: integer 
+	Parameter O11_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O12_BASE_ADDR bound to: 285212672 - type: integer 
+	Parameter O12_BASE_REGION_LSB bound to: 24 - type: integer 
+	Parameter O13_BASE_ADDR bound to: 268697600 - type: integer 
+	Parameter O13_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O14_BASE_ADDR bound to: 268701696 - type: integer 
+	Parameter O14_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O15_BASE_ADDR bound to: 268705792 - type: integer 
+	Parameter O15_BASE_REGION_LSB bound to: 3 - type: integer 
+	Parameter BASE_REGION_MSB bound to: 31 - type: integer 
+	Parameter SPLT_I_NUM bound to: 17 - type: integer 
+	Parameter OUTS_CNT_W bound to: 1 - type: integer 
+	Parameter AW bound to: 32 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter CMD_CUT_READY bound to: 1 - type: integer 
+	Parameter RSP_CUT_READY bound to: 1 - type: integer 
+	Parameter CMD_DP bound to: 2 - type: integer 
+	Parameter RSP_DP bound to: 2 - type: integer 
+	Parameter USR_W bound to: 1 - type: integer 
+	Parameter CMD_PACK_W bound to: 78 - type: integer 
+	Parameter RSP_PACK_W bound to: 35 - type: integer 
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter MSKO bound to: 0 - type: integer 
+	Parameter DP bound to: 2 - type: integer 
+	Parameter DW bound to: 78 - type: integer 
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter MSKO bound to: 0 - type: integer 
+	Parameter DP bound to: 2 - type: integer 
+	Parameter DW bound to: 35 - type: integer 
+	Parameter AW bound to: 32 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter FIFO_OUTS_NUM bound to: 1 - type: integer 
+	Parameter FIFO_CUT_READY bound to: 1 - type: integer 
+	Parameter SPLT_NUM bound to: 17 - type: integer 
+	Parameter SPLT_PTR_1HOT bound to: 1 - type: integer 
+	Parameter SPLT_PTR_W bound to: 17 - type: integer 
+	Parameter ALLOW_DIFF bound to: 0 - type: integer 
+	Parameter ALLOW_0CYCL_RSP bound to: 1 - type: integer 
+	Parameter VLD_MSK_PAYLOAD bound to: 1 - type: integer 
+	Parameter USR_W bound to: 1 - type: integer 
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 17 - type: integer 
+	Parameter DW bound to: 17 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element T_1514_reg was removed.  [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/sirv_tlwidthwidget_qspi.v:386]
+WARNING: [Synth 8-6014] Unused sequential element a_opcode_reg was removed.  [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/sirv_flash_qspi.v:2220]
+WARNING: [Synth 8-6014] Unused sequential element a_param_reg was removed.  [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/sirv_flash_qspi.v:2221]
+WARNING: [Synth 8-6014] Unused sequential element a_mask_reg was removed.  [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/sirv_flash_qspi.v:2225]
+WARNING: [Synth 8-6014] Unused sequential element a_data_reg was removed.  [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/perips/sirv_flash_qspi.v:2226]
+	Parameter DW bound to: 65 - type: integer 
+	Parameter SYNC_DP bound to: 2 - type: integer 
+	Parameter DW bound to: 65 - type: integer 
+	Parameter DW bound to: 33 - type: integer 
+	Parameter SYNC_DP bound to: 2 - type: integer 
+	Parameter DW bound to: 33 - type: integer 
+	Parameter H_ACTIVE bound to: 16'b0000011110000000 
+	Parameter H_FP bound to: 16'b0000000001011000 
+	Parameter H_SYNC bound to: 16'b0000000000101100 
+	Parameter H_BP bound to: 16'b0000000010010100 
+	Parameter V_ACTIVE bound to: 16'b0000010000111000 
+	Parameter V_FP bound to: 16'b0000000000000100 
+	Parameter V_SYNC bound to: 16'b0000000000000101 
+	Parameter V_BP bound to: 16'b0000000000100100 
+	Parameter HS_POL bound to: 1'b1 
+	Parameter VS_POL bound to: 1'b1 
+	Parameter H_TOTAL bound to: 16'b0000100010011000 
+	Parameter V_TOTAL bound to: 16'b0000010001100101 
+	Parameter WHITE_R bound to: 8'b11111111 
+	Parameter WHITE_G bound to: 8'b11111111 
+	Parameter WHITE_B bound to: 8'b11111111 
+	Parameter YELLOW_R bound to: 8'b11111111 
+	Parameter YELLOW_G bound to: 8'b11111111 
+	Parameter YELLOW_B bound to: 8'b00000000 
+	Parameter CYAN_R bound to: 8'b00000000 
+	Parameter CYAN_G bound to: 8'b11111111 
+	Parameter CYAN_B bound to: 8'b11111111 
+	Parameter GREEN_R bound to: 8'b00000000 
+	Parameter GREEN_G bound to: 8'b11111111 
+	Parameter GREEN_B bound to: 8'b00000000 
+	Parameter MAGENTA_R bound to: 8'b11111111 
+	Parameter MAGENTA_G bound to: 8'b00000000 
+	Parameter MAGENTA_B bound to: 8'b11111111 
+	Parameter RED_R bound to: 8'b11111111 
+	Parameter RED_G bound to: 8'b00000000 
+	Parameter RED_B bound to: 8'b00000000 
+	Parameter BLUE_R bound to: 8'b00000000 
+	Parameter BLUE_G bound to: 8'b00000000 
+	Parameter BLUE_B bound to: 8'b11111111 
+	Parameter BLACK_R bound to: 8'b00000000 
+	Parameter BLACK_G bound to: 8'b00000000 
+	Parameter BLACK_B bound to: 8'b00000000 
+	Parameter BMP_X_PIXELS bound to: 240 - type: integer 
+	Parameter BMP_Y_PIXELS bound to: 180 - type: integer 
+	Parameter BMP_PIXEL_NUM bound to: 43200 - type: integer 
+	Parameter BMP_PIXEL_NUM_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'rgb2dvi' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/rgb2dvi.vhd:89]
+	Parameter kGenerateSerialClk bound to: 0 - type: bool 
+	Parameter kClkPrimitive bound to: MMCM - type: string 
+	Parameter kClkRange bound to: 1 - type: integer 
+	Parameter kRstActiveHigh bound to: 1 - type: bool 
+INFO: [Synth 8-638] synthesizing module 'ResetBridge' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/SyncAsyncReset.vhd:72]
+	Parameter kPolarity bound to: 1'b1 
+INFO: [Synth 8-5534] Detected attribute (* keep = "TRUE" *) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/SyncAsyncReset.vhd:73]
+INFO: [Synth 8-638] synthesizing module 'SyncAsync' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/SyncAsync.vhd:72]
+	Parameter kResetTo bound to: 1'b1 
+	Parameter kStages bound to: 2 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "TRUE" *) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/SyncAsync.vhd:73]
+INFO: [Synth 8-256] done synthesizing module 'SyncAsync' (124#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/SyncAsync.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'ResetBridge' (125#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/SyncAsyncReset.vhd:72]
+INFO: [Synth 8-638] synthesizing module 'OutputSERDES' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/OutputSERDES.vhd:76]
+	Parameter kParallelWidth bound to: 10 - type: integer 
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IOSTANDARD bound to: TMDS_33 - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'OutputBuffer' to cell 'OBUFDS' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/OutputSERDES.vhd:83]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: SDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b0 
+	Parameter INIT_TQ bound to: 1'b0 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'SerializerMaster' to cell 'OSERDESE2' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/OutputSERDES.vhd:92]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: SDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b0 
+	Parameter INIT_TQ bound to: 1'b0 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: SLAVE - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'SerializerSlave' to cell 'OSERDESE2' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/OutputSERDES.vhd:135]
+INFO: [Synth 8-256] done synthesizing module 'OutputSERDES' (126#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/OutputSERDES.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'TMDS_Encoder' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/TMDS_Encoder.vhd:80]
+INFO: [Synth 8-256] done synthesizing module 'TMDS_Encoder' (127#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/TMDS_Encoder.vhd:80]
+INFO: [Synth 8-256] done synthesizing module 'rgb2dvi' (128#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/rgb2dvi.vhd:89]
+WARNING: [Synth 8-689] width (32) of port connection 'i_icb_rsp_rdata' does not match port width (1) of module 'hdmi_display_wrapper' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_perips.v:3157]
+WARNING: [Synth 8-3848] Net i2c_mst_irq in module/entity e203_subsys_perips does not have driver. [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_perips.v:343]
+WARNING: [Synth 8-3848] Net icb_hdmi_rsp_err in module/entity e203_subsys_perips does not have driver. [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_perips.v:1472]
+WARNING: [Synth 8-3848] Net i2c_sda_pad_o in module/entity e203_subsys_perips does not have driver. [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_perips.v:416]
+WARNING: [Synth 8-3848] Net i2c_sda_padoen_o in module/entity e203_subsys_perips does not have driver. [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_perips.v:417]
+WARNING: [Synth 8-3848] Net i2c_scl_pad_o in module/entity e203_subsys_perips does not have driver. [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_perips.v:413]
+WARNING: [Synth 8-3848] Net i2c_scl_padoen_o in module/entity e203_subsys_perips does not have driver. [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/subsys/e203_subsys_perips.v:414]
+	Parameter MROM_AW bound to: 12 - type: integer 
+	Parameter MROM_DP bound to: 1024 - type: integer 
+	Parameter ICB_FIFO_DP bound to: 2 - type: integer 
+	Parameter ICB_FIFO_CUT_READY bound to: 1 - type: integer 
+	Parameter AW bound to: 32 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter SPLT_FIFO_OUTS_NUM bound to: 1 - type: integer 
+	Parameter SPLT_FIFO_CUT_READY bound to: 1 - type: integer 
+	Parameter O0_BASE_ADDR bound to: 0 - type: integer 
+	Parameter O0_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O1_BASE_ADDR bound to: 4096 - type: integer 
+	Parameter O1_BASE_REGION_LSB bound to: 12 - type: integer 
+	Parameter O2_BASE_ADDR bound to: 131072 - type: integer 
+	Parameter O2_BASE_REGION_LSB bound to: 17 - type: integer 
+	Parameter O3_BASE_ADDR bound to: 536870912 - type: integer 
+	Parameter O3_BASE_REGION_LSB bound to: 29 - type: integer 
+	Parameter O4_BASE_ADDR bound to: -1610612736 - type: integer 
+	Parameter O4_BASE_REGION_LSB bound to: 31 - type: integer 
+	Parameter O5_BASE_ADDR bound to: 0 - type: integer 
+	Parameter O5_BASE_REGION_LSB bound to: 28 - type: integer 
+	Parameter O6_BASE_ADDR bound to: 0 - type: integer 
+	Parameter O6_BASE_REGION_LSB bound to: 0 - type: integer 
+	Parameter O7_BASE_ADDR bound to: 0 - type: integer 
+	Parameter O7_BASE_REGION_LSB bound to: 0 - type: integer 
+	Parameter BASE_REGION_MSB bound to: 31 - type: integer 
+	Parameter SPLT_I_NUM bound to: 9 - type: integer 
+	Parameter AW bound to: 32 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter FIFO_OUTS_NUM bound to: 1 - type: integer 
+	Parameter FIFO_CUT_READY bound to: 1 - type: integer 
+	Parameter SPLT_NUM bound to: 9 - type: integer 
+	Parameter SPLT_PTR_1HOT bound to: 1 - type: integer 
+	Parameter SPLT_PTR_W bound to: 9 - type: integer 
+	Parameter ALLOW_DIFF bound to: 0 - type: integer 
+	Parameter ALLOW_0CYCL_RSP bound to: 1 - type: integer 
+	Parameter VLD_MSK_PAYLOAD bound to: 1 - type: integer 
+	Parameter USR_W bound to: 1 - type: integer 
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 9 - type: integer 
+	Parameter DW bound to: 9 - type: integer 
+	Parameter AW bound to: 12 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter DP bound to: 1024 - type: integer 
+	Parameter AW bound to: 12 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter DP bound to: 1024 - type: integer 
+	Parameter AXI_FIFO_DP bound to: 2 - type: integer 
+	Parameter AXI_FIFO_CUT_READY bound to: 1 - type: integer 
+	Parameter AW bound to: 32 - type: integer 
+	Parameter FIFO_OUTS_NUM bound to: 4 - type: integer 
+	Parameter FIFO_CUT_READY bound to: 1 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter MSKO bound to: 1 - type: integer 
+	Parameter DP bound to: 0 - type: integer 
+	Parameter DW bound to: 1 - type: integer 
+	Parameter CHNL_FIFO_DP bound to: 2 - type: integer 
+	Parameter CHNL_FIFO_CUT_READY bound to: 1 - type: integer 
+	Parameter AW bound to: 32 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter AR_CHNL_W bound to: 50 - type: integer 
+	Parameter AW_CHNL_W bound to: 50 - type: integer 
+	Parameter W_CHNL_W bound to: 37 - type: integer 
+	Parameter R_CHNL_W bound to: 35 - type: integer 
+	Parameter B_CHNL_W bound to: 2 - type: integer 
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter MSKO bound to: 0 - type: integer 
+	Parameter DP bound to: 2 - type: integer 
+	Parameter DW bound to: 50 - type: integer 
+	Parameter DW bound to: 50 - type: integer 
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter MSKO bound to: 0 - type: integer 
+	Parameter DP bound to: 2 - type: integer 
+	Parameter DW bound to: 37 - type: integer 
+	Parameter DW bound to: 37 - type: integer 
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter MSKO bound to: 0 - type: integer 
+	Parameter DP bound to: 2 - type: integer 
+	Parameter DW bound to: 2 - type: integer 
+	Parameter AW bound to: 32 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter SUPPORT_JTAG_DTM bound to: 1 - type: integer 
+	Parameter ASYNC_FF_LEVELS bound to: 2 - type: integer 
+	Parameter PC_SIZE bound to: 32 - type: integer 
+	Parameter HART_NUM bound to: 1 - type: integer 
+	Parameter HART_ID_W bound to: 1 - type: integer 
+	Parameter ASYNC_FF_LEVELS bound to: 2 - type: integer 
+	Parameter DEBUG_DATA_BITS bound to: 34 - type: integer 
+	Parameter DEBUG_ADDR_BITS bound to: 5 - type: integer 
+	Parameter DEBUG_OP_BITS bound to: 2 - type: integer 
+	Parameter JTAG_VERSION bound to: 4'b0001 
+	Parameter DBUS_IDLE_CYCLES bound to: 3'b101 
+	Parameter IR_BITS bound to: 5 - type: integer 
+	Parameter DEBUG_VERSION bound to: 0 - type: integer 
+	Parameter TEST_LOGIC_RESET bound to: 4'b0000 
+	Parameter RUN_TEST_IDLE bound to: 4'b0001 
+	Parameter SELECT_DR bound to: 4'b0010 
+	Parameter CAPTURE_DR bound to: 4'b0011 
+	Parameter SHIFT_DR bound to: 4'b0100 
+	Parameter EXIT1_DR bound to: 4'b0101 
+	Parameter PAUSE_DR bound to: 4'b0110 
+	Parameter EXIT2_DR bound to: 4'b0111 
+	Parameter UPDATE_DR bound to: 4'b1000 
+	Parameter SELECT_IR bound to: 4'b1001 
+	Parameter CAPTURE_IR bound to: 4'b1010 
+	Parameter SHIFT_IR bound to: 4'b1011 
+	Parameter EXIT1_IR bound to: 4'b1100 
+	Parameter PAUSE_IR bound to: 4'b1101 
+	Parameter EXIT2_IR bound to: 4'b1110 
+	Parameter UPDATE_IR bound to: 4'b1111 
+	Parameter REG_BYPASS bound to: 5'b11111 
+	Parameter REG_IDCODE bound to: 5'b00001 
+	Parameter REG_DEBUG_ACCESS bound to: 5'b10001 
+	Parameter REG_DTM_INFO bound to: 5'b10000 
+	Parameter DBUS_REG_BITS bound to: 41 - type: integer 
+	Parameter DBUS_REQ_BITS bound to: 41 - type: integer 
+	Parameter DBUS_RESP_BITS bound to: 36 - type: integer 
+	Parameter SHIFT_REG_BITS bound to: 41 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/debug/sirv_jtag_dtm.v:237]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/debug/sirv_jtag_dtm.v:295]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/debug/sirv_jtag_dtm.v:308]
+	Parameter DW bound to: 41 - type: integer 
+	Parameter SYNC_DP bound to: 2 - type: integer 
+	Parameter DW bound to: 41 - type: integer 
+	Parameter DW bound to: 36 - type: integer 
+	Parameter SYNC_DP bound to: 2 - type: integer 
+	Parameter DW bound to: 36 - type: integer 
+	Parameter PC_SIZE bound to: 32 - type: integer 
+	Parameter DW bound to: 36 - type: integer 
+	Parameter SYNC_DP bound to: 2 - type: integer 
+	Parameter DW bound to: 41 - type: integer 
+	Parameter SYNC_DP bound to: 2 - type: integer 
+	Parameter ASYNC_FF_LEVELS bound to: 2 - type: integer 
+	Parameter CMD_PACK_W bound to: 65 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter SYNC_DP bound to: 2 - type: integer 
+	Parameter DW bound to: 65 - type: integer 
+	Parameter SYNC_DP bound to: 2 - type: integer 
+	Parameter ICB_FIFO_DP bound to: 0 - type: integer 
+	Parameter ICB_FIFO_CUT_READY bound to: 1 - type: integer 
+	Parameter AW bound to: 15 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter SPLT_FIFO_OUTS_NUM bound to: 1 - type: integer 
+	Parameter SPLT_FIFO_CUT_READY bound to: 1 - type: integer 
+	Parameter O0_BASE_ADDR bound to: 15'b000001000000000 
+	Parameter O0_BASE_REGION_LSB bound to: 8 - type: integer 
+	Parameter BASE_REGION_MSB bound to: 14 - type: integer 
+	Parameter SPLT_I_NUM bound to: 2 - type: integer 
+	Parameter OUTS_CNT_W bound to: 1 - type: integer 
+	Parameter AW bound to: 15 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter CMD_CUT_READY bound to: 1 - type: integer 
+	Parameter RSP_CUT_READY bound to: 1 - type: integer 
+	Parameter CMD_DP bound to: 0 - type: integer 
+	Parameter RSP_DP bound to: 0 - type: integer 
+	Parameter USR_W bound to: 1 - type: integer 
+	Parameter CMD_PACK_W bound to: 61 - type: integer 
+	Parameter RSP_PACK_W bound to: 35 - type: integer 
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter MSKO bound to: 0 - type: integer 
+	Parameter DP bound to: 0 - type: integer 
+	Parameter DW bound to: 61 - type: integer 
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter MSKO bound to: 0 - type: integer 
+	Parameter DP bound to: 0 - type: integer 
+	Parameter DW bound to: 35 - type: integer 
+	Parameter AW bound to: 15 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter FIFO_OUTS_NUM bound to: 1 - type: integer 
+	Parameter FIFO_CUT_READY bound to: 1 - type: integer 
+	Parameter SPLT_NUM bound to: 2 - type: integer 
+	Parameter SPLT_PTR_1HOT bound to: 1 - type: integer 
+	Parameter SPLT_PTR_W bound to: 2 - type: integer 
+	Parameter ALLOW_DIFF bound to: 0 - type: integer 
+	Parameter ALLOW_0CYCL_RSP bound to: 1 - type: integer 
+	Parameter VLD_MSK_PAYLOAD bound to: 1 - type: integer 
+	Parameter USR_W bound to: 1 - type: integer 
+	Parameter CUT_READY bound to: 1 - type: integer 
+	Parameter DP bound to: 1 - type: integer 
+	Parameter DW bound to: 2 - type: integer 
+WARNING: [Synth 8-4767] Trying to implement RAM 'ram_read_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: Write port has constant address. 
+	2: No valid read/write found for RAM. 
+	2: Only 1 word in RAM 
+RAM "ram_read_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'ram_index_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: Write port has constant address. 
+	2: No valid read/write found for RAM. 
+	2: Only 1 word in RAM 
+RAM "ram_index_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'ram_data_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: Write port has constant address. 
+	2: No valid read/write found for RAM. 
+	2: Only 1 word in RAM 
+RAM "ram_data_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'ram_mask_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: Write port has constant address. 
+	2: No valid read/write found for RAM. 
+	2: Only 1 word in RAM 
+RAM "ram_mask_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'ram_extra_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: Write port has constant address. 
+	2: No valid read/write found for RAM. 
+	2: Only 1 word in RAM 
+RAM "ram_extra_reg" dissolved into registers
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 28 - type: integer 
+	Parameter APP_DATA_WIDTH bound to: 128 - type: integer 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 28 - type: integer 
+	Parameter BUS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter APP_DATA_WIDTH bound to: 128 - type: integer 
+	Parameter nCK_PER_CLK bound to: 4 - type: integer 
+	Parameter RANKS bound to: 1 - type: integer 
+	Parameter RANK_WIDTH bound to: 1 - type: integer 
+	Parameter PAYLOAD_WIDTH bound to: 16 - type: integer 
+	Parameter BURST_LENGTH bound to: 8 - type: integer 
+	Parameter APP_MASK_WIDTH bound to: 16 - type: integer 
+	Parameter MASK_SIZE bound to: 2 - type: integer 
+	Parameter CMD_WRITE bound to: 3'b000 
+	Parameter CMD_READ bound to: 3'b001 
+	Parameter IDLE bound to: 3'b000 
+	Parameter MEM_READ bound to: 3'b001 
+	Parameter MEM_READ_WAIT bound to: 3'b010 
+	Parameter MEM_WRITE bound to: 3'b011 
+	Parameter MEM_READ_END bound to: 3'b100 
+	Parameter MEM_WRITE_END bound to: 3'b101 
+WARNING: [Synth 8-5788] Register r_app_addr_offset_reg in module custom_icb_mig is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/custom_icb_mig.v:172]
+WARNING: [Synth 8-5788] Register r_app_wr_mask_reg in module custom_icb_mig is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/custom_icb_mig.v:180]
+WARNING: [Synth 8-5788] Register r_app_wdf_wren_reg in module custom_icb_mig is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/custom_icb_mig.v:115]
+WARNING: [Synth 8-5788] Register r_app_rd_data_reg in module custom_icb_mig is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/custom_icb_mig.v:116]
+WARNING: [Synth 8-7023] instance 'u_custom_icb_mig' of module 'custom_icb_mig' has 26 connections declared, but only 25 given [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/custom_icb_mig_wrapper_.v:108]
+WARNING: [Synth 8-3848] Net init_calib_complete in module/entity e203_soc_top does not have driver. [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/soc/e203_soc_top.v:304]
+WARNING: [Synth 8-3331] design custom_icb_mig has unconnected port ddr3_clk
+WARNING: [Synth 8-3331] design custom_icb_mig_wrapper has unconnected port i_icb_cmd_addr[31]
+WARNING: [Synth 8-3331] design custom_icb_mig_wrapper has unconnected port i_icb_cmd_addr[30]
+WARNING: [Synth 8-3331] design custom_icb_mig_wrapper has unconnected port i_icb_cmd_addr[29]
+WARNING: [Synth 8-3331] design custom_icb_mig_wrapper has unconnected port i_icb_cmd_addr[28]
+WARNING: [Synth 8-3331] design custom_icb_mig_wrapper has unconnected port i_icb_rsp_ready
+WARNING: [Synth 8-3331] design sirv_DeglitchShiftRegister has unconnected port reset
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[31]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[30]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[29]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[27]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[26]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[25]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[24]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[23]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[22]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[21]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[20]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[19]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[18]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[17]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[16]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[15]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[14]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[11]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[10]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[7]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[6]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[5]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_cfg_write_bits[4]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countLo_write_bits[31]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[31]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[30]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[29]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[28]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[27]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[26]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[25]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[24]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[23]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[22]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[21]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[20]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[19]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[18]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[17]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[16]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[15]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[14]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[13]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[12]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[11]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[10]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[9]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[8]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[7]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[6]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[5]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[4]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[3]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[2]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[1]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_countHi_write_bits[0]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[15]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[14]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[13]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[12]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[11]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[10]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[9]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[8]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[7]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[6]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[5]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[4]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[3]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[2]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[1]
+WARNING: [Synth 8-3331] design sirv_wdog has unconnected port io_regs_s_write_bits[0]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[31]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[30]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[29]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[28]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[27]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[26]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[25]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[24]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[23]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[22]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[21]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[20]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[19]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[18]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[17]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[16]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[15]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[14]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[13]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[12]
+WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[11]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1774.672 ; gain = 87.555
+---------------------------------------------------------------------------------
 
-****** Xilinx hw_server v2019.1
-  **** Build date : May 24 2019 at 15:13:31
-    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1798.488 ; gain = 111.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1798.488 ; gain = 111.371
+---------------------------------------------------------------------------------
+INFO: [Project 1-454] Reading design checkpoint 'e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mmcm/mmcm.dcp' for cell 'ip_mmcm'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/reset_sys/reset_sys.dcp' for cell 'ip_reset_sys'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/video_pll_1/video_pll.dcp' for cell 'dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_hdmi_display_wrapper/video_pll_m0'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/hdmi_ram_1/hdmi_ram.dcp' for cell 'dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_hdmi_display_wrapper/u_hdmi_data_gen/u_hdmi_ram'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/hdmi_ram_2_1/hdmi_ram_2.dcp' for cell 'dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_hdmi_display_wrapper/u_hdmi_data_gen/u_hdmi_ram_2'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0.dcp' for cell 'dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0'
+INFO: [Netlist 29-17] Analyzing 422 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_hdmi_display_wrapper/video_pll_m0/inst/clkin1_ibufg 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+INFO: [Opt 31-140] Inserted 2 IBUFs to IO ports without IO buffers.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_hdmi_display_wrapper/video_pll_m0/clk_in1' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
 
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc] for cell 'dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0'
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:339]
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:346]
+Finished Parsing XDC File [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc] for cell 'dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/e203_system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/e203_system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/reset_sys/reset_sys_board.xdc] for cell 'ip_reset_sys/U0'
+Finished Parsing XDC File [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/reset_sys/reset_sys_board.xdc] for cell 'ip_reset_sys/U0'
+Parsing XDC File [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/reset_sys/reset_sys.xdc] for cell 'ip_reset_sys/U0'
+Finished Parsing XDC File [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/reset_sys/reset_sys.xdc] for cell 'ip_reset_sys/U0'
+Parsing XDC File [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mmcm/mmcm_board.xdc] for cell 'ip_mmcm/inst'
+Finished Parsing XDC File [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mmcm/mmcm_board.xdc] for cell 'ip_mmcm/inst'
+Parsing XDC File [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mmcm/mmcm.xdc] for cell 'ip_mmcm/inst'
+Finished Parsing XDC File [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mmcm/mmcm.xdc] for cell 'ip_mmcm/inst'
+Parsing XDC File [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/video_pll_1/video_pll_board.xdc] for cell 'dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_hdmi_display_wrapper/video_pll_m0/inst'
+Finished Parsing XDC File [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/video_pll_1/video_pll_board.xdc] for cell 'dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_hdmi_display_wrapper/video_pll_m0/inst'
+Parsing XDC File [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/video_pll_1/video_pll.xdc] for cell 'dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_hdmi_display_wrapper/video_pll_m0/inst'
+Finished Parsing XDC File [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/video_pll_1/video_pll.xdc] for cell 'dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_hdmi_display_wrapper/video_pll_m0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/video_pll_1/video_pll.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/e203_system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/e203_system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/constrs_1/imports/constrs/nuclei-master.xdc]
+INFO: [Timing 38-2] Deriving generated clocks [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/constrs_1/imports/constrs/nuclei-master.xdc:7]
+WARNING: [Vivado 12-584] No ports matched 'jd_3'. [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/constrs_1/imports/constrs/nuclei-master.xdc:34]
+WARNING: [Vivado 12-584] No ports matched 'jd_3'. [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/constrs_1/imports/constrs/nuclei-master.xdc:86]
+Finished Parsing XDC File [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/constrs_1/imports/constrs/nuclei-master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/constrs_1/imports/constrs/nuclei-master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/e203_system_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/constrs_1/imports/constrs/nuclei-master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/e203_system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/e203_system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
 
-connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:24 . Memory (MB): peak = 1145.219 ; gain = 0.000
-connect_hw_server -url localhost:3121
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210249855394]
-set_property PARAM.FREQUENCY 5000000 [get_hw_targets */xilinx_tcf/Digilent/210249855394]
-open_hw_target
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249855394
-set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
-current_hw_device [get_hw_devices xc7a100t_0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-create_hw_cfgmem -hw_device [get_hw_devices xc7a100t_0] -mem_dev [lindex [get_cfgmem_parts {mt25ql128-spi-x1_x2_x4}] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2249.980 ; gain = 0.000
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
-WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
-create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name ila_0 -dir e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip
-set_property -dict [list CONFIG.C_PROBE9_WIDTH {128} CONFIG.C_PROBE8_WIDTH {128} CONFIG.C_PROBE7_WIDTH {128} CONFIG.C_PROBE6_WIDTH {28} CONFIG.C_PROBE5_WIDTH {16} CONFIG.C_PROBE4_WIDTH {16} CONFIG.C_PROBE3_WIDTH {28} CONFIG.C_PROBE2_WIDTH {28} CONFIG.C_NUM_OF_PROBES {10}] [get_ips ila_0]
-generate_target {instantiation_template} [get_files e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci]
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_0'...
-generate_target all [get_files  e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci]
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_0'...
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc'
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_0'...
-INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_0'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_0'...
-catch { config_ip_cache -export [get_ips -all ila_0] }
-export_ip_user_files -of_objects [get_files e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci]
-launch_runs -jobs 16 ila_0_synth_1
-[Sat Jul  3 16:29:06 2021] Launched ila_0_synth_1...
-Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_0_synth_1/runme.log
-export_simulation -of_objects [get_files e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci] -directory E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/sim_scripts -ip_user_files_dir E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files -ipstatic_source_dir E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/modelsim} {questa=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/questa} {riviera=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/riviera} {activehdl=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 16
-[Sat Jul  3 16:31:26 2021] Launched synth_1...
-Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/runme.log
-[Sat Jul  3 16:31:26 2021] Launched impl_1...
-Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/runme.log
-set_property PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 5475.316 ; gain = 0.000
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
-display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-WARNING: Simulation object dut/u_custom_icb_mig/u_custom_icb_mig/app_rdy was not found in the design.
-WARNING: Simulation object dut/u_custom_icb_mig/u_custom_icb_mig/app_state was not found in the design.
-WARNING: Simulation object dut/u_custom_icb_mig/u_custom_icb_mig/app_rd_data_valid was not found in the design.
-add_wave -into {hw_ila_data_1.wcfg} -radix hex { {dut/u_custom_icb_mig/u_custom_icb_mig/app_addr_offset} {dut/u_custom_icb_mig/u_custom_icb_mig/app_addr_offset_1} {dut/u_custom_icb_mig/u_custom_icb_mig/app_rd_data} {dut/u_custom_icb_mig/u_custom_icb_mig/app_rd_req} {dut/u_custom_icb_mig/u_custom_icb_mig/app_wr_req} {dut/u_custom_icb_mig/u_custom_icb_mig/mem_rw_addr} {dut/u_custom_icb_mig/u_custom_icb_mig/mem_rw_addr_1} {dut/u_custom_icb_mig/u_custom_icb_mig/mem_wr_mask_i} {dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr} {dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data} {dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_data} {dut/u_custom_icb_mig/u_custom_icb_mig/r_app_wr_mask} }
-set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes dut/u_custom_icb_mig/u_custom_icb_mig/app_wr_req -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 16:46:19
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 16:46:25
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 16:47:19
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 16:47:21
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 16:49:09
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 16:49:11
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 16:51:27
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 16:51:35
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 16
-[Sat Jul  3 16:53:13 2021] Launched synth_1...
-Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/runme.log
-[Sat Jul  3 16:53:13 2021] Launched impl_1...
-Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/runme.log
-set_property PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 5518.406 ; gain = 0.000
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
-refresh_hw_device: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 5518.406 ; gain = 0.000
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:17:19
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:17:21
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-add_wave -into {hw_ila_data_1.wcfg} -radix hex { {dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr} }
-set_property PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 5518.406 ; gain = 0.000
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
-refresh_hw_device: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 5518.406 ; gain = 0.000
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:20:17
-wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2021-Jul-03 17:20:32
-WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
-set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes dut/u_custom_icb_mig/u_custom_icb_mig/app_rd_req -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-set_property CONTROL.TRIGGER_CONDITION OR [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:20:41
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:21:00
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:21:34
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:21:36
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:21:44
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:21:47
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-set_property PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-program_hw_devices: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 5518.406 ; gain = 0.000
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
-refresh_hw_device: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 5518.406 ; gain = 0.000
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:23:01
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:23:06
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:23:22
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:23:23
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:23:54
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:23:57
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:25:36
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:25:38
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:25:58
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:26:01
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:26:19
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:26:21
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:27:07
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:27:09
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:27:33
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:27:40
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:28:09
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:28:14
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:28:57
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:28:59
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:30:11
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:30:12
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 17:30:23
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 17:30:25
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-reset_run synth_1
-WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
-set_property -dict [list CONFIG.C_PROBE10_WIDTH {32} CONFIG.C_NUM_OF_PROBES {13}] [get_ips ila_0]
-generate_target all [get_files  e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci]
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_0'...
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc'
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_0'...
-INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_0'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_0'...
-catch { config_ip_cache -export [get_ips -all ila_0] }
-export_ip_user_files -of_objects [get_files e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci] -no_script -sync -force -quiet
-reset_run ila_0_synth_1
-launch_runs -jobs 16 ila_0_synth_1
-[Sat Jul  3 17:35:05 2021] Launched ila_0_synth_1...
-Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_0_synth_1/runme.log
-export_simulation -of_objects [get_files e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci] -directory E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/sim_scripts -ip_user_files_dir E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files -ipstatic_source_dir E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/modelsim} {questa=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/questa} {riviera=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/riviera} {activehdl=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
-launch_runs impl_1 -to_step write_bitstream -jobs 16
-[Sat Jul  3 17:38:02 2021] Launched synth_1...
-Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/runme.log
-[Sat Jul  3 17:38:02 2021] Launched impl_1...
-Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/runme.log
-set_property PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-program_hw_devices: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 5559.066 ; gain = 0.531
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
-refresh_hw_device: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 5565.676 ; gain = 6.609
-add_wave -into {hw_ila_data_1.wcfg} -radix hex { {dut/u_custom_icb_mig/u_custom_icb_mig/mem_rd_done} {dut/u_custom_icb_mig/u_custom_icb_mig/mem_wr_data_i} {dut/u_custom_icb_mig/u_custom_icb_mig/mem_wr_done} }
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:31:51
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:32:01
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-set_property PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 5565.676 ; gain = 0.000
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
-refresh_hw_device: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 5565.676 ; gain = 0.000
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:32:58
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:33:22
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:33:34
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:33:36
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:33:55
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:33:57
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:34:13
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:34:16
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
-set_property -dict [list CONFIG.C_PROBE14_WIDTH {128} CONFIG.C_PROBE13_WIDTH {28} CONFIG.C_NUM_OF_PROBES {15}] [get_ips ila_0]
-generate_target all [get_files  e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci]
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_0'...
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc'
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_0'...
-INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_0'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_0'...
-catch { config_ip_cache -export [get_ips -all ila_0] }
-export_ip_user_files -of_objects [get_files e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci] -no_script -sync -force -quiet
-reset_run ila_0_synth_1
-launch_runs -jobs 16 ila_0_synth_1
-[Sat Jul  3 18:36:50 2021] Launched ila_0_synth_1...
-Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_0_synth_1/runme.log
-export_simulation -of_objects [get_files e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci] -directory E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/sim_scripts -ip_user_files_dir E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files -ipstatic_source_dir E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/modelsim} {questa=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/questa} {riviera=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/riviera} {activehdl=E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 2008.344 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 187 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 38 instances
+  IOBUFDS_DIFF_OUT_INTERMDISABLE => IOBUFDS_DIFF_OUT_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT, IBUFDS_INTERMDISABLE_INT, INV, OBUFTDS, OBUFTDS): 2 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 130 instances
 
-launch_runs impl_1 -to_step write_bitstream -jobs 16
-[Sat Jul  3 18:37:45 2021] Launched ila_0_synth_1, synth_1...
-Run output will be captured here:
-ila_0_synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_0_synth_1/runme.log
-synth_1: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/runme.log
-[Sat Jul  3 18:37:45 2021] Launched impl_1...
-Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/runme.log
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:38:01
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:38:03
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:38:18
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:38:20
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:38:51
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:38:53
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:39:17
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:39:19
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:40:36
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:40:38
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:41:04
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:41:06
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:41:32
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:41:34
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:42:29
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:42:31
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 18:42:47
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 18:42:50
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-reset_run impl_1 -prev_step 
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 16
-[Sat Jul  3 18:48:54 2021] Launched synth_1...
-Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/runme.log
-[Sat Jul  3 18:48:54 2021] Launched impl_1...
-Run output will be captured here: E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/runme.log
-set_property PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.ltx} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/impl_1/e203_system_wrapper.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-program_hw_devices: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 5584.234 ; gain = 0.000
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
-refresh_hw_device: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 5584.234 ; gain = 0.000
-add_wave -into {hw_ila_data_1.wcfg} -radix hex { {dut/u_custom_icb_mig/u_custom_icb_mig/r_app_addr_offset} {dut/u_custom_icb_mig/u_custom_icb_mig/r_app_rd_data_1} }
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 19:48:41
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 19:48:43
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Jul-03 19:49:12
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"dut/u_custom_icb_mig/u_custom_icb_mig/u_ila_0"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Jul-03 19:49:14
-INFO: [Labtools 27-3304] ILA Waveform data saved to file E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:36 ; elapsed = 00:00:27 . Memory (MB): peak = 2119.465 ; gain = 432.348
+240 Infos, 132 Warnings, 2 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:32 . Memory (MB): peak = 2119.465 ; gain = 432.348
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Jul  5 22:14:18 2021...
