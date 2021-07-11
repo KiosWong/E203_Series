@@ -196,6 +196,15 @@ read_verilog -library xil_defaultlib {
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/icb_dmac_invoker.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/icb_dmac_receiver.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/icb_dmac.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/block_ram.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/fifo.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/conv_ctrl.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/win_gen.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/shift_ram.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/conv2d_top.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/conv_datapath.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/icb_conv2d.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/icb_conv2d_defines.v
 }
 read_vhdl -library xil_defaultlib {
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/SyncAsync.vhd

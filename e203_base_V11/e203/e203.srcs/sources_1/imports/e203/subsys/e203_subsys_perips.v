@@ -1516,6 +1516,18 @@ wire [`E203_XLEN-1:0]       dmac_perips_icb_rsp_rdata;
 
 wire 						dmac_periphs_dma_req;
 wire 						dmac_periphs_dma_rsp;
+
+wire 						conv2d_icb_cmd_valid;
+wire 						conv2d_icb_cmd_ready;
+wire [`E203_ADDR_SIZE-1:0] 	conv2d_icb_cmd_addr; 
+wire 						conv2d_icb_cmd_read; 
+wire [`E203_XLEN-1:0] 		conv2d_icb_cmd_wdata;
+wire [`E203_XLEN/8-1:0] 	conv2d_icb_cmd_wmask;
+
+wire 						conv2d_icb_rsp_valid;
+wire 						conv2d_icb_rsp_ready;
+wire  						conv2d_icb_rsp_err;
+wire [`E203_XLEN-1:0] 		conv2d_icb_rsp_rdata;
 	
 /*************************custom peripheral wire end*************************/	
 
@@ -1633,8 +1645,6 @@ sirv_gnrl_icb_arbt # (
 	.clk                    (clk  )                     ,
 	.rst_n                  (rst_n)
 );
-	
-/*************************custom peripheral wire end*************************/
 
   // The total address range for the PPI is from/to
   //  **************0x1000 0000 -- 0x1FFF FFFF
@@ -1714,7 +1724,7 @@ sirv_gnrl_icb_arbt # (
   
       // * Here is an I2C WishBone Peripheral
   .O15_BASE_ADDR       (32'h1004_2000),       
-  .O15_BASE_REGION_LSB (3)// I2C only have 3 bits address width
+  .O15_BASE_REGION_LSB (12)// I2C only have 3 bits address width
 
   )u_sirv_ppi_fab(
 
@@ -2020,7 +2030,7 @@ sirv_gnrl_icb_arbt # (
     .o12_icb_rsp_excl_ok(1'b0  ),
     .o12_icb_rsp_rdata  (sysper_icb_rsp_rdata),
 
-   //  * Example AXI    
+	// Custom ICB HDMI  
     .o13_icb_enable     (1'b1),
 
     .o13_icb_cmd_valid  (icb_hdmi_cmd_valid),
@@ -2040,7 +2050,8 @@ sirv_gnrl_icb_arbt # (
     .o13_icb_rsp_err    (icb_hdmi_rsp_err),
     .o13_icb_rsp_excl_ok(1'b0  ),
     .o13_icb_rsp_rdata  (icb_hdmi_rsp_rdata),
-
+	
+	// Custom ICB dmac  
     .o14_icb_enable     (1'b1),
     .o14_icb_cmd_valid  (dmac_host_icb_cmd_valid),
     .o14_icb_cmd_ready  (dmac_host_icb_cmd_ready),
@@ -2061,26 +2072,26 @@ sirv_gnrl_icb_arbt # (
     .o14_icb_rsp_excl_ok(1'b0  ),
     .o14_icb_rsp_rdata  (dmac_host_icb_rsp_rdata),
 
-   //  * I2C WishBone    
-    .o15_icb_enable     (1'b0),
+   	// Custom ICB conv2d     
+    .o15_icb_enable     (1'b1),
 
-    .o15_icb_cmd_valid  (),
-    .o15_icb_cmd_ready  (),
-    .o15_icb_cmd_addr   ( ),
-    .o15_icb_cmd_read   ( ),
-    .o15_icb_cmd_wdata  (),
-    .o15_icb_cmd_wmask  (),
+    .o15_icb_cmd_valid  (conv2d_icb_cmd_valid),
+    .o15_icb_cmd_ready  (conv2d_icb_cmd_ready),
+    .o15_icb_cmd_addr   (conv2d_icb_cmd_addr),
+    .o15_icb_cmd_read   (conv2d_icb_cmd_read),
+    .o15_icb_cmd_wdata  (conv2d_icb_cmd_wdata),
+    .o15_icb_cmd_wmask  (conv2d_icb_cmd_wmask),
     .o15_icb_cmd_lock   (),
     .o15_icb_cmd_excl   (),
     .o15_icb_cmd_size   (),
     .o15_icb_cmd_burst  (),
     .o15_icb_cmd_beat   (),
     
-    .o15_icb_rsp_valid  (),
-    .o15_icb_rsp_ready  (),
-    .o15_icb_rsp_err    (),
+    .o15_icb_rsp_valid  (conv2d_icb_rsp_valid),
+    .o15_icb_rsp_ready  (conv2d_icb_rsp_ready),
+    .o15_icb_rsp_err    (conv2d_icb_rsp_err),
     .o15_icb_rsp_excl_ok(1'b0  ),
-    .o15_icb_rsp_rdata  (),
+    .o15_icb_rsp_rdata  (conv2d_icb_rsp_rdata),
 
     .clk           (clk  ),
     .rst_n         (bus_rst_n) 
@@ -3374,6 +3385,31 @@ u_icb_dmac
 	.dmac_periphs_dma_rsp_o(dmac_periphs_dma_rsp),
 
 	.dmac_transaction_done_o(),
+	.clk(clk),
+	.rst_n(rst_n)
+);
+
+icb_conv2d
+#(
+	.IFMAP_DATA_WIDTH(16),
+	.OFMAP_DATA_WIDTH(32),
+	.KERNEL_SIZE(3)
+)
+u_icb_conv2d
+(
+	.conv2d_icb_cmd_valid_i(conv2d_icb_cmd_valid),
+	.conv2d_icb_cmd_ready_o(conv2d_icb_cmd_ready),
+	.conv2d_icb_cmd_addr_i(conv2d_icb_cmd_addr), 
+	.conv2d_icb_cmd_read_i(conv2d_icb_cmd_read), 
+	.conv2d_icb_cmd_wdata_i(conv2d_icb_cmd_wdata),
+	.conv2d_icb_cmd_wmask_i(conv2d_icb_cmd_wmask),
+
+	.conv2d_icb_rsp_valid_o(conv2d_icb_rsp_valid),
+	.conv2d_icb_rsp_ready_i(conv2d_icb_rsp_ready),
+	.conv2d_icb_rsp_err_o(conv2d_icb_rsp_err),
+	.conv2d_icb_rsp_rdata_o(conv2d_icb_rsp_rdata),
+
+	.conv2d_done_o(),
 	.clk(clk),
 	.rst_n(rst_n)
 );

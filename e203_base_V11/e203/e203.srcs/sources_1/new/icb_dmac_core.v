@@ -429,17 +429,4 @@ assign dmac_transaction_done_o = s_dmac_stream_done;
 
 assign perips_dma_rsp_o = perips_dma_req_i;
 
-ila_dmac u_ila_dmac (
-	.clk(clk), // input wire clk
-
-	.probe0(s_host_icb_cmd_valid_i), // input wire [0:0]  probe0  
-	.probe1(s_host_icb_cmd_ready_o), // input wire [0:0]  probe1 
-	.probe2(w_dmac_core_region_addr), // input wire [0:0]  probe2 
-	.probe3(s_host_icb_cmd_wdata_i), // input wire [0:0]  probe3 
-	.probe4(ccr), // input wire [15:0]  probe4 
-	.probe5(csar), // input wire [31:0]  probe5 
-	.probe6(cdar), // input wire [31:0]  probe6 
-	.probe7(cmdtr) // input wire [15:0]  probe7
-);
-
 endmodule

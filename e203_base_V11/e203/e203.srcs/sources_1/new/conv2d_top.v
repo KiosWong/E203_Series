@@ -13,18 +13,22 @@ module conv2d_top
 	input  clear,
 	
 	input  ifmap_fifo_wr_en_i,
+	output ifmap_fifo_ready_o,
 	input  [IFMAP_DATA_WIDTH-1:0]ifmap_fifo_data_i,
 	input  [KERNEL_SIZE*KERNEL_SIZE*IFMAP_DATA_WIDTH-1:0]filter_data_i,
 	input  ofmap_fifo_rd_en_i,
-	output ofmap_fifo_data_valid_o,
+	output ofmap_fifo_valid_o,
 	output [OFMAP_DATA_WIDTH-1:0]ofmap_fifo_data_o,
+	
+	output conv_err,
 	output conv_done
 );
 
 localparam  FIFO_SIZE = 1024;
 			
 wire w_ifmap_fifo_data_req;
-wire s_ifmap_empty;
+wire s_ifmap_fifo_empty;
+wire s_ifmap_fifo_full;
 wire [IFMAP_DATA_WIDTH-1:0]ifmap_fifo_data_out;
 
 sync_bram_fifo
@@ -41,8 +45,8 @@ u_ifmap_fifo
 	.fifo_wr_en(ifmap_fifo_wr_en_i),
 	.fifo_rd_en(w_ifmap_fifo_data_req),
 	.fifo_rd_rewind(0),
-	.fifo_empty(s_ifmap_empty),
-	.fifo_full(),
+	.fifo_empty(s_ifmap_fifo_empty),
+	.fifo_full(s_ifmap_fifo_full),
 	.fifo_out(ifmap_fifo_data_out)
 );
 
@@ -50,7 +54,7 @@ wire w_ifmap_fifo_data_valid;
 wire w_tap_data_valid;
 wire [KERNEL_SIZE*IFMAP_DATA_WIDTH-1:0]w_tap_data_out;
 
-assign w_ifmap_fifo_data_valid = ~s_ifmap_empty;
+assign w_ifmap_fifo_data_valid = ~s_ifmap_fifo_empty;
 
 shift_ram 
 #(
@@ -159,6 +163,8 @@ u_ofmap_fifo
 );
 
 assign conv_done = w_conv_op_done;
-assign ofmap_fifo_data_valid_o = ~s_ofmap_fifo_empty;
+assign ifmap_fifo_ready_o = ~s_ifmap_fifo_full;
+assign ofmap_fifo_valid_o = ~s_ofmap_fifo_empty;
+assign conv_err = ifmap_fifo_wr_en_i & s_ifmap_fifo_full;
 
 endmodule
