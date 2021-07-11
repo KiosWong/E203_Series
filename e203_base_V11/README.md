@@ -15,7 +15,7 @@
 1. 添加single channel Conv2D模块，用于卷积计算： 
     - 实现ifmap data写入与ofmap data读取 ~~, 暂未实现filter数据写入，目前以全1代替~~；
     - 实现filter数据写入并做双缓冲处理；
-    - 目前仅支持3*3、步长为1、fmap为32*32的normal conv。
+    - 目前仅支持3*3、步长为1、fmap为32 * 32的normal conv。
 2. 将conv2d模块挂载至peripheral bus，地址为0x1004_2000起始的4KB。conv2d寄存器及地址:
     - **[RW]** *ccr*：conv2d control register, ***offset = 0x00, size = 2***
     - **[RW]** *cpar*：conv2d parameter register ,***offset = 0x02, size = 2***

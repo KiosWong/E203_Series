@@ -10,16 +10,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1024001fs"></ZoomEndTime>
-      <Cursor1Time time="513000fs"></Cursor1Time>
+      <ZoomEndTime time="7961fs"></ZoomEndTime>
+      <Cursor1Time time="1000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="709"></NameColumnWidth>
-      <ValueColumnWidth column_width="147"></ValueColumnWidth>
+      <ValueColumnWidth column_width="204"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="10" />
-   <wave_markers>
-   </wave_markers>
    <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d/ccr" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d/ccr[15:0]</obj_property>
