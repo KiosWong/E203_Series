@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Sun Jul 11 21:38:57 2021
+| Date             : Sun Jul 11 22:28:48 2021
 | Host             : DESKTOP-V0OL22A running 64-bit major release  (build 9200)
 | Command          : report_power -file e203_system_wrapper_power_routed.rpt -pb e203_system_wrapper_power_summary_routed.pb -rpx e203_system_wrapper_power_routed.rpx
 | Design           : e203_system_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.174        |
+| Total On-Chip Power (W)  | 1.247        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.065        |
+| Dynamic (W)              | 1.137        |
 | Device Static (W)        | 0.110        |
 | Effective TJA (C/W)      | 2.6          |
-| Max Ambient (C)          | 81.9         |
-| Junction Temperature (C) | 28.1         |
+| Max Ambient (C)          | 81.7         |
+| Junction Temperature (C) | 28.3         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,26 +52,26 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.051 |       30 |       --- |             --- |
-| Slice Logic              |     0.017 |    42569 |       --- |             --- |
-|   LUT as Logic           |     0.015 |    17664 |     63400 |           27.86 |
+| Clocks                   |     0.058 |       30 |       --- |             --- |
+| Slice Logic              |     0.019 |    42569 |       --- |             --- |
+|   LUT as Logic           |     0.017 |    17657 |     63400 |           27.85 |
 |   Register               |    <0.001 |    17240 |    126800 |           13.60 |
 |   CARRY4                 |    <0.001 |      478 |     15850 |            3.02 |
 |   LUT as Distributed RAM |    <0.001 |      624 |     19000 |            3.28 |
-|   F7/F8 Muxes            |    <0.001 |      436 |     63400 |            0.69 |
 |   LUT as Shift Register  |    <0.001 |      410 |     19000 |            2.16 |
+|   F7/F8 Muxes            |    <0.001 |      436 |     63400 |            0.69 |
 |   BUFG                   |    <0.001 |        2 |        32 |            6.25 |
 |   Others                 |     0.000 |     1341 |       --- |             --- |
-| Signals                  |     0.017 |    32962 |       --- |             --- |
-| Block RAM                |     0.011 |    102.5 |       135 |           75.93 |
-| MMCM                     |     0.324 |        3 |         6 |           50.00 |
+| Signals                  |     0.019 |    32964 |       --- |             --- |
+| Block RAM                |     0.022 |    102.5 |       135 |           75.93 |
+| MMCM                     |     0.375 |        3 |         6 |           50.00 |
 | PLL                      |     0.092 |        1 |         6 |           16.67 |
 | DSPs                     |    <0.001 |        9 |       240 |            3.75 |
 | I/O                      |     0.415 |       98 |       300 |           32.67 |
 | PHASER                   |     0.134 |       14 |       --- |             --- |
 | XADC                     |     0.004 |        1 |       --- |             --- |
 | Static Power             |     0.110 |          |           |                 |
-| Total                    |     1.174 |          |           |                 |
+| Total                    |     1.247 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -81,8 +81,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.162 |       0.142 |      0.019 |
-| Vccaux    |       1.800 |     0.361 |       0.342 |      0.018 |
+| Vccint    |       1.000 |     0.182 |       0.162 |      0.019 |
+| Vccaux    |       1.800 |     0.389 |       0.371 |      0.018 |
 | Vcco33    |       3.300 |     0.048 |       0.044 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -90,7 +90,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.121 |       0.117 |      0.004 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.004 |       0.001 |      0.003 |
+| Vccbram   |       1.000 |     0.005 |       0.002 |      0.003 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.022 |       0.002 |      0.020 |
@@ -137,8 +137,8 @@ Table of Contents
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 | Clock                                                                                                                                                     | Domain                                                                                                                                                                                                                                       | Constraint (ns) |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
-| clk_out1_mmcm                                                                                                                                             | ip_mmcm/inst/clk_out1_mmcm                                                                                                                                                                                                                   |            62.5 |
-| clk_out1_mmcm                                                                                                                                             | u_e203_subsys_top/hfclk                                                                                                                                                                                                                      |            62.5 |
+| clk_out1_mmcm                                                                                                                                             | ip_mmcm/inst/clk_out1_mmcm                                                                                                                                                                                                                   |            31.3 |
+| clk_out1_mmcm                                                                                                                                             | u_e203_subsys_top/hfclk                                                                                                                                                                                                                      |            31.3 |
 | clk_out1_video_pll                                                                                                                                        | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_hdmi_display_wrapper/video_pll_m0/inst/clk_out1_video_pll                                                                                                                    |             6.7 |
 | clk_out2_mmcm                                                                                                                                             | ip_mmcm/inst/clk_out2_mmcm                                                                                                                                                                                                                   |           119.0 |
 | clk_out2_video_pll                                                                                                                                        | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_hdmi_display_wrapper/video_pll_m0/inst/clk_out2_video_pll                                                                                                                    |             1.3 |
@@ -177,16 +177,16 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| e203_system_wrapper      |     1.065 |
+| e203_system_wrapper      |     1.137 |
 |   IOBUF_jtag_TDO         |     0.005 |
-|   dbg_hub                |     0.001 |
-|     inst                 |     0.001 |
-|       BSCANID.u_xsdbm_id |     0.001 |
-|   dut                    |     0.934 |
-|     u_custom_icb_mig     |     0.642 |
-|       u_custom_icb_mig   |     0.641 |
-|     u_e203_subsys_top    |     0.292 |
-|       u_e203_subsys_main |     0.287 |
+|   dbg_hub                |     0.002 |
+|     inst                 |     0.002 |
+|       BSCANID.u_xsdbm_id |     0.002 |
+|   dut                    |     1.005 |
+|     u_custom_icb_mig     |     0.640 |
+|       u_custom_icb_mig   |     0.639 |
+|     u_e203_subsys_top    |     0.366 |
+|       u_e203_subsys_main |     0.360 |
 |       u_sirv_aon_top     |     0.005 |
 |   ip_mmcm                |     0.123 |
 |     inst                 |     0.123 |

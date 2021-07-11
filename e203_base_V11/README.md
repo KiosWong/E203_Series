@@ -13,6 +13,20 @@
 
 ## 2021.7.11
 1. 添加single channel Conv2D模块，用于卷积计算： 
-    - 实现ifmap data写入与ofmap data读取，暂未实现filter数据写入，目前以全1代替；
-    - 目前仅支持3*3、步长为1的normal conv。
-2. 将conv2d模块挂载至peripheral bus，地址为0x1004_2000起始的4KB
+    - 实现ifmap data写入与ofmap data读取 ~~, 暂未实现filter数据写入，目前以全1代替~~；
+    - 实现filter数据写入并做双缓冲处理；
+    - 目前仅支持3*3、步长为1、fmap为32*32的normal conv。
+2. 将conv2d模块挂载至peripheral bus，地址为0x1004_2000起始的4KB。conv2d寄存器及地址:
+    - **[RW]** *ccr*：conv2d control register, ***offset = 0x00, size = 2***
+    - **[RW]** *cpar*：conv2d parameter register ,***offset = 0x02, size = 2***
+    - **[W]** *ifwr*：ifmap fifo write (virtual) register, ***offset = 0x04, size = 4***
+    - **[R]** *ofrd*: ofmap fifo read  (virtual) register, ***offset = 0x08, size = 4***
+    - **[W]** *filwr* filter write (virtual) register, ***offset = 0x0C, size = 4***
+### to do
+1. 为conv2d module ccr添加其他有效位
+2. 扩展conv2d module，实现25通道并行；
+   - 为各module添加寄存器组，处理好相应偏移地址；
+   - 为整体模块添加done寄存器，用于指示各conv2d module的运行情况；
+   - 合理设计数据流，最大程度利用片上BRAM
+3. 调试DMAC，实现conv2d module、DDR、DTCM间数据传输；
+  

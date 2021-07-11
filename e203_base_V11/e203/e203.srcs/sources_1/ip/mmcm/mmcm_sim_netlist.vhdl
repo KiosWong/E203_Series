@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Sat Jul  3 15:25:26 2021
+-- Date        : Sun Jul 11 22:11:29 2021
 -- Host        : DESKTOP-V0OL22A running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/mmcm/mmcm_sim_netlist.vhdl
@@ -89,7 +89,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKFBOUT_USE_FINE_PS => false,
       CLKIN1_PERIOD => 20.000000,
       CLKIN2_PERIOD => 0.000000,
-      CLKOUT0_DIVIDE_F => 62.500000,
+      CLKOUT0_DIVIDE_F => 31.250000,
       CLKOUT0_DUTY_CYCLE => 0.500000,
       CLKOUT0_PHASE => 0.000000,
       CLKOUT0_USE_FINE_PS => false,

@@ -15,17 +15,17 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tfgg676-2
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 38632 
+INFO: Helper process launched with PID 41732 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 876.777 ; gain = 187.777
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 876.895 ; gain = 187.582
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'e203_system_wrapper' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/e203_soc_wrapper.v:3]
-INFO: [Synth 8-6157] synthesizing module 'mmcm' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/.Xil/Vivado-18600-DESKTOP-V0OL22A/realtime/mmcm_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mmcm' (1#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/.Xil/Vivado-18600-DESKTOP-V0OL22A/realtime/mmcm_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mmcm' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/.Xil/Vivado-37948-DESKTOP-V0OL22A/realtime/mmcm_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mmcm' (1#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/.Xil/Vivado-37948-DESKTOP-V0OL22A/realtime/mmcm_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'clock_divider' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/clock_divider.v:22]
 INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (2#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/clock_divider.v:22]
-INFO: [Synth 8-6157] synthesizing module 'reset_sys' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/.Xil/Vivado-18600-DESKTOP-V0OL22A/realtime/reset_sys_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'reset_sys' (3#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/.Xil/Vivado-18600-DESKTOP-V0OL22A/realtime/reset_sys_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'reset_sys' [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/.Xil/Vivado-37948-DESKTOP-V0OL22A/realtime/reset_sys_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'reset_sys' (3#1) [E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/.Xil/Vivado-37948-DESKTOP-V0OL22A/realtime/reset_sys_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'PULLUP' [D:/Program/Vivado/Vivado/2019.1/scripts/rt/data/unisim_comp.v:69747]
 INFO: [Synth 8-6155] done synthesizing module 'PULLUP' (4#1) [D:/Program/Vivado/Vivado/2019.1/scripts/rt/data/unisim_comp.v:69747]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [D:/Program/Vivado/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115]
@@ -1240,7 +1240,7 @@ WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_
 WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[11]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1184.488 ; gain = 495.488
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1184.445 ; gain = 495.133
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1253,10 +1253,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1184.488 ; gain = 495.488
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1184.445 ; gain = 495.133
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1184.488 ; gain = 495.488
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1184.445 ; gain = 495.133
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 42 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1293,16 +1293,16 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/e203_system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1350.359 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1364.441 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 38 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 38 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.114 . Memory (MB): peak = 1350.359 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.117 . Memory (MB): peak = 1364.441 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_hdmi_display_wrapper/u_hdmi_data_gen/u_hdmi_ram' at clock pin 'clka' is different from the actual clock period '6.739', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_hdmi_display_wrapper/u_hdmi_data_gen/u_hdmi_ram_2' at clock pin 'clka' is different from the actual clock period '6.739', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1357.938 ; gain = 668.938
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 1370.863 ; gain = 681.551
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
@@ -1310,7 +1310,7 @@ Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1357.938 ; gain = 668.938
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:26 . Memory (MB): peak = 1370.863 ; gain = 681.551
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'dmac_src_fsm_state_reg' in module 'icb_dmac_core'
 INFO: [Synth 8-802] inferred FSM for state register 'dmac_dst_fsm_state_reg' in module 'icb_dmac_core'
@@ -1381,7 +1381,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'jtagStateReg_reg' using en
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'app_state_reg' using encoding 'sequential' in module 'custom_icb_mig'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1357.938 ; gain = 668.938
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 1370.863 ; gain = 681.551
 ---------------------------------------------------------------------------------
 RAM Pipeline Warning: Read Address Register Found For RAM mem[1].non_last.mem_r_reg. We will not be able to pipeline it. This may degrade performance. 
 RAM Pipeline Warning: Read Address Register Found For RAM mem[1].non_last.mem_r_reg. We will not be able to pipeline it. This may degrade performance. 
@@ -6164,7 +6164,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_su
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (duti_10/\u_aon_1to2_icb/u_i_icb_splt/splt_num_gt_1_gen.fifo_dp_1.u_sirv_gnrl_rspid_fifo/dp_gt_0.dat_dfflr/qout_r_reg[1] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (duti_10/\u_aon_1to2_icb/u_i_icb_splt/splt_num_gt_1_gen.fifo_dp_1.u_sirv_gnrl_rspid_fifo/dp_gt_0.dat_dfflr/qout_r_reg[0] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:04:00 ; elapsed = 00:04:03 . Memory (MB): peak = 2271.707 ; gain = 1582.707
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:59 ; elapsed = 00:04:00 . Memory (MB): peak = 2258.320 ; gain = 1569.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -6300,13 +6300,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'video_pll_m0/clk_out2' to
 INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'video_pll_m0/clk_in1' to 'hdmi_display_mask_reg[0]/C'
 INFO: [Synth 8-5819] Moved 8 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:09 ; elapsed = 00:04:12 . Memory (MB): peak = 2271.707 ; gain = 1582.707
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:07 ; elapsed = 00:04:09 . Memory (MB): peak = 2258.320 ; gain = 1569.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:04:14 ; elapsed = 00:04:17 . Memory (MB): peak = 2271.707 ; gain = 1582.707
+Finished Timing Optimization : Time (s): cpu = 00:04:12 ; elapsed = 00:04:14 . Memory (MB): peak = 2258.320 ; gain = 1569.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -6410,7 +6410,7 @@ INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_su
 INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:25 ; elapsed = 00:04:28 . Memory (MB): peak = 2271.707 ; gain = 1582.707
+Finished Technology Mapping : Time (s): cpu = 00:04:22 ; elapsed = 00:04:24 . Memory (MB): peak = 2258.320 ; gain = 1569.008
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -6434,7 +6434,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:27 ; elapsed = 00:04:30 . Memory (MB): peak = 2271.707 ; gain = 1582.707
+Finished IO Insertion : Time (s): cpu = 00:04:24 ; elapsed = 00:04:26 . Memory (MB): peak = 2258.320 ; gain = 1569.008
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -6447,7 +6447,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:27 ; elapsed = 00:04:30 . Memory (MB): peak = 2271.707 ; gain = 1582.707
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:24 ; elapsed = 00:04:26 . Memory (MB): peak = 2258.320 ; gain = 1569.008
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -6459,25 +6459,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:30 ; elapsed = 00:04:33 . Memory (MB): peak = 2271.707 ; gain = 1582.707
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:28 ; elapsed = 00:04:29 . Memory (MB): peak = 2258.320 ; gain = 1569.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:30 ; elapsed = 00:04:33 . Memory (MB): peak = 2271.707 ; gain = 1582.707
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:28 ; elapsed = 00:04:30 . Memory (MB): peak = 2258.320 ; gain = 1569.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:32 ; elapsed = 00:04:35 . Memory (MB): peak = 2271.707 ; gain = 1582.707
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:29 ; elapsed = 00:04:31 . Memory (MB): peak = 2258.320 ; gain = 1569.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:32 ; elapsed = 00:04:35 . Memory (MB): peak = 2271.707 ; gain = 1582.707
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:29 ; elapsed = 00:04:31 . Memory (MB): peak = 2258.320 ; gain = 1569.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -7448,17 +7448,17 @@ Report Instance Areas:
 |889   |  slowclkgen                                                           |clock_divider                              |    18|
 +------+-----------------------------------------------------------------------+-------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:32 ; elapsed = 00:04:35 . Memory (MB): peak = 2271.707 ; gain = 1582.707
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:29 ; elapsed = 00:04:31 . Memory (MB): peak = 2258.320 ; gain = 1569.008
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:04:09 ; elapsed = 00:04:27 . Memory (MB): peak = 2271.707 ; gain = 1409.258
-Synthesis Optimization Complete : Time (s): cpu = 00:04:32 ; elapsed = 00:04:35 . Memory (MB): peak = 2271.707 ; gain = 1582.707
+Synthesis Optimization Runtime : Time (s): cpu = 00:04:05 ; elapsed = 00:04:23 . Memory (MB): peak = 2258.320 ; gain = 1382.590
+Synthesis Optimization Complete : Time (s): cpu = 00:04:29 ; elapsed = 00:04:32 . Memory (MB): peak = 2258.320 ; gain = 1569.008
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 814 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 2 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2271.707 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2258.320 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 69 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 38 instances
@@ -7469,12 +7469,12 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 567 Infos, 264 Warnings, 2 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:42 ; elapsed = 00:04:45 . Memory (MB): peak = 2271.707 ; gain = 1843.246
+synth_design: Time (s): cpu = 00:04:38 ; elapsed = 00:04:41 . Memory (MB): peak = 2258.320 ; gain = 1829.188
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2271.707 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2258.320 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/synth_1/e203_system_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file e203_system_wrapper_utilization_synth.rpt -pb e203_system_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Jul 11 21:29:09 2021...
+INFO: [Common 17-206] Exiting Vivado at Sun Jul 11 22:16:30 2021...
