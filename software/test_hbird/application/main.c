@@ -2,10 +2,14 @@
 #include "app.h"
 
 #define DDR_BASE_ADDR		0xA0000000
+#define DMAC_BASE_ADDR		0x10041000
+#define CONV2D_BASE_ADDR	0x10042000
 
 int i;
 int batch_cnt;
 int failed_cnt = 0;
+int conv2d_output_value = 0;
+int ccr;
 
 int main(void)
 {
@@ -14,6 +18,25 @@ int main(void)
 	int test_idx = 0;
 	int ddr_test_addr = 0;
 	banner_print();
+
+
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x02;
+	for(i = 0; i < 1024; i++) {
+		*((int *)(CONV2D_BASE_ADDR + 4)) = i;
+	}
+
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x01;
+	delay_1ms(100);
+	ccr = *((int *)(CONV2D_BASE_ADDR + 0x00));
+
+	for(i = 0; i < 900; i++) {
+		conv2d_output_value = *((int *)(CONV2D_BASE_ADDR + 8));
+		printf("%d ", conv2d_output_value);
+		if((i+1) % 30 == 0)
+			printf("\r\n");
+	}
+	ccr = *((int *)(CONV2D_BASE_ADDR + 0x00));
+
 	printf("**********************DDR RW test**********************\r\n");
 	printf("batch size: 1MB.\r\n\r\n");
 

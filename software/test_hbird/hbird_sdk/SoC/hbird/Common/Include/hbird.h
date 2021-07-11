@@ -421,7 +421,7 @@ typedef struct {
 #define QSPI2_BASE              (HBIRD_PERIPH_BASE + 0x34000)          /*!< (QSPI2) Base Address */
 #define PWM2_BASE               (HBIRD_PERIPH_BASE + 0x35000)          /*!< (PWM2) Base Address */
 #define ICB_HDMI_BASE			(HBIRD_PERIPH_BASE + 0x40000)
-#define ICB_MEM_BASE			(HBIRD_PERIPH_BASE + 0x41000)		   /*!< (ICB Memory<custom>) Base Address */
+#define ICB_DMA_BASE			(HBIRD_PERIPH_BASE + 0x41000)		   /*!< (ICB Memory<custom>) Base Address */
 #define I2C_BASE                (HBIRD_PERIPH_BASE + 0x42000)          /*!< (I2C Master) Base Address */
 
 /** @} */ /* End of group Device_Peripheral_peripheralAddr */

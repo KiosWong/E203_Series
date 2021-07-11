@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../hbird_sdk/SoC/hbird/Common/Source/Drivers/custom_hbird_dma.c \
 ../hbird_sdk/SoC/hbird/Common/Source/Drivers/custom_hbird_hdmi.c \
 ../hbird_sdk/SoC/hbird/Common/Source/Drivers/hbird_gpio.c \
 ../hbird_sdk/SoC/hbird/Common/Source/Drivers/hbird_icb_mem.c \
@@ -11,6 +12,7 @@ C_SRCS += \
 ../hbird_sdk/SoC/hbird/Common/Source/Drivers/htif.c 
 
 OBJS += \
+./hbird_sdk/SoC/hbird/Common/Source/Drivers/custom_hbird_dma.o \
 ./hbird_sdk/SoC/hbird/Common/Source/Drivers/custom_hbird_hdmi.o \
 ./hbird_sdk/SoC/hbird/Common/Source/Drivers/hbird_gpio.o \
 ./hbird_sdk/SoC/hbird/Common/Source/Drivers/hbird_icb_mem.o \
@@ -18,6 +20,7 @@ OBJS += \
 ./hbird_sdk/SoC/hbird/Common/Source/Drivers/htif.o 
 
 C_DEPS += \
+./hbird_sdk/SoC/hbird/Common/Source/Drivers/custom_hbird_dma.d \
 ./hbird_sdk/SoC/hbird/Common/Source/Drivers/custom_hbird_hdmi.d \
 ./hbird_sdk/SoC/hbird/Common/Source/Drivers/hbird_gpio.d \
 ./hbird_sdk/SoC/hbird/Common/Source/Drivers/hbird_icb_mem.d \
