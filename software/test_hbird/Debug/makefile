@@ -61,7 +61,7 @@ all: test_hbird.elf secondary-outputs
 test_hbird.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GNU RISC-V Cross C++ Linker'
-	riscv-nuclei-elf-g++ -march=rv32imac -mabi=ilp32 -mcmodel=medany -mno-save-restore -O0 -ffunction-sections -fdata-sections -fno-common  -g -T "E:\Projects\RISC-V\Software\test_hbird\hbird_sdk\SoC\hbird\Board\hbird_eval\Source\GCC\gcc_hbird_ilm.ld" -nostartfiles -Xlinker --gc-sections -Wl,-Map,"test_hbird.map" --specs=nano.specs --specs=nosys.specs -u _isatty -u _write -u _sbrk -u _read -u _close -u _fstat -u _lseek -o "test_hbird.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	riscv-nuclei-elf-g++ -march=rv32imac -mabi=ilp32 -mcmodel=medany -mno-save-restore -O0 -ffunction-sections -fdata-sections -fno-common  -g -T "E:\Projects\SoC\e203_series\software\test_hbird\hbird_sdk\SoC\hbird\Board\hbird_eval\Source\GCC\gcc_hbird_ilm.ld" -nostartfiles -Xlinker --gc-sections -Wl,-Map,"test_hbird.map" --specs=nano.specs --specs=nosys.specs -u _isatty -u _write -u _sbrk -u _read -u _close -u _fstat -u _lseek -o "test_hbird.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
