@@ -17,9 +17,9 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_param tcl.collectionResultDisplayLimit 0
+set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
 set_msg_config  -id {Project 1-19}  -string {{CRITICAL WARNING: [Project 1-19] Could not find the file 'E:/Projects/SoC/e203_series/e203_base_V10/e203/e203.srcs/sources_1/bd/axi_mig/ip/axi_mig_mig_7series_0_0/mig_a.prj'.}}  -suppress 
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
@@ -41,7 +41,7 @@ set_property include_dirs {
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/imports/e203/core
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new
 } [current_fileset]
-read_ip -quiet e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac.xci
+read_ip -quiet E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac.xci
 set_property used_in_synthesis false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_v6_2/constraints/ila.xdc]
@@ -100,32 +100,32 @@ write_checkpoint -force -noxdef ila_dmac.dcp
 create_report "ila_dmac_synth_1_synth_report_utilization_0" "report_utilization -file ila_dmac_utilization_synth.rpt -pb ila_dmac_utilization_synth.pb"
 
 if { [catch {
-  file copy -force E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_dmac_synth_1/ila_dmac.dcp e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac.dcp
+  file copy -force E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_dmac_synth_1/ila_dmac.dcp E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_stub.v
+  write_verilog -force -mode synth_stub E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_stub.vhdl
+  write_vhdl -force -mode synth_stub E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_sim_netlist.v
+  write_verilog -force -mode funcsim E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -135,32 +135,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_dmac_synth_1/ila_dmac.dcp e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac.dcp
+  file copy -force E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_dmac_synth_1/ila_dmac.dcp E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_dmac_synth_1/ila_dmac_stub.v e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_stub.v
+  file rename -force E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_dmac_synth_1/ila_dmac_stub.v E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_dmac_synth_1/ila_dmac_stub.vhdl e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_stub.vhdl
+  file rename -force E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_dmac_synth_1/ila_dmac_stub.vhdl E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_dmac_synth_1/ila_dmac_sim_netlist.v e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_sim_netlist.v
+  file rename -force E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_dmac_synth_1/ila_dmac_sim_netlist.v E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_dmac_synth_1/ila_dmac_sim_netlist.vhdl e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_sim_netlist.vhdl
+  file rename -force E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.runs/ila_dmac_synth_1/ila_dmac_sim_netlist.vhdl E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -169,13 +169,13 @@ if { [catch {
 
 if {[file isdir E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/ip/ila_dmac]} {
   catch { 
-    file copy -force e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_stub.v E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/ip/ila_dmac
+    file copy -force E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_stub.v E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/ip/ila_dmac
   }
 }
 
 if {[file isdir E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/ip/ila_dmac]} {
   catch { 
-    file copy -force e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_stub.vhdl E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/ip/ila_dmac
+    file copy -force E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_stub.vhdl E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.ip_user_files/ip/ila_dmac
   }
 }
 file delete __synthesis_is_running__

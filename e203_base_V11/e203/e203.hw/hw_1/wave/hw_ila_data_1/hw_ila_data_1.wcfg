@@ -15,15 +15,15 @@
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="709"></NameColumnWidth>
-      <ValueColumnWidth column_width="152"></ValueColumnWidth>
+      <ValueColumnWidth column_width="147"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="8" />
+   <WVObjectSize size="10" />
    <wave_markers>
    </wave_markers>
    <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d/ccr" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d/ccr[7:0]</obj_property>
-      <obj_property name="ObjectShortName">ccr[7:0]</obj_property>
+      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d/ccr[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ccr[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
@@ -78,6 +78,22 @@
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d/s_ofmap_fifo_rd_en</obj_property>
       <obj_property name="ObjectShortName">s_ofmap_fifo_rd_en</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d/r_filter[0]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d/r_filter[0][143:0]</obj_property>
+      <obj_property name="ObjectShortName">r_filter[0][143:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d/c_filter_load_cnt" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d/c_filter_load_cnt[3:0]</obj_property>
+      <obj_property name="ObjectShortName">c_filter_load_cnt[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
