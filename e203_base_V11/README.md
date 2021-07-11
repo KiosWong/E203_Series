@@ -22,6 +22,7 @@
     - **[W]** *ifwr*：ifmap fifo write (virtual) register, ***offset = 0x04, size = 4***
     - **[R]** *ofrd*: ofmap fifo read  (virtual) register, ***offset = 0x08, size = 4***
     - **[W]** *filwr* filter write (virtual) register, ***offset = 0x0C, size = 4***
+3. 提高系统主频至32MHz，未出现异常。
 ### to do
 1. 为conv2d module ccr添加其他有效位
 2. 扩展conv2d module，实现25通道并行；
