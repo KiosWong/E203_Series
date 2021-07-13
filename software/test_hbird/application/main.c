@@ -17,38 +17,162 @@ int main(void)
 	volatile int rd_value;
 	int test_idx = 0;
 	int ddr_test_addr = 0;
+	int filter_value;
 	banner_print();
 
 	printf("**********************Conv2D test**********************\r\n");
-	*((short *)(CONV2D_BASE_ADDR + 0x00)) = 0x02;
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0xffffffff;
+	*((short *)(CONV2D_BASE_ADDR + 0x04)) = 0x02;
 	printf("ifmap:\r\n");
 	for(i = 0; i < 1024; i++) {
-		*((int *)(CONV2D_BASE_ADDR + 4)) = i;
+		*((int *)(CONV2D_BASE_ADDR + 0x08)) = i;
 		printf("%4d ", i);
 		if((i+1) % 32 == 0)
 			printf("\r\n");
 	}
-	printf("************************&&****************************\r\n");
-	printf("filter:\r\n");
+	printf("************************& channel 1 filter &****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x01;
+	filter_value = 1;
 	for(i = 0; i < 9; i++) {
-		*((int *)(CONV2D_BASE_ADDR + 0x0C)) = 2;
-		printf("%4d ", 2);
+		*((int *)(CONV2D_BASE_ADDR + 0x10)) = filter_value;
+		printf("%4d ", filter_value);
 		if((i+1) % 3 == 0)
 			printf("\r\n");
 	}
-	printf("************************&&****************************\r\n");
-	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x01;
-	delay_1ms(100);
-	ccr = *((int *)(CONV2D_BASE_ADDR + 0x00));
-	printf("ofmap:\r\n");
+	printf("************************& channel 2 filter &****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x02;
+	filter_value = 2;
+	for(i = 0; i < 9; i++) {
+		*((int *)(CONV2D_BASE_ADDR + 0x10)) = filter_value;
+		printf("%4d ", filter_value);
+		if((i+1) % 3 == 0)
+			printf("\r\n");
+	}
+	printf("************************& channel 3 filter &****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x04;
+	filter_value = 3;
+	for(i = 0; i < 9; i++) {
+		*((int *)(CONV2D_BASE_ADDR + 0x10)) = filter_value;
+		printf("%4d ", filter_value);
+		if((i+1) % 3 == 0)
+			printf("\r\n");
+	}
+	printf("************************& channel 4 filter &****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x08;
+	filter_value = 4;
+	for(i = 0; i < 9; i++) {
+		*((int *)(CONV2D_BASE_ADDR + 0x10)) = filter_value;
+		printf("%4d ", filter_value);
+		if((i+1) % 3 == 0)
+			printf("\r\n");
+	}
+	printf("************************& channel 5 filter &****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x10;
+	filter_value = 5;
+	for(i = 0; i < 9; i++) {
+		*((int *)(CONV2D_BASE_ADDR + 0x10)) = filter_value;
+		printf("%4d ", filter_value);
+		if((i+1) % 3 == 0)
+			printf("\r\n");
+	}
+	printf("************************& channel 6 filter &****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x20;
+	filter_value = 6;
+	for(i = 0; i < 9; i++) {
+		*((int *)(CONV2D_BASE_ADDR + 0x10)) = filter_value;
+		printf("%4d ", filter_value);
+		if((i+1) % 3 == 0)
+			printf("\r\n");
+	}
+	printf("************************& channel 7 filter &****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x40;
+	filter_value = 7;
+	for(i = 0; i < 9; i++) {
+		*((int *)(CONV2D_BASE_ADDR + 0x10)) = filter_value;
+		printf("%4d ", filter_value);
+		if((i+1) % 3 == 0)
+			printf("\r\n");
+	}
+	printf("************************& channel 8 filter &****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x80;
+	filter_value = 8;
+	for(i = 0; i < 9; i++) {
+		*((int *)(CONV2D_BASE_ADDR + 0x10)) = filter_value;
+		printf("%4d ", filter_value);
+		if((i+1) % 3 == 0)
+			printf("\r\n");
+	}
 
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0xff;
+	*((short *)(CONV2D_BASE_ADDR + 0x04)) = 0x01;
+	delay_1ms(100);
+
+	printf("************************channel output****************************\r\n\r\n");
+
+	printf("************************channel 1 output****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x01;
 	for(i = 0; i < 900; i++) {
-		conv2d_output_value = *((int *)(CONV2D_BASE_ADDR + 8));
+		conv2d_output_value = *((int *)(CONV2D_BASE_ADDR + 0x0C));
 		printf("%4d ", conv2d_output_value);
 		if((i+1) % 30 == 0)
 			printf("\r\n");
 	}
-	ccr = *((int *)(CONV2D_BASE_ADDR + 0x00));
+	printf("************************channel 2 output****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x02;
+	for(i = 0; i < 900; i++) {
+		conv2d_output_value = *((int *)(CONV2D_BASE_ADDR + 0x0C));
+		printf("%4d ", conv2d_output_value);
+		if((i+1) % 30 == 0)
+			printf("\r\n");
+	}
+	printf("************************channel 3 output****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x04;
+	for(i = 0; i < 900; i++) {
+		conv2d_output_value = *((int *)(CONV2D_BASE_ADDR + 0x0C));
+		printf("%4d ", conv2d_output_value);
+		if((i+1) % 30 == 0)
+			printf("\r\n");
+	}
+	printf("************************channel 4 output****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x08;
+	for(i = 0; i < 900; i++) {
+		conv2d_output_value = *((int *)(CONV2D_BASE_ADDR + 0x0C));
+		printf("%4d ", conv2d_output_value);
+		if((i+1) % 30 == 0)
+			printf("\r\n");
+	}
+	printf("************************channel 5 output****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x10;
+	for(i = 0; i < 900; i++) {
+		conv2d_output_value = *((int *)(CONV2D_BASE_ADDR + 0x0C));
+		printf("%4d ", conv2d_output_value);
+		if((i+1) % 30 == 0)
+			printf("\r\n");
+	}
+	printf("************************channel 6 output****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x20;
+	for(i = 0; i < 900; i++) {
+		conv2d_output_value = *((int *)(CONV2D_BASE_ADDR + 0x0C));
+		printf("%4d ", conv2d_output_value);
+		if((i+1) % 30 == 0)
+			printf("\r\n");
+	}
+	printf("************************channel 7 output****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x40;
+	for(i = 0; i < 900; i++) {
+		conv2d_output_value = *((int *)(CONV2D_BASE_ADDR + 0x0C));
+		printf("%4d ", conv2d_output_value);
+		if((i+1) % 30 == 0)
+			printf("\r\n");
+	}
+	printf("************************channel 8 output****************************\r\n");
+	*((int *)(CONV2D_BASE_ADDR + 0x00)) = 0x80;
+	for(i = 0; i < 900; i++) {
+		conv2d_output_value = *((int *)(CONV2D_BASE_ADDR + 0x0C));
+		printf("%4d ", conv2d_output_value);
+		if((i+1) % 30 == 0)
+			printf("\r\n");
+	}
 	printf("********************Conv2D test end********************\r\n\r\n");
 
 	printf("**********************DDR RW test**********************\r\n");
