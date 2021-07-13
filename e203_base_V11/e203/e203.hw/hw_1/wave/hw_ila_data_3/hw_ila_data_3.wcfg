@@ -3,78 +3,19 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="E:/Projects/SoC/e203_series/e203_base_V10/e203/e203.hw/hw_1/wave/hw_ila_data_3/hw_ila_data_3.wdb" id="1">
+      <db_ref path="E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.hw/hw_1/wave/hw_ila_data_3/hw_ila_data_3.wdb" id="1">
          <top_modules>
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="998772fs"></ZoomEndTime>
+      <ZoomEndTime time="274713fs"></ZoomEndTime>
       <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="792"></NameColumnWidth>
-      <ValueColumnWidth column_width="244"></ValueColumnWidth>
+      <ValueColumnWidth column_width="234"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="8" />
-   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_cmd_addr" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_cmd_addr[31:0]</obj_property>
-      <obj_property name="ObjectShortName">sysmem_icb_cmd_addr[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_cmd_read" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_cmd_read</obj_property>
-      <obj_property name="ObjectShortName">sysmem_icb_cmd_read</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_cmd_ready" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_cmd_ready</obj_property>
-      <obj_property name="ObjectShortName">sysmem_icb_cmd_ready</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_cmd_valid" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_cmd_valid</obj_property>
-      <obj_property name="ObjectShortName">sysmem_icb_cmd_valid</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_cmd_wdata" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_cmd_wdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">sysmem_icb_cmd_wdata[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_rsp_ready" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_rsp_ready</obj_property>
-      <obj_property name="ObjectShortName">sysmem_icb_rsp_ready</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_rsp_valid" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_rsp_valid</obj_property>
-      <obj_property name="ObjectShortName">sysmem_icb_rsp_valid</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_rsp_rdata" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_mems/sysmem_icb_rsp_rdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">sysmem_icb_rsp_rdata[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
+   <WVObjectSize size="0" />
 </wave_config>

@@ -46,22 +46,29 @@ always @(posedge clk or negedge rst_n) begin
 	end
 end
 
-always @(posedge clk or negedge rst_n) begin
-	if(!rst_n) begin
-		for(i = 0; i < TAP_NUMBER*FMAP_TILE_SIZE; i = i + 1) begin
-			shift_ram_regs[i] = 0;
-		end
-	end
-	else if(clear) begin
-		for(i = 0; i < TAP_NUMBER*FMAP_TILE_SIZE; i = i + 1) begin
-			shift_ram_regs[i] = 0;
-		end
-	end
-	else if(en) begin
-		shift_ram_regs[0] <= shift_data_in_i;
-		for(i = 1; i < TAP_NUMBER*FMAP_TILE_SIZE; i = i + 1) begin
-			shift_ram_regs[i] <= shift_ram_regs[i-1];
-		end
+//always @(posedge clk or negedge rst_n) begin
+//	if(!rst_n) begin
+//		for(i = 0; i < TAP_NUMBER*FMAP_TILE_SIZE; i = i + 1) begin
+//			shift_ram_regs[i] = 0;
+//		end
+//	end
+//	else if(clear) begin
+//		for(i = 0; i < TAP_NUMBER*FMAP_TILE_SIZE; i = i + 1) begin
+//			shift_ram_regs[i] = 0;
+//		end
+//	end
+//	else if(en) begin
+//		shift_ram_regs[0] <= shift_data_in_i;
+//		for(i = 1; i < TAP_NUMBER*FMAP_TILE_SIZE; i = i + 1) begin
+//			shift_ram_regs[i] <= shift_ram_regs[i-1];
+//		end
+//	end
+//end
+
+always @(posedge clk) begin
+	shift_ram_regs[0] <= shift_data_in_i;
+	for(i = 1; i < TAP_NUMBER*FMAP_TILE_SIZE; i = i + 1) begin
+		shift_ram_regs[i] <= shift_ram_regs[i-1];
 	end
 end
 

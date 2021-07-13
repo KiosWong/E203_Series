@@ -11,6 +11,7 @@ module conv2d_top
 	input  rst_n,
 	input  en,
 	input  clear,
+	input  rewind,
 	
 	input  ifmap_fifo_wr_en_i,
 	output ifmap_fifo_ready_o,
@@ -44,7 +45,7 @@ u_ifmap_fifo
 	.fifo_din(ifmap_fifo_data_i),
 	.fifo_wr_en(ifmap_fifo_wr_en_i),
 	.fifo_rd_en(w_ifmap_fifo_data_req),
-	.fifo_rd_rewind(0),
+	.fifo_rd_rewind(rewind),
 	.fifo_empty(s_ifmap_fifo_empty),
 	.fifo_full(s_ifmap_fifo_full),
 	.fifo_out(ifmap_fifo_data_out)

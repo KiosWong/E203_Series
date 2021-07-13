@@ -60,6 +60,8 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {Project 1-19}  -string {{CRITICAL WARNING: [Project 1-19] Could not find the file 'E:/Projects/SoC/e203_series/e203_base_V10/e203/e203.srcs/sources_1/bd/axi_mig/ip/axi_mig_mig_7series_0_0/mig_a.prj'.}}  -suppress 
 
 start_step init_design

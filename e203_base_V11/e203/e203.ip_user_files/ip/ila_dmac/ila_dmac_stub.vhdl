@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Sun Jul 11 20:59:11 2021
+-- Date        : Tue Jul 13 16:27:33 2021
 -- Host        : DESKTOP-V0OL22A running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_stub.vhdl
@@ -17,14 +17,9 @@ entity ila_dmac is
     clk : in STD_LOGIC;
     probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe3 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe4 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    probe5 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe7 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    probe8 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    probe9 : in STD_LOGIC_VECTOR ( 143 downto 0 )
+    probe4 : in STD_LOGIC_VECTOR ( 143 downto 0 )
   );
 
 end ila_dmac;
@@ -33,7 +28,7 @@ architecture stub of ila_dmac is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk,probe0[0:0],probe1[0:0],probe2[31:0],probe3[31:0],probe4[15:0],probe5[31:0],probe6[31:0],probe7[15:0],probe8[3:0],probe9[143:0]";
+attribute black_box_pad_pin of stub : architecture is "clk,probe0[0:0],probe1[0:0],probe2[0:0],probe3[31:0],probe4[143:0]";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "ila,Vivado 2019.1";
 begin

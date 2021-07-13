@@ -19,22 +19,30 @@ module win_gen
 integer i;
 reg [VECTOR_SIZE*DATA_WIDTH-1:0]window_data_regs[VECTOR_SIZE-1:0];
 
-always @(posedge clk or negedge rst_n) begin
-	if(!rst_n) begin
-		for(i = 0; i < VECTOR_SIZE; i = i + 1) begin
-			window_data_regs[i] <= {DATA_WIDTH*VECTOR_SIZE{1'b0}};
-		end
-	end
-	else if(clear) begin
-		for(i = 0; i < VECTOR_SIZE; i = i + 1) begin
-			window_data_regs[i] <= {DATA_WIDTH*VECTOR_SIZE{1'b0}};
-		end
-	end
-	else if(en) begin
-		window_data_regs[0] <= vector_data_i;
-		for(i = 1; i < VECTOR_SIZE; i = i + 1) begin
-			window_data_regs[i] <= window_data_regs[i-1];
-		end
+//always @(posedge clk or negedge rst_n) begin
+//	if(!rst_n) begin
+//		for(i = 0; i < VECTOR_SIZE; i = i + 1) begin
+//			window_data_regs[i] <= {DATA_WIDTH*VECTOR_SIZE{1'b0}};
+//		end
+//	end
+//	else if(clear) begin
+//		for(i = 0; i < VECTOR_SIZE; i = i + 1) begin
+//			window_data_regs[i] <= {DATA_WIDTH*VECTOR_SIZE{1'b0}};
+//		end
+//	end
+//	else if(en) begin
+//		window_data_regs[0] <= vector_data_i;
+//		for(i = 1; i < VECTOR_SIZE; i = i + 1) begin
+//			window_data_regs[i] <= window_data_regs[i-1];
+//		end
+//	end
+//end
+
+always @(posedge clk) begin
+	
+	window_data_regs[0] <= vector_data_i;
+	for(i = 1; i < VECTOR_SIZE; i = i + 1) begin
+		window_data_regs[i] <= window_data_regs[i-1];
 	end
 end
 
