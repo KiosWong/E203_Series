@@ -26,6 +26,7 @@
 // ====================================================================
 
 `include "e203_defines.v"
+`include "icb_conv2d_defines.v"
 
 
 module e203_subsys_perips(
@@ -3391,10 +3392,10 @@ u_icb_dmac
 
 icb_conv2d_cluster
 #(
-	.CONV2D_CORE_NUMBER(8),
-	.IFMAP_DATA_WIDTH(16),
-	.OFMAP_DATA_WIDTH(32),
-	.KERNEL_SIZE(3)
+	.CONV2D_CORE_NUMBER(`CONV2D_CORE_NUMBER),
+	.IFMAP_DATA_WIDTH(`CONV2D_IFMAP_DATA_WIDTH),
+	.OFMAP_DATA_WIDTH(`CONV2D_OFMAP_DATA_WIDTH),
+	.KERNEL_SIZE(CONV2D_OFMAP_KERNEL_SIZE)
 )
 u_icb_conv2d_cluster
 (

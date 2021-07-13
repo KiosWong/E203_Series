@@ -12,7 +12,7 @@
 4. 将DTCM读写接口与DDR MIG读写接口挂载至外部数据总线，实现CPU通过memory bus对DDR内存的访问以及DMAC通过mems主端口对DDR MIG、DTCM内存区域的访问。
 
 ## 2021.7.11
-1. 添加single channel Conv2D模块，用于卷积计算： 
+1. 添加single channel conv2d模块，用于卷积计算： 
     - 实现ifmap data写入与ofmap data读取 ~~, 暂未实现filter数据写入，目前以全1代替~~；
     - 实现filter数据写入并做双缓冲处理；
     - 目前仅支持3*3、步长为1、fmap为32 * 32的normal conv。
@@ -30,4 +30,11 @@
    - 为整体模块添加done寄存器，用于指示各conv2d module的运行情况；
    - 合理设计数据流，最大程度利用片上BRAM
 3. 调试DMAC，实现conv2d module、DDR、DTCM间数据传输；
-  
+
+## 2021.7.13
+1. 为CCR寄存器添加IFRWD位，用于控制ifmap fifo数据重用；
+2. 完成conv2d通道扩展，修改参数**CONV2D_CORE_NUMBER**可实现1-25通道并行；
+3. 修改conv2d通道读写逻辑，添加通道选择寄存器chsel，与各通道逐位对应，置高时使能通道寄存器读写。当前conv2d操作逻辑：1) 选择conv2d通道，写入ifmap数据(可并行写入多通道)；2) 选择conv2d通道，写入filter数据；3) 选择conv2d通道，使能conv2d；4) 等待运算完成；5) 选择conv2d通道，逐通道读出ofmap数据。
+### to do
+1. 调试DMAC，实现conv2d module、DDR、DTCM间数据传输；
+2. 添加量化/反量化模块

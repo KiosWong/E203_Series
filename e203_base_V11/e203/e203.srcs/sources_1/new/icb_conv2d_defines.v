@@ -1,5 +1,10 @@
 `include "e203_defines.v"
 
+`define CONV2D_CORE_NUMBER			8
+`define CONV2D_IFMAP_DATA_WIDTH		16
+`define CONV2D_OFMAP_DATA_WIDTH		32
+`define CONV2D_OFMAP_KERNEL_SIZE	3
+
 `define CONV2D_ADDR_SIZE			`E203_ADDR_SIZE
 
 `define CONV2D_CHSEL_SIZE			32
