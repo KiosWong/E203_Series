@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date                      : Tue Jul 13 17:31:22 2021
+| Date                      : Tue Jul 13 19:58:38 2021
 | Host                      : DESKTOP-V0OL22A running 64-bit major release  (build 9200)
 | Command                   : report_io -file e203_system_wrapper_io_placed.rpt
 | Design                    : e203_system_wrapper
