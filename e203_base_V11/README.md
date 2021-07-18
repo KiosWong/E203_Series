@@ -38,3 +38,25 @@
 ### to do
 1. 调试DMAC，实现conv2d module、DDR、DTCM间数据传输；
 2. 添加量化/反量化模块
+
+## 2021.7.17
+1. 修改输入储存模块以提高数据传输效率并支持膨胀卷积：
+    - 将输入储存模块划分为***ibuf***、***sequencer***、***mapper***、***router***、***fabwin gen***五部分：
+      - ***ibuf***：input fmap存储实体，由4块BRAM slice构成；
+      - ***sequencer***：产生block读取id，支持普通卷积与膨胀卷积；
+      - ***mapper***：将***sequencer***产生的block id映射为ibuf slice读取信号与base address；
+      - ***router***：将***mapper***产生的ibuf slice读取信号与base address路由至ibuf；
+      - ***fabwin gen***：产生卷积窗口，支持普通卷积、膨胀卷积、逐点卷积。
+    - 扩展输入数据至32b(8b*4)，与总线位宽相匹配，储存结构：
+
+        SLICE1  ***BLOCK1 | BLOCK5 | BLOCK9 | BLOCK12| BLOCK17| BLOCK21| BLOCK25| BLOCK29*** 
+
+        SLICE2  ***BLOCK2 | BLOCK6 | BLOCK10| BLOCK14| BLOCK18| BLOCK22| BLOCK26| BLOCK32***
+
+        SLICE3  ***BLOCK3 | BLOCK7 | BLOCK11| BLOCK15| BLOCK19| BLOCK23| BLOCK27| BLOCK31***
+
+        SLICE4  ***BLOCK4 | BLOCK8 | BLOCK12| BLOCK16| BLOCK20| BLOCK24| BLOCK28| BLOCK32***
+2. 编写程序实现ifmap正常储存序到ibuf储存序的转换。将转换后的ifmap输出为hex文件供tb测试，卷积结果正常。
+### to do
+1. 修改conv_ctrl模块，完善对膨胀卷积的支持，主要为行、列有效信号的产生逻辑；
+2. 添加池化模块，支持2*2池化。
