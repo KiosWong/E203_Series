@@ -203,8 +203,11 @@ read_verilog -library xil_defaultlib {
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/shift_ram.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/conv2d_top.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/conv_datapath.v
-  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/icb_conv2d.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/icb_conv2d_defines.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/icb_conv2d_cluster.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/conv2d_wrapper.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/rs_datafeeder.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/gnrl_conv2d_ibuf.v
 }
 read_vhdl -library xil_defaultlib {
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/SyncAsync.vhd
@@ -240,17 +243,17 @@ set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_s
 read_ip -quiet E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/hdmi_ram_2_1/hdmi_ram_2.xci
 set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/hdmi_ram_2_1/hdmi_ram_2_ooc.xdc]
 
-read_ip -quiet E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci
-set_property used_in_synthesis false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc]
+read_ip -quiet E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_icb/ila_icb.xci
+set_property used_in_synthesis false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_icb/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_icb/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_icb/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_icb/ila_icb_ooc.xdc]
 
-read_ip -quiet E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac.xci
-set_property used_in_synthesis false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_dmac/ila_dmac_ooc.xdc]
+read_ip -quiet e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_conv2d/ila_conv2d.xci
+set_property used_in_synthesis false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_conv2d/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_conv2d/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_conv2d/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_conv2d/ila_conv2d_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

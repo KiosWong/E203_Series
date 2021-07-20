@@ -61,10 +61,10 @@ module e203_system_wrapper
   output [0:0]  ddr3_odt,
   output        init_calib_complete,
   
-	output TMDS_clk_n,
-	output TMDS_clk_p,
-	output [2:0]TMDS_data_n,
-	output [2:0]TMDS_data_p,
+//	output TMDS_clk_n,
+//	output TMDS_clk_p,
+//	output [2:0]TMDS_data_n,
+//	output [2:0]TMDS_data_p,
 
   // JD (used for JTAG connection)
   inout wire jd_0, // TDO
@@ -1304,10 +1304,10 @@ module e203_system_wrapper
     .ddr3_dqs_p                     (ddr3_dqs_p),  // inout [1:0]		ddr3_dqs_p
     .init_calib_complete            (init_calib_complete),  // output			init_calib_complete
   
-	.TMDS_clk_n(TMDS_clk_n),
-	.TMDS_clk_p(TMDS_clk_p),
-	.TMDS_data_n(TMDS_data_n),
-	.TMDS_data_p(TMDS_data_p)
+	.TMDS_clk_n(),
+	.TMDS_clk_p(),
+	.TMDS_data_n(),
+	.TMDS_data_p()
   );
 
   // Assign reasonable values to otherwise unconnected inputs to chip top

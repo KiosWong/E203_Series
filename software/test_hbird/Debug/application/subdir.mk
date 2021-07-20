@@ -5,16 +5,19 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../application/banner.c \
+../application/kinpu.c \
 ../application/kshell.c \
 ../application/main.c 
 
 OBJS += \
 ./application/banner.o \
+./application/kinpu.o \
 ./application/kshell.o \
 ./application/main.o 
 
 C_DEPS += \
 ./application/banner.d \
+./application/kinpu.d \
 ./application/kshell.d \
 ./application/main.d 
 

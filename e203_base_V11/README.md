@@ -12,7 +12,7 @@
 4. 将DTCM读写接口与DDR MIG读写接口挂载至外部数据总线，实现CPU通过memory bus对DDR内存的访问以及DMAC通过mems主端口对DDR MIG、DTCM内存区域的访问。
 
 ## 2021.7.11
-1. 添加single channel Conv2D模块，用于卷积计算： 
+1. 添加single channel conv2d模块，用于卷积计算： 
     - 实现ifmap data写入与ofmap data读取 ~~, 暂未实现filter数据写入，目前以全1代替~~；
     - 实现filter数据写入并做双缓冲处理；
     - 目前仅支持3*3、步长为1、fmap为32 * 32的normal conv。
@@ -30,4 +30,46 @@
    - 为整体模块添加done寄存器，用于指示各conv2d module的运行情况；
    - 合理设计数据流，最大程度利用片上BRAM
 3. 调试DMAC，实现conv2d module、DDR、DTCM间数据传输；
-  
+
+## 2021.7.13
+1. 为CCR寄存器添加IFRWD位，用于控制ifmap fifo数据重用；
+2. 完成conv2d通道扩展，修改参数**CONV2D_CORE_NUMBER**可实现1-25通道并行；
+3. 修改conv2d通道读写逻辑，添加通道选择寄存器chsel，与各通道逐位对应，置高时使能通道寄存器读写。当前conv2d操作逻辑：1) 选择conv2d通道，写入ifmap数据(可并行写入多通道)；2) 选择conv2d通道，写入filter数据；3) 选择conv2d通道，使能conv2d；4) 等待运算完成；5) 选择conv2d通道，逐通道读出ofmap数据。
+### to do
+1. 调试DMAC，实现conv2d module、DDR、DTCM间数据传输；
+2. 添加量化/反量化模块
+
+## 2021.7.17
+1. 修改输入储存模块以提高数据传输效率并支持膨胀卷积：
+    - 将输入储存模块划分为***ibuf***、***sequencer***、***mapper***、***router***、***fabwin gen***五部分：
+      - ***ibuf***：input fmap存储实体，由4块BRAM slice构成；
+      - ***sequencer***：产生block读取id，支持普通卷积与膨胀卷积；
+      - ***mapper***：将***sequencer***产生的block id映射为ibuf slice读取信号与base address；
+      - ***router***：将***mapper***产生的ibuf slice读取信号与base address路由至ibuf；
+      - ***fabwin gen***：产生卷积窗口，支持普通卷积、膨胀卷积、逐点卷积。
+    - 扩展输入数据至32b(8b*4)，与总线位宽相匹配，储存结构：
+
+        SLICE1  ***BLOCK1 | BLOCK5 | BLOCK9 | BLOCK12| BLOCK17| BLOCK21| BLOCK25| BLOCK29*** 
+
+        SLICE2  ***BLOCK2 | BLOCK6 | BLOCK10| BLOCK14| BLOCK18| BLOCK22| BLOCK26| BLOCK32***
+
+        SLICE3  ***BLOCK3 | BLOCK7 | BLOCK11| BLOCK15| BLOCK19| BLOCK23| BLOCK27| BLOCK31***
+
+        SLICE4  ***BLOCK4 | BLOCK8 | BLOCK12| BLOCK16| BLOCK20| BLOCK24| BLOCK28| BLOCK32***
+2. 编写程序实现ifmap正常储存序到ibuf储存序的转换。将转换后的ifmap输出为hex文件供tb测试，卷积结果正常。
+### to do
+1. 调试DMAC，实现conv2d module、DDR、DTCM间数据传输；
+2. 添加量化/反量化模块
+3. 修改conv_ctrl模块，完善对膨胀卷积的支持，主要为行、列有效信号的产生逻辑；
+4. 添加池化模块，支持2*2池化。
+
+## 2021.7.20
+1. 完成conv_ctrl修改，添加膨胀卷积支持；
+2. 基本完成卷积模块构建，命名为KINPU；
+3. 编写kinpu库函数，实现数据写入、运算控制与数据读出；
+### todo
+1. 调试DMAC，实现conv2d module、DDR、DTCM间数据传输；
+2. 添加量化/反量化模块；
+3. 添加池化模块，支持2*2池化；
+4. 将模块添加至中断系统；
+5. 优化卷积模块寄存器与操作流程，进一步完善功能。

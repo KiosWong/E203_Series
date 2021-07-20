@@ -26,6 +26,7 @@
 // ====================================================================
 
 `include "e203_defines.v"
+`include "icb_conv2d_defines.v"
 
 
 module e203_subsys_perips(
@@ -3318,24 +3319,24 @@ sirv_hclkgen_regs u_sirv_hclkgen_regs(
 	.i_icb_rsp_rdata(hclkgen_icb_rsp_rdata)
 );
 
-hdmi_display_wrapper u_hdmi_display_wrapper(
+//hdmi_display_wrapper u_hdmi_display_wrapper(
 
-	.i_icb_cmd_valid(icb_hdmi_cmd_valid),
-	.i_icb_cmd_ready(icb_hdmi_cmd_ready),
-	.i_icb_cmd_addr(icb_hdmi_cmd_addr), 
-	.i_icb_cmd_read(icb_hdmi_cmd_read), 
-	.i_icb_cmd_wdata(icb_hdmi_cmd_wdata),
+//	.i_icb_cmd_valid(icb_hdmi_cmd_valid),
+//	.i_icb_cmd_ready(icb_hdmi_cmd_ready),
+//	.i_icb_cmd_addr(icb_hdmi_cmd_addr), 
+//	.i_icb_cmd_read(icb_hdmi_cmd_read), 
+//	.i_icb_cmd_wdata(icb_hdmi_cmd_wdata),
 
-	.i_icb_rsp_valid(icb_hdmi_rsp_valid),
-	.i_icb_rsp_ready(icb_hdmi_rsp_ready),
-	.i_icb_rsp_rdata(icb_hdmi_rsp_rdata),
+//	.i_icb_rsp_valid(icb_hdmi_rsp_valid),
+//	.i_icb_rsp_ready(icb_hdmi_rsp_ready),
+//	.i_icb_rsp_rdata(icb_hdmi_rsp_rdata),
 	
-   .TMDS_clk_n(TMDS_clk_n),
-   .TMDS_clk_p(TMDS_clk_p),
-   .TMDS_data_n(TMDS_data_n),
-   .TMDS_data_p(TMDS_data_p),
-   .sys_clk(clk)
-);
+//   .TMDS_clk_n(TMDS_clk_n),
+//   .TMDS_clk_p(TMDS_clk_p),
+//   .TMDS_data_n(TMDS_data_n),
+//   .TMDS_data_p(TMDS_data_p),
+//   .sys_clk(clk)
+//);
 
 icb_dmac
 #(
@@ -3389,13 +3390,14 @@ u_icb_dmac
 	.rst_n(rst_n)
 );
 
-icb_conv2d
+icb_conv2d_cluster
 #(
-	.IFMAP_DATA_WIDTH(16),
-	.OFMAP_DATA_WIDTH(32),
-	.KERNEL_SIZE(3)
+	.CONV2D_CORE_NUMBER(`CONV2D_CORE_NUMBER),
+	.IFMAP_DATA_WIDTH(`CONV2D_IFMAP_DATA_WIDTH),
+	.OFMAP_DATA_WIDTH(`CONV2D_OFMAP_DATA_WIDTH),
+	.KERNEL_SIZE(`CONV2D_KERNEL_SIZE)
 )
-u_icb_conv2d
+u_icb_conv2d_cluster
 (
 	.conv2d_icb_cmd_valid_i(conv2d_icb_cmd_valid),
 	.conv2d_icb_cmd_ready_o(conv2d_icb_cmd_ready),
@@ -3413,6 +3415,5 @@ u_icb_conv2d
 	.clk(clk),
 	.rst_n(rst_n)
 );
-
 
 endmodule

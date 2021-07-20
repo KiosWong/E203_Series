@@ -65,6 +65,13 @@ always @(posedge clk or negedge rst_n) begin
 	end
 end
 
+//always @(posedge clk) begin
+//	shift_ram_regs[0] <= shift_data_in_i;
+//	for(i = 1; i < TAP_NUMBER*FMAP_TILE_SIZE; i = i + 1) begin
+//		shift_ram_regs[i] <= shift_ram_regs[i-1];
+//	end
+//end
+
 reg [6:0]shift_cnt;
 always @(posedge clk or negedge rst_n) begin
 	if(!rst_n) begin
@@ -104,7 +111,7 @@ module dilated_shift_ram
 	input  clear,
 	
 	input  [1:0]dilation_sel_i,
-	input  ifmap_fifo_data_valid_i,
+	input  ifmap_data_valid_i,
 	
 	output reg tap_data_valid_o,
 	input  [DATA_WIDTH-1:0]shift_data_in_i,
@@ -120,7 +127,7 @@ integer i, j;
 reg [DATA_WIDTH-1:0]shift_ram_regs[TAP_NUMBER-1:0][SHIFT_REG_COLUMN-1:0];
 
 wire s_shift_ram_en;
-assign s_shift_ram_en = en && ifmap_fifo_data_valid_i;
+assign s_shift_ram_en = en && ifmap_data_valid_i;
 
 reg r_shift_ram_en;
 always @(posedge clk or negedge rst_n) begin

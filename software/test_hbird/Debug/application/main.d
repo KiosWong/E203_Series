@@ -22,7 +22,9 @@ application/main.o: ../application/main.c ../application/app.h \
  ../application/banner.h ../application/kshell.h \
  E:\Projects\RISC-V\Software\test_hbird\utils\inc/common_utils.h \
  E:\Projects\RISC-V\Software\test_hbird\utils\inc/parse_utils.h \
- E:\Projects\RISC-V\Software\test_hbird\utils\inc/common_utils.h
+ E:\Projects\RISC-V\Software\test_hbird\utils\inc/common_utils.h \
+ ../application/kinpu.h \
+ E:\Projects\SoC\e203_series\software\test_hbird\hbird_sdk\SoC\hbird\Common\Include/hbird.h
 
 ../application/app.h:
 
@@ -75,3 +77,7 @@ E:\Projects\RISC-V\Software\test_hbird\utils\inc/common_utils.h:
 E:\Projects\RISC-V\Software\test_hbird\utils\inc/parse_utils.h:
 
 E:\Projects\RISC-V\Software\test_hbird\utils\inc/common_utils.h:
+
+../application/kinpu.h:
+
+E:\Projects\SoC\e203_series\software\test_hbird\hbird_sdk\SoC\hbird\Common\Include/hbird.h:
