@@ -5,6 +5,7 @@
 #include "hbird_sdk_soc.h"
 #include "banner.h"
 #include "kshell.h"
+#include "kinpu.h"
 
 
 

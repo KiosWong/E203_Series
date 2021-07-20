@@ -185,5 +185,4 @@ assign s_conv2d_icb_handshaked 		= conv2d_icb_cmd_valid_i & conv2d_icb_cmd_ready
 assign s_conv2d_icb_rsp_valid_set 	= s_conv2d_icb_handshaked;
 assign s_conv2d_icb_rsp_valid_clr 	= conv2d_icb_rsp_valid_o & conv2d_icb_rsp_ready_i;
 
-
 endmodule

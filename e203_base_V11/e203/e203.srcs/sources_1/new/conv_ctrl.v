@@ -16,6 +16,7 @@ module conv_ctrl
 	
 	/* 0:stride disable(size 1); 1:stride enable(size 2)*/
 	input stride_sel_i,
+	input [2:0]dilation_i,
 	/*start indicator from window field, indicates data taps are ready*/
 	input  window_valid_i,				
 	/*input control signal*/
@@ -40,9 +41,8 @@ reg [5:0]conv_cnt_column;
 
 wire s_conv_last_colum_in_row;
 wire s_conv_last_row_in_fmap;
-assign s_conv_last_colum_in_row = (conv_cnt_column == FMAP_TILE_SIZE - 1) ? 1 : 0;
-assign s_conv_last_row_in_fmap = (conv_cnt_row == FMAP_TILE_SIZE - 1) ? 1 : 0;
-
+assign s_conv_last_colum_in_row = (conv_cnt_column == FMAP_TILE_SIZE - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
+assign s_conv_last_row_in_fmap = (conv_cnt_row == FMAP_TILE_SIZE - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
 
 always @(posedge clk or negedge rst_n) begin
 	if(!rst_n) begin
@@ -82,8 +82,8 @@ end
 wire s_slide_window_column_valid;
 wire s_slide_window_row_valid;
 wire s_slide_window_valid;
-assign s_slide_window_column_valid = (conv_cnt_column < FMAP_TILE_SIZE - (KERNEL_SIZE - 1)) ? 1 : 0;
-assign s_slide_window_row_valid = (conv_cnt_row < FMAP_TILE_SIZE - (KERNEL_SIZE - 1)) ? 1 : 0;
+assign s_slide_window_column_valid = (conv_cnt_column < FMAP_TILE_SIZE - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
+assign s_slide_window_row_valid = (conv_cnt_row < FMAP_TILE_SIZE - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
 assign s_slide_window_valid = (s_slide_window_column_valid && s_slide_window_row_valid) ? 1 : 0;
 
 reg stride_valid;

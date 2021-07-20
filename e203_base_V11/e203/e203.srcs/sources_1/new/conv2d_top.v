@@ -4,6 +4,9 @@ module conv2d_top
 #(
 	parameter IFMAP_DATA_WIDTH = 8,
 	parameter OFMAP_DATA_WIDTH = 32,
+	parameter IFMAP_BUF_BLK_SIZE = 32,
+	parameter IFMAP_BUF_BLK_NUM = 32,
+	parameter IFMAP_BUF_SLICE_NUM = 4,
 	parameter KERNEL_SIZE = 3
 )
 (
@@ -11,11 +14,15 @@ module conv2d_top
 	input  rst_n,
 	input  en,
 	input  clear,
+	input  prep,
 	input  rewind,
 	
-	input  ifmap_fifo_wr_en_i,
-	output ifmap_fifo_ready_o,
-	input  [IFMAP_DATA_WIDTH-1:0]ifmap_fifo_data_i,
+	input  stride_sel_i,
+	input  [1:0]dilation_sel_i,
+	input  conv_mode_sel_i,
+	
+	input  ifmap_buf_wr_en_i,
+	input  [IFMAP_DATA_WIDTH*IFMAP_BUF_SLICE_NUM-1:0]ifmap_data_i,
 	input  [KERNEL_SIZE*KERNEL_SIZE*IFMAP_DATA_WIDTH-1:0]filter_data_i,
 	input  ofmap_fifo_rd_en_i,
 	output ofmap_fifo_valid_o,
@@ -26,73 +33,69 @@ module conv2d_top
 );
 
 localparam  FIFO_SIZE = 1024;
+localparam 	DILATION_NONE 				= 2'b00,
+		   	DILATION_2					= 2'b01,
+			DILATION_4					= 2'b10;
+
+// decode dilation from sel signal in bits 
+reg  [2:0]conv2d_dilation;
+always @(*) begin
+	conv2d_dilation = 3'd0;
+	case(dilation_sel_i)
+		DILATION_NONE: 	conv2d_dilation = 3'd0;
+		DILATION_2:		conv2d_dilation = 3'd2;
+		DILATION_4:		conv2d_dilation = 3'd4;
+		default:		conv2d_dilation = 3'd0;
+	endcase
+end
 			
 wire w_ifmap_fifo_data_req;
 wire s_ifmap_fifo_empty;
 wire s_ifmap_fifo_full;
 wire [IFMAP_DATA_WIDTH-1:0]ifmap_fifo_data_out;
 
-sync_bram_fifo
+wire  gnrl_conv2d_ibuf_rd_en;
+wire  gnrl_conv2d_ibuf_wr_en;
+wire [KERNEL_SIZE*KERNEL_SIZE*IFMAP_DATA_WIDTH-1:0]gnrl_conv2d_ibuf_fab_dat;
+wire  gnrl_conv2d_ibuf_cfg_valid;
+
+wire [5:0]gnrl_conv2d_ibuf_slice_size_sel = 3'd5;
+wire [2:0]gnrl_conv2d_ibuf_stride = 3'd1;
+wire [2:0]gnrl_conv2d_ibuf_dilation = 3'd0;
+wire [2:0]gnrl_conv2d_ibuf_sel_num = 3'd3;
+wire gnrl_conv2d_ibuf_fab_dat_vld;
+
+assign gnrl_conv2d_ibuf_rd_en = en;
+
+gnrl_conv2d_ibuf_fab
 #(
-	.DATA_WIDTH(IFMAP_DATA_WIDTH),
-	.BUF_SIZE(FIFO_SIZE)
+	.IFMAP_DATA_WIDTH(IFMAP_DATA_WIDTH),
+	.IFMAP_BUF_BLK_SIZE(IFMAP_BUF_BLK_SIZE),
+	.IFMAP_BUF_BLK_NUM(IFMAP_BUF_BLK_NUM),
+	.IFMAP_BUF_SLICE_NUM(IFMAP_BUF_SLICE_NUM),
+	.IFMAP_FABWIN_SIZE(KERNEL_SIZE)
 )
-u_ifmap_fifo
-( 	
-	.clk(clk),
-	.rst_n(rst_n),
-	.clear(clear),
-	.fifo_din(ifmap_fifo_data_i),
-	.fifo_wr_en(ifmap_fifo_wr_en_i),
-	.fifo_rd_en(w_ifmap_fifo_data_req),
-	.fifo_rd_rewind(rewind),
-	.fifo_empty(s_ifmap_fifo_empty),
-	.fifo_full(s_ifmap_fifo_full),
-	.fifo_out(ifmap_fifo_data_out)
-);
-
-wire w_ifmap_fifo_data_valid;
-wire w_tap_data_valid;
-wire [KERNEL_SIZE*IFMAP_DATA_WIDTH-1:0]w_tap_data_out;
-
-assign w_ifmap_fifo_data_valid = ~s_ifmap_fifo_empty;
-
-shift_ram 
-#(
-	.DATA_WIDTH(IFMAP_DATA_WIDTH)
-)
-u_shift_ram
+u_gnrl_conv2d_ibuf_fab
 (
-	.clk(clk),
-	.rst_n(rst_n),
-	.en(en),
-	.clear(clear),
+	.gnrl_conv2d_ibuf_wr_en_i(ifmap_buf_wr_en_i),
+	.gnrl_conv2d_ibuf_wr_dat_i(ifmap_data_i),
+
+	.gnrl_conv2d_ibuf_rd_en_i(gnrl_conv2d_ibuf_rd_en),
+	.gnrl_conv2d_ibuf_fab_dat_vld_o(gnrl_conv2d_ibuf_fab_dat_vld),
+	.gnrl_conv2d_ibuf_fab_dat_o(gnrl_conv2d_ibuf_fab_dat),
 	
-	.ifmap_fifo_data_req_o(w_ifmap_fifo_data_req),
-	.ifmap_fifo_data_valid_i(w_ifmap_fifo_data_valid),
-
-	.shift_data_in_i(ifmap_fifo_data_out),
-	.tap_data_valid_o(w_tap_data_valid),
-	.tap_data_o(w_tap_data_out)
-);
-
-wire w_window_data_valid;
-wire [KERNEL_SIZE*KERNEL_SIZE*IFMAP_DATA_WIDTH-1:0]w_window_data_out;
-
-win_gen 
-#(
-	.DATA_WIDTH(IFMAP_DATA_WIDTH)
-)
-u_win_gen
-(
+	.gnrl_conv2d_ibuf_slice_size_sel_i(gnrl_conv2d_ibuf_slice_size_sel),
+	.gnrl_conv2d_ibuf_cfg_valid_i(gnrl_conv2d_ibuf_cfg_valid),
+	
+	.gnrl_conv2d_stride_i(gnrl_conv2d_ibuf_stride),
+	.gnrl_conv2d_mode_sel_i(conv_mode_sel_i),
+	.gnrl_conv2d_dilation_sel_i(dilation_sel_i),
+	
 	.clk(clk),
 	.rst_n(rst_n),
-	.en(w_tap_data_valid),
 	.clear(clear),
-
-	.vector_data_i(w_tap_data_out),
-	.window_data_valid_o(w_window_data_valid),
-	.window_data_o(w_window_data_out)
+	.prep(prep),
+	.rewind(rewind)
 );
 
 wire w_conv_datapath_data_valid;
@@ -108,9 +111,9 @@ u_conv_datapath
 	.rst_n(rst_n),
 
 	.pipe_flush_i(clear),
-	.kernel_data_valid_i(w_window_data_valid),
+	.kernel_data_valid_i(gnrl_conv2d_ibuf_fab_dat_vld),
 
-	.kernel_data_i(w_window_data_out),
+	.kernel_data_i(gnrl_conv2d_ibuf_fab_dat),
 	.filter_data_i(filter_data_i),
 
 	.conv_data_valid_o(w_conv_datapath_data_valid),
@@ -129,9 +132,10 @@ conv_ctrl u_conv_ctrl
 	.en(en),
 	.clear(clear),
 
-	.stride_sel_i(0),
+	.stride_sel_i(stride_sel_i),
+	.dilation_i(conv2d_dilation),
 
-	.window_valid_i(w_window_data_valid),
+	.window_valid_i(gnrl_conv2d_ibuf_fab_dat_vld),
 
 	.conv_data_valid_i(w_conv_datapath_data_valid),				//start indicator from window field, indicates data taps are ready
 
@@ -164,8 +168,6 @@ u_ofmap_fifo
 );
 
 assign conv_done = w_conv_op_done;
-assign ifmap_fifo_ready_o = ~s_ifmap_fifo_full;
 assign ofmap_fifo_valid_o = ~s_ofmap_fifo_empty;
-assign conv_err = ifmap_fifo_wr_en_i & s_ifmap_fifo_full;
 
 endmodule

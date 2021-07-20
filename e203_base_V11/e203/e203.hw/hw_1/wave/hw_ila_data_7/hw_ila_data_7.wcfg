@@ -10,52 +10,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="4281fs"></ZoomEndTime>
+      <ZoomEndTime time="2841fs"></ZoomEndTime>
       <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="699"></NameColumnWidth>
-      <ValueColumnWidth column_width="239"></ValueColumnWidth>
+      <ValueColumnWidth column_width="229"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="5" />
-   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d_cluster/conv2d_cluster[6].u_conv2d_wrapper/conv2d_sel_i" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d_cluster/conv2d_cluster[6].u_conv2d_wrapper/conv2d_sel_i</obj_property>
-      <obj_property name="ObjectShortName">conv2d_sel_i</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d_cluster/conv2d_cluster[6].u_conv2d_wrapper/s_ofmap_fifo_rd_en" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d_cluster/conv2d_cluster[6].u_conv2d_wrapper/s_ofmap_fifo_rd_en</obj_property>
-      <obj_property name="ObjectShortName">s_ofmap_fifo_rd_en</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d_cluster/conv2d_cluster[6].u_conv2d_wrapper/s_conv2d_config_rden" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d_cluster/conv2d_cluster[6].u_conv2d_wrapper/s_conv2d_config_rden</obj_property>
-      <obj_property name="ObjectShortName">s_conv2d_config_rden</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d_cluster/conv2d_cluster[6].u_conv2d_wrapper/w_ofmap_fifo_data" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d_cluster/conv2d_cluster[6].u_conv2d_wrapper/w_ofmap_fifo_data[31:0]</obj_property>
-      <obj_property name="ObjectShortName">w_ofmap_fifo_data[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d_cluster/conv2d_cluster[6].u_conv2d_wrapper/r_filter[0]" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d_cluster/conv2d_cluster[6].u_conv2d_wrapper/r_filter[0][143:0]</obj_property>
-      <obj_property name="ObjectShortName">r_filter[0][143:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
+   <WVObjectSize size="0" />
 </wave_config>

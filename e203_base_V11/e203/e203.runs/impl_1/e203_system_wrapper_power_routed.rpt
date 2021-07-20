@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Tue Jul 13 20:04:26 2021
+| Date             : Tue Jul 20 19:16:32 2021
 | Host             : DESKTOP-V0OL22A running 64-bit major release  (build 9200)
 | Command          : report_power -file e203_system_wrapper_power_routed.rpt -pb e203_system_wrapper_power_summary_routed.pb -rpx e203_system_wrapper_power_routed.rpx
 | Design           : e203_system_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.993        |
+| Total On-Chip Power (W)  | 1.075        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.885        |
-| Device Static (W)        | 0.108        |
+| Dynamic (W)              | 0.964        |
+| Device Static (W)        | 0.111        |
 | Effective TJA (C/W)      | 2.6          |
-| Max Ambient (C)          | 82.4         |
-| Junction Temperature (C) | 27.6         |
+| Max Ambient (C)          | 82.2         |
+| Junction Temperature (C) | 27.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,26 +52,25 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.060 |       25 |       --- |             --- |
-| Slice Logic              |     0.022 |    80718 |       --- |             --- |
-|   LUT as Logic           |     0.017 |    31072 |     63400 |           49.01 |
-|   LUT as Shift Register  |     0.002 |     1218 |     19000 |            6.41 |
-|   Register               |     0.002 |    33744 |    126800 |           26.61 |
-|   CARRY4                 |    <0.001 |     1103 |     15850 |            6.96 |
+| Clocks                   |     0.068 |       25 |       --- |             --- |
+| Slice Logic              |     0.056 |   110000 |       --- |             --- |
+|   LUT as Logic           |     0.051 |    51506 |     63400 |           81.24 |
+|   Register               |     0.004 |    35468 |    126800 |           27.97 |
+|   CARRY4                 |    <0.001 |     3653 |     15850 |           23.05 |
 |   LUT as Distributed RAM |    <0.001 |      600 |     19000 |            3.16 |
-|   F7/F8 Muxes            |    <0.001 |      409 |     63400 |            0.65 |
+|   LUT as Shift Register  |    <0.001 |      142 |     19000 |            0.75 |
+|   F7/F8 Muxes            |    <0.001 |      408 |     63400 |            0.64 |
 |   BUFG                   |    <0.001 |        2 |        32 |            6.25 |
-|   Others                 |     0.000 |     1084 |       --- |             --- |
-| Signals                  |     0.037 |    63961 |       --- |             --- |
-| Block RAM                |     0.047 |     69.5 |       135 |           51.48 |
+|   Others                 |     0.000 |     1334 |       --- |             --- |
+| Signals                  |     0.055 |    82152 |       --- |             --- |
+| Block RAM                |     0.066 |      107 |       135 |           79.26 |
 | MMCM                     |     0.217 |        2 |         6 |           33.33 |
 | PLL                      |     0.092 |        1 |         6 |           16.67 |
-| DSPs                     |     0.002 |      225 |       240 |           93.75 |
 | I/O                      |     0.271 |       90 |       300 |           30.00 |
 | PHASER                   |     0.134 |       14 |       --- |             --- |
 | XADC                     |     0.004 |        1 |       --- |             --- |
-| Static Power             |     0.108 |          |           |                 |
-| Total                    |     0.993 |          |           |                 |
+| Static Power             |     0.111 |          |           |                 |
+| Total                    |     1.075 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -81,8 +80,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.223 |       0.205 |      0.018 |
-| Vccaux    |       1.800 |     0.302 |       0.283 |      0.018 |
+| Vccint    |       1.000 |     0.302 |       0.282 |      0.020 |
+| Vccaux    |       1.800 |     0.302 |       0.284 |      0.018 |
 | Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -90,7 +89,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.121 |       0.117 |      0.004 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.006 |       0.004 |      0.002 |
+| Vccbram   |       1.000 |     0.008 |       0.006 |      0.003 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.022 |       0.002 |      0.020 |
@@ -172,14 +171,14 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| e203_system_wrapper      |     0.885 |
-|   IOBUF_jtag_TDO         |     0.006 |
-|   dut                    |     0.755 |
-|     u_custom_icb_mig     |     0.642 |
-|       u_custom_icb_mig   |     0.641 |
-|     u_e203_subsys_top    |     0.113 |
-|       u_e203_subsys_main |     0.108 |
-|       u_sirv_aon_top     |     0.005 |
+| e203_system_wrapper      |     0.964 |
+|   IOBUF_jtag_TDO         |     0.005 |
+|   dut                    |     0.833 |
+|     u_custom_icb_mig     |     0.641 |
+|       u_custom_icb_mig   |     0.640 |
+|     u_e203_subsys_top    |     0.192 |
+|       u_e203_subsys_main |     0.187 |
+|       u_sirv_aon_top     |     0.004 |
 |   ip_mmcm                |     0.123 |
 |     inst                 |     0.123 |
 +--------------------------+-----------+

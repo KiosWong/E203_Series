@@ -1,5 +1,17 @@
 `timescale 1ns / 1ps
 
+/**
+ * conv2d input buf module
+ * 
+ * This module provide a BRAM cluster to buffer input fmap.
+ * The BRAM cluster is organized with slices. Each BRAM slice has a read port and a write port,
+ * which can be independently operated, providing totally n-port simultaneous BRAM access.
+ *
+ * Certainly we can increase BRAM slice number to enhance internal data bandwidth, but that may
+ * brings a surge of BRAM ultilization. Pratically we find a cluster with 4 slices is somewhat 
+ * a equilibrium.
+ *
+ */
 module gnrl_conv2d_ibuf
 #(
 	parameter IFMAP_DATA_WIDTH 	= 8,
@@ -15,7 +27,7 @@ module gnrl_conv2d_ibuf
 	gnrl_conv2d_ibuf_rd_adr_i,
 	gnrl_conv2d_ibuf_rd_dat_o,
 
-	clk, rst_n, clear
+	clk
 );
 
 function integer clogb2 (input integer bit_depth);
@@ -27,7 +39,7 @@ end
 endfunction
 
 localparam IFMAP_BUF_DEPTH 		= IFMAP_BUF_SIZE / IFMAP_BUF_SLICE;
-localparam IFMAP_BUF_DEPTH_SIZE = 8;
+localparam IFMAP_BUF_DEPTH_SIZE = clogb2(IFMAP_BUF_DEPTH)-1;
 
 input  [IFMAP_BUF_SLICE-1:0]						gnrl_conv2d_ibuf_wr_en_i;
 input  [IFMAP_BUF_DEPTH_SIZE*IFMAP_BUF_SLICE-1:0]	gnrl_conv2d_ibuf_wr_adr_i;
@@ -38,8 +50,6 @@ input  [IFMAP_BUF_DEPTH_SIZE*IFMAP_BUF_SLICE-1:0]	gnrl_conv2d_ibuf_rd_adr_i;
 output [IFMAP_DATA_WIDTH*IFMAP_BUF_SLICE-1:0]		gnrl_conv2d_ibuf_rd_dat_o;
 
 input  clk;
-input  rst_n;
-input  clear;
 
 generate 
 	genvar gen_it;
@@ -68,6 +78,29 @@ endgenerate
 	
 endmodule
 
+/**
+ * conv2d ifmap block sequencing module
+ * 
+ * This module provide a ifmap block fetch sequence according to convolution type.
+ * Every time the signal gnrl_conv2d_ibuf_blk_nxt_i comes, module yeilds a new pack of 
+ * block ids in deccimal.
+ *
+ * The ifmap is splitted into blocks and stored in different BRAM slices, commonly the ifmap 
+ * block size is equal to the ifmap tile size.For instance, a ifmap of 32*32 generally has 
+ * 32 blocks, and the block size is 32.
+ *
+ * Blocks are squentially buffered, as is shown below:
+ *         -------- -------- -------- -------- -------- -------- -------- -------
+ * SLICE1  BLOCK1 | BLOCK5 | BLOCK9 | BLOCK12| BLOCK17| BLOCK21| BLOCK25| BLOCK29
+ *         -------- -------- -------- -------- -------- -------- -------- -------
+ * SLICE2  BLOCK2 | BLOCK6 | BLOCK10| BLOCK14| BLOCK18| BLOCK22| BLOCK26| BLOCK32
+ *         -------- -------- -------- -------- -------- -------- -------- -------
+ * SLICE3  BLOCK3 | BLOCK7 | BLOCK11| BLOCK15| BLOCK19| BLOCK23| BLOCK27| BLOCK31
+ *         -------- -------- -------- -------- -------- -------- -------- -------
+ * SLICE4  BLOCK4 | BLOCK8 | BLOCK12| BLOCK16| BLOCK20| BLOCK24| BLOCK28| BLOCK32
+ *         -------- -------- -------- -------- -------- -------- -------- -------
+ *
+ */
 module gnrl_conv2d_ibuf_blk_sequenser
 #(
 	parameter IFMAP_BUF_SIZE		= 32*32,
@@ -80,7 +113,7 @@ module gnrl_conv2d_ibuf_blk_sequenser
 	gnrl_conv2d_ibuf_blk_nxt_i,
 	gnrl_conv2d_ibuf_blk_sel_o,
 	
-	clk, rst_n, en, clear, rewind
+	clk, rst_n, en, clear, prep, rewind
 );
 
 function integer clogb2 (input integer bit_depth);
@@ -105,6 +138,7 @@ input  clk;
 input  rst_n;
 input  en;
 input  clear;
+input  prep;
 input  rewind;
 
 reg  [IFMAP_BUF_BLK_NUM_WIDTH*IFMAP_BUF_BLK_SEL_NUM-1:0]r_gnrl_conv2d_ibuf_blk_sel;
@@ -112,19 +146,14 @@ wire [IFMAP_BUF_BLK_NUM_WIDTH*IFMAP_BUF_BLK_SEL_NUM-1:0]gnrl_conv2d_ibuf_blk_sel
 wire [IFMAP_BUF_BLK_NUM_WIDTH-1:0]gnrl_conv2d_ibuf_blk_sel_inspec[IFMAP_BUF_BLK_SEL_NUM-1:0];
 wire [IFMAP_BUF_BLK_NUM_WIDTH-1:0]gnrl_conv2d_ibuf_blk_sel_nxt_inspec[IFMAP_BUF_BLK_SEL_NUM-1:0];
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk) begin
 	if(!rst_n) begin
-		for(i = 0; i < IFMAP_BUF_BLK_SEL_NUM; i = i + 1) begin
-			r_gnrl_conv2d_ibuf_blk_sel[(i+1)*IFMAP_BUF_BLK_NUM_WIDTH-1-:IFMAP_BUF_BLK_NUM_WIDTH] <= {IFMAP_BUF_BLK_NUM_WIDTH{1'b0}};
-		end
-	end
-	else if(en) begin
 		r_gnrl_conv2d_ibuf_blk_sel[(0+1)*IFMAP_BUF_BLK_NUM_WIDTH-1-:IFMAP_BUF_BLK_NUM_WIDTH] <= {IFMAP_BUF_BLK_NUM_WIDTH{1'b0}};
 		for(i = 1; i < IFMAP_BUF_BLK_SEL_NUM; i = i + 1) begin
 			r_gnrl_conv2d_ibuf_blk_sel[(i+1)*IFMAP_BUF_BLK_NUM_WIDTH-1-:IFMAP_BUF_BLK_NUM_WIDTH] <= $unsigned(i + gnrl_conv2d_ibuf_blk_dilation_i * i) & {IFMAP_BUF_BLK_NUM_WIDTH{1'b1}};
 		end
 	end
-	else if(clear | rewind) begin
+	else if(clear | rewind | prep) begin
 		r_gnrl_conv2d_ibuf_blk_sel[(0+1)*IFMAP_BUF_BLK_NUM_WIDTH-1-:IFMAP_BUF_BLK_NUM_WIDTH] <= {IFMAP_BUF_BLK_NUM_WIDTH{1'b0}};
 		for(i = 1; i < IFMAP_BUF_BLK_SEL_NUM; i = i + 1) begin
 			r_gnrl_conv2d_ibuf_blk_sel[(i+1)*IFMAP_BUF_BLK_NUM_WIDTH-1-:IFMAP_BUF_BLK_NUM_WIDTH] <= $unsigned(i + gnrl_conv2d_ibuf_blk_dilation_i * i) & {IFMAP_BUF_BLK_NUM_WIDTH{1'b1}};
@@ -149,6 +178,13 @@ assign gnrl_conv2d_ibuf_blk_sel_o = r_gnrl_conv2d_ibuf_blk_sel;
 
 endmodule
 
+/**
+ * conv2d block mapping module
+ * 
+ * This module maps block id sequence to the BRAM slice it belongs to and it's base address.
+ * Entire combinitional logic to perform block-to-slice mapping.
+ *
+ */
 module gnrl_conv2d_ibuf_blk_mapper
 #(
 
@@ -158,10 +194,11 @@ module gnrl_conv2d_ibuf_blk_mapper
 	parameter IFMAP_BUF_BLK_SIZE	= 32
 )
 (
-	gnrl_conv2d_ibuf_blk_size_sel_i,
-	gnrl_conv2d_ibuf_blk_sel_i,
-	gnrl_conv2d_ibuf_rd_sel_o,
-	gnrl_conv2d_ibuf_rd_base_adr_o
+	gnrl_conv2d_ibuf_blk_size_sel_i,		// block size in 2^bits
+	gnrl_conv2d_ibuf_blk_sel_i,				// which blocks to perfrom
+	
+	gnrl_conv2d_ibuf_rd_sel_o,				// which BRAM slices to perform
+	gnrl_conv2d_ibuf_rd_base_adr_o			// BRAM base address
 );
 
 function integer clogb2 (input integer bit_depth);
@@ -202,7 +239,17 @@ endgenerate
 
 endmodule
 
-
+/**
+ * conv2d block routing module
+ * 
+ * This module routes the control/data signal from mapping module to BRAM slices.
+ * 
+ * In many cases, the number of block reading and that of BRAM slice differs. The module is 
+ * thus needed to dock these operating signals.
+ * For instance, when the convolution window size is 3 and BRAM slice number is 4, we need
+ * to route mapping signal of 3 to BRAM slice operating signal of 4.
+ * 
+ */
 module gnrl_conv2d_ibuf_blk_router
 #(
 
@@ -268,6 +315,15 @@ assign gnrl_conv2d_ibuf_slice_rd_adr_o 	= gnrl_conv2d_ibuf_slice_rd_adr;
 
 endmodule
 
+/**
+ * conv2d window generating module
+ * 
+ * This module generates a convolution window using data from BRAM slices.
+ * We implement a dilated conv window generating module here. The valid dilation
+ * is 0/2/4.
+ * 
+ * 
+ */
 module gnrl_conv2d_ibuf_fabwin_gen
 #(
 	parameter IFMAP_DATA_WIDTH			= 8,
@@ -377,15 +433,16 @@ module gnrl_conv2d_ibuf_fab
 	gnrl_conv2d_ibuf_fab_dat_o,
 	
 	gnrl_conv2d_ibuf_slice_size_sel_i,
-	gnrl_conv2d_ibuf_stride_i,
 	gnrl_conv2d_ibuf_cfg_valid_i,
 	
+	gnrl_conv2d_stride_i,
 	gnrl_conv2d_mode_sel_i,
 	gnrl_conv2d_dilation_sel_i,
 	
 	clk,
 	rst_n,
 	clear,
+	prep,
 	rewind
 );
 
@@ -419,7 +476,7 @@ output																gnrl_conv2d_ibuf_fab_dat_vld_o;
 output [IFMAP_FABWIN_SIZE*IFMAP_FABWIN_SIZE*IFMAP_DATA_WIDTH-1:0]	gnrl_conv2d_ibuf_fab_dat_o;
 
 input  [2:0]														gnrl_conv2d_ibuf_slice_size_sel_i;
-input  [2:0] 														gnrl_conv2d_ibuf_stride_i;
+input  [2:0] 														gnrl_conv2d_stride_i;
 input 																gnrl_conv2d_ibuf_cfg_valid_i;
 
 input  [2:0] 														gnrl_conv2d_mode_sel_i;
@@ -428,37 +485,17 @@ input  [1:0] 														gnrl_conv2d_dilation_sel_i;
 input  clk;
 input  rst_n;
 input  clear;
+input  prep;
 input  rewind;
 
-wire [IFMAP_BUF_DEPTH_WIDTH-1:0]w_gnrl_conv2d_ibuf_slice_size;
-assign w_gnrl_conv2d_ibuf_slice_size = {{(IFMAP_BLOCK_SIZE_WIDTH-1){1'b0}}, 1'b1} << gnrl_conv2d_ibuf_slice_size_sel_i;
 
-reg  [IFMAP_BLOCK_SIZE_WIDTH-1:0]c_ibuf_blk_rd_cnt;
-wire s_ibuf_slice_rd_row_edge;
-reg  s_ibuf_slice_rd_new_row;
+/******************************************intra-block address counter******************************************/
 
-assign s_ibuf_slice_rd_row_edge = (c_ibuf_blk_rd_cnt == w_gnrl_conv2d_ibuf_slice_size - gnrl_conv2d_ibuf_stride_i) ? 1 : 0;
-always @(posedge clk or negedge rst_n) begin
-	if(!rst_n) begin
-		c_ibuf_blk_rd_cnt <= {IFMAP_BLOCK_SIZE_WIDTH{1'b0}};
-	end
-	else if(clear | rewind | s_ibuf_slice_rd_row_edge) begin
-		c_ibuf_blk_rd_cnt <= {IFMAP_BLOCK_SIZE_WIDTH{1'b0}};
-	end
-	else if(gnrl_conv2d_ibuf_rd_en_i) begin
-		c_ibuf_blk_rd_cnt <= c_ibuf_blk_rd_cnt + gnrl_conv2d_ibuf_stride_i;
-	end
-end
+// base address of each block is proviede by block mapping module
+// intra-block address offset is needed to calculate the final BRAM reading address
 
-always @(posedge clk) begin
-	s_ibuf_slice_rd_new_row <= s_ibuf_slice_rd_row_edge;
-end
-
-wire gnrl_conv2d_ibuf_blk_nxt;
-wire [IFMAP_BUF_BLK_NUM_WIDTH*IFMAP_BUF_RD_NUM-1:0]gnrl_conv2d_ibuf_blk_sel;
+// decode dilation from sel signal in bits 
 reg  [2:0]gnrl_conv2d_ibuf_dilation;
-
-assign gnrl_conv2d_ibuf_blk_nxt = s_ibuf_slice_rd_new_row;
 always @(*) begin
 	gnrl_conv2d_ibuf_dilation = 3'd0;
 	case(gnrl_conv2d_dilation_sel_i)
@@ -469,6 +506,54 @@ always @(*) begin
 	endcase
 end
 
+wire [IFMAP_BUF_DEPTH_WIDTH-1:0]w_gnrl_conv2d_ibuf_slice_size; 
+assign w_gnrl_conv2d_ibuf_slice_size = {{(IFMAP_BLOCK_SIZE_WIDTH-1){1'b0}}, 1'b1} << gnrl_conv2d_ibuf_slice_size_sel_i;
+
+reg  [IFMAP_BLOCK_SIZE_WIDTH-1:0]c_ibuf_blk_rd_cnt;
+wire s_ibuf_slice_rd_row_edge;
+reg  s_ibuf_slice_rd_new_row;
+
+assign s_ibuf_slice_rd_row_edge = (c_ibuf_blk_rd_cnt == w_gnrl_conv2d_ibuf_slice_size - 1) ? 1 : 0;
+always @(posedge clk or negedge rst_n) begin
+	if(!rst_n) begin
+		c_ibuf_blk_rd_cnt <= {IFMAP_BLOCK_SIZE_WIDTH{1'b0}};
+	end
+	else if(clear | rewind | s_ibuf_slice_rd_row_edge) begin
+		c_ibuf_blk_rd_cnt <= {IFMAP_BLOCK_SIZE_WIDTH{1'b0}};
+	end
+	else if(gnrl_conv2d_ibuf_rd_en_i) begin
+		c_ibuf_blk_rd_cnt <= c_ibuf_blk_rd_cnt + gnrl_conv2d_stride_i;
+	end
+end
+
+always @(posedge clk) begin
+	s_ibuf_slice_rd_new_row <= s_ibuf_slice_rd_row_edge;
+end
+
+wire gnrl_conv2d_ibuf_blk_nxt;
+wire [IFMAP_BUF_BLK_NUM_WIDTH*IFMAP_BUF_RD_NUM-1:0]gnrl_conv2d_ibuf_blk_sel;
+
+assign gnrl_conv2d_ibuf_blk_nxt = s_ibuf_slice_rd_new_row;
+
+reg [IFMAP_BUF_DEPTH_WIDTH-1:0]c_ibuf_wr_cnt;
+always @(posedge clk or negedge rst_n) begin
+	if(!rst_n) begin
+		c_ibuf_wr_cnt <= {IFMAP_BUF_DEPTH_WIDTH{1'b0}};
+	end
+	else if(clear) begin
+		c_ibuf_wr_cnt <= {IFMAP_BUF_DEPTH_WIDTH{1'b0}};
+	end
+	else if(gnrl_conv2d_ibuf_wr_en_i) begin
+		if(c_ibuf_wr_cnt == IFMAP_BUF_DEPTH-1) begin
+			c_ibuf_wr_cnt <= {IFMAP_BUF_DEPTH_WIDTH{1'b0}};
+		end
+		else begin
+			c_ibuf_wr_cnt <= c_ibuf_wr_cnt + 1'b1;
+		end
+	end
+end
+
+/******************************************sequencer******************************************/
 gnrl_conv2d_ibuf_blk_sequenser
 #(
 	.IFMAP_BUF_SIZE(IFMAP_BUF_SIZE),
@@ -477,7 +562,7 @@ gnrl_conv2d_ibuf_blk_sequenser
 )
 u_gnrl_conv2d_ibuf_blk_sequenser
 (
-	.gnrl_conv2d_ibuf_blk_stride_i(gnrl_conv2d_ibuf_stride_i),
+	.gnrl_conv2d_ibuf_blk_stride_i(gnrl_conv2d_stride_i),
 	.gnrl_conv2d_ibuf_blk_dilation_i(gnrl_conv2d_ibuf_dilation),
 	.gnrl_conv2d_ibuf_blk_nxt_i(gnrl_conv2d_ibuf_blk_nxt),
 	.gnrl_conv2d_ibuf_blk_sel_o(gnrl_conv2d_ibuf_blk_sel),
@@ -486,9 +571,11 @@ u_gnrl_conv2d_ibuf_blk_sequenser
 	.rst_n(rst_n), 
 	.en(gnrl_conv2d_ibuf_rd_en_i),
 	.clear(clear), 
+	.prep(prep),
 	.rewind(rewind)
 );
 
+// sequencer pipeline stage
 reg  [IFMAP_BUF_BLK_NUM_WIDTH*IFMAP_BUF_RD_NUM-1:0]pipe_gnrl_conv2d_ibuf_blk_sel_stage;
 reg  [IFMAP_BUF_BLK_NUM_WIDTH*IFMAP_BUF_RD_NUM-1:0]dffs_pipe_gnrl_conv2d_ibuf_blk_sel_stage_1dly;
 reg  [IFMAP_BUF_BLK_NUM_WIDTH*IFMAP_BUF_RD_NUM-1:0]dffs_pipe_gnrl_conv2d_ibuf_blk_sel_stage_2dly;
@@ -496,6 +583,7 @@ always @(posedge clk) begin
 	pipe_gnrl_conv2d_ibuf_blk_sel_stage <= gnrl_conv2d_ibuf_blk_sel;
 end
 
+/******************************************mapper******************************************/
 wire [IFMAP_BUF_RD_NUM*IFMAP_SLICE_WIDTH-1:0]gnrl_conv2d_ibuf_rd_sel;
 wire [IFMAP_SLICE_WIDTH-1:0]gnrl_conv2d_ibuf_rd_sel_inspec[IFMAP_BUF_RD_NUM-1:0];
 wire [IFMAP_BUF_RD_NUM*IFMAP_BUF_DEPTH_WIDTH-1:0]w_gnrl_conv2d_ibuf_rd_base_adr;
@@ -514,19 +602,20 @@ u_gnrl_conv2d_ibuf_blk_mapper
 	.gnrl_conv2d_ibuf_rd_base_adr_o(w_gnrl_conv2d_ibuf_rd_base_adr)
 );
 
+// mapper pipeline stage
 reg  [IFMAP_BUF_RD_NUM*IFMAP_SLICE_WIDTH-1:0]pipe_gnrl_conv2d_ibuf_rd_sel_stage;
-reg  [IFMAP_BUF_RD_NUM*IFMAP_SLICE_WIDTH-1:0]dffs_pipe_gnrl_conv2d_ibuf_rd_sel_stage_1dly;
 reg  [IFMAP_BUF_RD_NUM*IFMAP_BUF_DEPTH_WIDTH-1:0]pipe_gnrl_conv2d_ibuf_rd_base_adr_stage;
 
 always @(posedge clk) begin
 	pipe_gnrl_conv2d_ibuf_rd_sel_stage <= gnrl_conv2d_ibuf_rd_sel;
-	dffs_pipe_gnrl_conv2d_ibuf_rd_sel_stage_1dly <= pipe_gnrl_conv2d_ibuf_rd_sel_stage;
 end
 
 always @(posedge clk) begin
 	pipe_gnrl_conv2d_ibuf_rd_base_adr_stage <= w_gnrl_conv2d_ibuf_rd_base_adr;
 end
 
+/******************************************router******************************************/
+// syncronize pipeline latency
 reg   [IFMAP_BUF_DEPTH_WIDTH-1:0]dff_ibuf_blk_rd_cnt_1dly;
 reg   [IFMAP_BUF_DEPTH_WIDTH-1:0]dff_ibuf_blk_rd_cnt_2dly;
 reg   [IFMAP_BUF_DEPTH_WIDTH-1:0]dff_ibuf_blk_rd_cnt_3dly;
@@ -562,6 +651,8 @@ generate
 	end
 endgenerate
 
+/******************************************ibuf******************************************/
+// syncronize pipeline latency
 reg dffs_gnrl_conv2d_ibuf_rd_en_1dly;
 reg dffs_gnrl_conv2d_ibuf_rd_en_2dly;
 reg dffs_gnrl_conv2d_ibuf_rd_en_3dly;
@@ -573,7 +664,11 @@ always @(posedge clk) begin
 end
 
 wire [IFMAP_BUF_SLICE_NUM-1:0]w_gnrl_conv2d_ibuf_slice_rd_en;
+wire [IFMAP_BUF_SLICE_NUM-1:0]w_gnrl_conv2d_ibuf_wr_en;
+wire [IFMAP_BUF_SLICE_NUM*IFMAP_BUF_DEPTH_WIDTH-1:0]w_gnrl_conv2d_ibuf_wr_adr;
 assign w_gnrl_conv2d_ibuf_slice_rd_en = w_gnrl_conv2d_ibuf_router_rd_en & {IFMAP_BUF_SLICE_NUM{dffs_gnrl_conv2d_ibuf_rd_en_3dly}};
+assign w_gnrl_conv2d_ibuf_wr_en = {IFMAP_BUF_SLICE_NUM{gnrl_conv2d_ibuf_wr_en_i}};
+assign w_gnrl_conv2d_ibuf_wr_adr = {IFMAP_BUF_SLICE_NUM{c_ibuf_wr_cnt}};
 
 gnrl_conv2d_ibuf
 #(
@@ -583,23 +678,27 @@ gnrl_conv2d_ibuf
 )
 u_gnrl_conv2d_ibuf
 (
-	.gnrl_conv2d_ibuf_wr_en_i(),
-	.gnrl_conv2d_ibuf_wr_adr_i(),
-	.gnrl_conv2d_ibuf_wr_dat_i(),
+	.gnrl_conv2d_ibuf_wr_en_i(w_gnrl_conv2d_ibuf_wr_en),
+	.gnrl_conv2d_ibuf_wr_adr_i(w_gnrl_conv2d_ibuf_wr_adr),
+	.gnrl_conv2d_ibuf_wr_dat_i(gnrl_conv2d_ibuf_wr_dat_i),
 	
 	.gnrl_conv2d_ibuf_rd_en_i(w_gnrl_conv2d_ibuf_slice_rd_en),
 	.gnrl_conv2d_ibuf_rd_adr_i(w_gnrl_conv2d_ibuf_slice_rd_adr),
 	.gnrl_conv2d_ibuf_rd_dat_o(w_gnrl_conv2d_ibuf_rd_dat),
 
-	.clk(clk), 
-	.rst_n(rst_n), 
-	.clear(clear)
+	.clk(clk)
 );
 
+/******************************************window generator******************************************/
+// syncronize pipeline latency
 reg dffs_gnrl_conv2d_ibuf_fab_dat_vld;
-
+reg [IFMAP_BUF_RD_NUM*IFMAP_SLICE_WIDTH-1:0]dffs_pipe_gnrl_conv2d_ibuf_rd_sel_stage_1dly;
 always @(posedge clk) begin
 	dffs_gnrl_conv2d_ibuf_fab_dat_vld <= dffs_gnrl_conv2d_ibuf_rd_en_3dly;
+end
+
+always @(posedge clk) begin
+	dffs_pipe_gnrl_conv2d_ibuf_rd_sel_stage_1dly <= pipe_gnrl_conv2d_ibuf_rd_sel_stage;
 end
 
 wire [IFMAP_SLICE_WIDTH*IFMAP_BUF_RD_NUM-1:0]w_gnrl_conv2d_fabwin_slice_sel;

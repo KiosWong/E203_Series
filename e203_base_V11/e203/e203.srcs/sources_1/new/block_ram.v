@@ -8,7 +8,7 @@ module block_ram_simple_dual_port
 (
 	input  clka,
 	input  ena,
-	input  [clogb2(DATA_DEPTH)-1:0]addra,
+	input  [clogb2(DATA_DEPTH)-2:0]addra,
 	input  [DATA_WIDTH-1:0]dina,
 	
 	input  clkb,

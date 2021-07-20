@@ -123,5 +123,5 @@ end
 
 assign conv_data_o = r_adder_tree_stage_3;
 assign conv_data_valid_o = (r_pipe_stage_cnt == 3) ? 1 : 0;
-	
+
 endmodule
