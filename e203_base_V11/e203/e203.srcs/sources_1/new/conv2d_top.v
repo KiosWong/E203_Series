@@ -2,12 +2,13 @@
 
 module conv2d_top
 #(
-	parameter IFMAP_DATA_WIDTH = 8,
-	parameter OFMAP_DATA_WIDTH = 32,
-	parameter IFMAP_BUF_BLK_SIZE = 32,
-	parameter IFMAP_BUF_BLK_NUM = 32,
-	parameter IFMAP_BUF_SLICE_NUM = 4,
-	parameter KERNEL_SIZE = 3
+	parameter IFMAP_DATA_WIDTH 		= 8,
+	parameter OFMAP_DATA_WIDTH 		= 32,
+	parameter IFMAP_BUF_BLK_SIZE 	= 32,
+	parameter IFMAP_BUF_BLK_NUM 	= 32,
+	parameter IFMAP_BUF_SLICE_NUM 	= 4,
+	parameter OFMAP_BUF_SIZE 		= 1024,
+	parameter KERNEL_SIZE 			= 3
 )
 (
 	input  clk,
@@ -20,19 +21,28 @@ module conv2d_top
 	input  stride_sel_i,
 	input  [1:0]dilation_sel_i,
 	input  conv_mode_sel_i,
+	input  conv_result_acc_i,
+	input  conv_result_act_i,
 	
 	input  ifmap_buf_wr_en_i,
 	input  [IFMAP_DATA_WIDTH*IFMAP_BUF_SLICE_NUM-1:0]ifmap_data_i,
 	input  [KERNEL_SIZE*KERNEL_SIZE*IFMAP_DATA_WIDTH-1:0]filter_data_i,
-	input  ofmap_fifo_rd_en_i,
-	output ofmap_fifo_valid_o,
-	output [OFMAP_DATA_WIDTH-1:0]ofmap_fifo_data_o,
+	input  ofmap_obuf_rd_en_i,
+	output [OFMAP_DATA_WIDTH-1:0]ofmap_obuf_data_o,
 	
 	output conv_err,
 	output conv_done
 );
 
-localparam  FIFO_SIZE = 1024;
+function integer clogb2 (input integer bit_depth);
+
+for(clogb2 = 0; bit_depth > 0; clogb2 = clogb2 + 1) begin
+	bit_depth = bit_depth >> 1;
+end
+
+endfunction
+
+localparam 	OFMAP_BUF_SIZE_WIDTH		= clogb2(OFMAP_BUF_SIZE)-1;
 localparam 	DILATION_NONE 				= 2'b00,
 		   	DILATION_2					= 2'b01,
 			DILATION_4					= 2'b10;
@@ -110,7 +120,7 @@ u_conv_datapath
 	.clk(clk), 
 	.rst_n(rst_n),
 
-	.pipe_flush_i(clear),
+	.pipe_flush_i(clear | rewind),
 	.kernel_data_valid_i(gnrl_conv2d_ibuf_fab_dat_vld),
 
 	.kernel_data_i(gnrl_conv2d_ibuf_fab_dat),
@@ -130,7 +140,7 @@ conv_ctrl u_conv_ctrl
 	.clk(clk), 
 	.rst_n(rst_n),
 	.en(en),
-	.clear(clear),
+	.clear(clear | rewind),
 
 	.stride_sel_i(stride_sel_i),
 	.dilation_i(conv2d_dilation),
@@ -146,28 +156,45 @@ conv_ctrl u_conv_ctrl
 	.conv_op_data_o(w_conv_op_data)
 );
 
-wire s_ofmap_fifo_empty;
+reg [OFMAP_BUF_SIZE_WIDTH-1:0]c_obuf_rd_cnt;
+always @(posedge clk or negedge rst_n) begin
+	if(!rst_n) begin
+		c_obuf_rd_cnt <= {OFMAP_BUF_SIZE_WIDTH{1'b0}};
+	end
+	else if(clear | rewind) begin
+		c_obuf_rd_cnt <= {OFMAP_BUF_SIZE_WIDTH{1'b0}};
+	end
+	else if(ofmap_obuf_rd_en_i) begin
+		c_obuf_rd_cnt <= c_obuf_rd_cnt + 1'b1;
+	end
+end
 
-sync_bram_fifo
+wire [OFMAP_BUF_SIZE_WIDTH-1:0]w_gnrl_conv2d_obuf_rd_adr;
+assign w_gnrl_conv2d_obuf_rd_adr = c_obuf_rd_cnt;
+
+gnrl_conv2d_obuf_fab
 #(
-	.DATA_WIDTH(OFMAP_DATA_WIDTH),
-	.BUF_SIZE(FIFO_SIZE)
+	.OFMAP_DATA_WIDTH(OFMAP_DATA_WIDTH),
+	.OFMAP_BUF_SIZE(OFMAP_BUF_SIZE)
 )
-u_ofmap_fifo
-( 	
-	.clk(clk),
-	.rst_n(rst_n),
-	.clear(clear),
-	.fifo_din(w_conv_op_data),
-	.fifo_wr_en(w_conv_op_valid),
-	.fifo_rd_en(ofmap_fifo_rd_en_i),
-	.fifo_rd_rewind(0),
-	.fifo_empty(s_ofmap_fifo_empty),
-	.fifo_full(),
-	.fifo_out(ofmap_fifo_data_o)
+u_gnrl_conv2d_obuf_fab
+(
+	.gnrl_conv2d_obuf_acc_i(conv_result_acc_i),
+	.gnrl_conv2d_obuf_act_i(conv_result_act_i),
+
+	.gnrl_conv2d_obuf_wr_vld_i(w_conv_op_valid),
+	.gnrl_conv2d_obuf_wdat_i(w_conv_op_data),
+
+	.gnrl_conv2d_obuf_rd_vld_i(ofmap_obuf_rd_en_i),
+	.gnrl_conv2d_obuf_rd_adr_i(w_gnrl_conv2d_obuf_rd_adr),
+	.gnrl_conv2d_obuf_rdat_o(ofmap_obuf_data_o),
+	
+	.clk(clk), 
+	.rst_n(rst_n), 
+	.clear(clear), 
+	.rewind(w_conv_op_done | rewind)
 );
 
 assign conv_done = w_conv_op_done;
-assign ofmap_fifo_valid_o = ~s_ofmap_fifo_empty;
 
 endmodule

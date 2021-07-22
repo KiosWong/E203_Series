@@ -27,6 +27,16 @@ typedef enum {
 	Mode_DP			= 1
 } KINPU_Mode_Type;
 
+typedef enum {
+	Acc_Enable		= 1,
+	Acc_Disable		= 0
+} KINPU_Acc_Type;
+
+typedef enum {
+	Act_Enable		= 1,
+	Act_Disable		= 0
+} KINPU_Act_Type;
+
 typedef struct {
 	__IOM uint32_t CHSEL;
 	__IOM uint16_t CCR;
@@ -41,13 +51,17 @@ typedef struct {
 	KINPU_Stride_Type 		stride;
 	KINPU_Dilation_Type 	dilation;
 	KINPU_Mode_Type			mode;
+	KINPU_Acc_Type			accumulate;
+	KINPU_Act_Type			activation;
 }KINPU_InitTypeDef;
 
-#define KINPU_CCR_STAET_BIT			(0)		
-#define KINPU_CCR_CLR_BIT			(1)			
+#define KINPU_CCR_START_BIT			(0)
+#define KINPU_CCR_CLR_BIT			(1)
+#define KINPU_CCR_REWIND_BIT		(4)
 
-#define KINPU_CCR_CMD_START			(((uint16_t) 1) << KINPU_CCR_STAET_BIT)
+#define KINPU_CCR_CMD_START			(((uint16_t) 1) << KINPU_CCR_START_BIT)
 #define KINPU_CCR_CMD_CLEAR			(((uint16_t) 1) << KINPU_CCR_CLR_BIT)
+#define KINPU_CCR_CMD_REWIND		(((uint16_t) 1) << KINPU_CCR_REWIND_BIT)
 
 #define KINPU_BASE					(HBIRD_PERIPH_BASE + 0x42000)
 
@@ -62,6 +76,7 @@ typedef struct {
 void kinpu_init(uint32_t kinpu_channel, KINPU_InitTypeDef* KINPU_InitStruct);
 void kinpu_start_conv(uint32_t kinpu_channel);
 void kinpu_clear(uint32_t kinpu_channel);
+void kinpu_ifmap_rewind(uint32_t kinpu_channel);
 void kinpu_load_ifmap(uint32_t kinpu_channel, uint8_t *ifmap_buf, int ifmap_buf_size);
 void kinpu_load_filter(uint32_t kinpu_channel, uint8_t *filter_buf, int filter_buf_size);
 void kinpu_load_ofmap(uint32_t kinpu_channel, uint32_t *ofmap_buf, int ofmap_size);

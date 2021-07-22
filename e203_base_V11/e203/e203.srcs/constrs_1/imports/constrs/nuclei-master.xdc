@@ -1,9 +1,9 @@
 create_clock -period 20.000 -name sys_clk_pin [get_ports clk_board]
 
-#set_false_path -from [get_clocks clk_out1_mmcm] -to [get_clocks clk_out3_mmcm]
-#set_false_path -from [get_clocks clk_out3_mmcm] -to [get_clocks clk_out1_mmcm]
-#set_false_path -from [get_clocks clk_out1_mmcm] -to [get_clocks clk_pll_i]
-#set_false_path -from [get_clocks clk_pll_i] -to [get_clocks clk_out1_mmcm]
+set_false_path -from [get_clocks clk_out1_mmcm] -to [get_clocks clk_out3_mmcm]
+set_false_path -from [get_clocks clk_out3_mmcm] -to [get_clocks clk_out1_mmcm]
+set_false_path -from [get_clocks clk_out1_mmcm] -to [get_clocks clk_pll_i]
+set_false_path -from [get_clocks clk_pll_i] -to [get_clocks clk_out1_mmcm]
 set_false_path -from [get_clocks clk_out1_mmcm] -to [get_clocks clk_out1_video_pll]
 
 set_false_path -from [get_ports ck_rst] -to [all_registers]

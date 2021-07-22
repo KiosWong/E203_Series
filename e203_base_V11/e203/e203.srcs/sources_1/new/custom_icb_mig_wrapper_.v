@@ -86,16 +86,6 @@ signal_sync u_sync_wr_done(
     .signal_outb()
 );
 
-//ila_ctrl_sig u_ila_ctrl_sig (
-//	.clk(ddr3_clk), // input wire clk
-
-
-//	.probe0(mem_rd_done_ui_clk_domain), // input wire [0:0]  probe0  
-//	.probe1(mem_rd_done_sys_clk_domain), // input wire [0:0]  probe1 
-//	.probe2(mem_rd_addr), // input wire [31:0]  probe2 
-//	.probe3(clk) // input wire [0:0]  probe3
-//);
-
 assign o_icb_rsp_valid = (mem_rd_done_sys_clk_domain | mem_wr_done_sys_clk_domain);
 assign o_icb_cmd_ready = (init_calib_complete & i_icb_cmd_valid);
 

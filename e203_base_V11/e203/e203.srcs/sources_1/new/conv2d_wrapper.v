@@ -23,7 +23,6 @@ module conv2d_wrapper
 reg [`CONV2D_CCR_SIZE-1:0]ccr;
 reg [`CONV2D_CPAR_SIZE-1:0]cpar;
 
-reg r_conv2d_ofifo_rd_en;
 reg r_conv2d_read_type;
 reg [`E203_XLEN-1:0]r_conv2d_rd_dat;
 reg [KERNEL_SIZE*KERNEL_SIZE*IFMAP_DATA_WIDTH-1:0]r_filter[1:0];
@@ -37,8 +36,8 @@ wire s_conv2d_config_rden;
 
 wire s_ifmap_buf_wr_en;
 wire [IFMAP_DATA_WIDTH*IFMAP_BUF_SLICE_NUM-1:0]w_ifmap_buf_data;
-wire s_ofmap_fifo_rd_en;
-wire [OFMAP_DATA_WIDTH-1:0]w_ofmap_fifo_data;
+wire s_ofmap_buf_rd_en;
+wire [OFMAP_DATA_WIDTH-1:0]w_ofmap_buf_data;
 
 wire w_icb_conv2d_en;
 wire w_icb_conv2d_clr;
@@ -61,10 +60,6 @@ always @(posedge clk or negedge rst_n) begin
 			r_conv2d_read_type <= 1'b0;
 		end
 	end
-end
-
-always @(posedge clk) begin
-	r_conv2d_ofifo_rd_en <= s_ofmap_fifo_rd_en;
 end
 
 always @(posedge clk or negedge rst_n) begin
@@ -124,6 +119,8 @@ end
 wire [`CONV2D_CPAR_STRSEL_SIZE-1:0]w_conv2d_cpar_stride_sel;
 wire [`CONV2D_CPAR_DILSEL_SIZE-1:0]w_conv2d_cpar_dilation_sel;
 wire [`CONV2D_CPAR_MODSEL_SIZE-1:0]w_conv2d_cpar_mode_sel;
+wire [`CONV2D_CPAR_RESACC_SIZE-1:0]w_conv2d_cpar_result_acc;
+wire [`CONV2D_CPAR_RESACT_SIZE-1:0]w_conv2d_cpar_result_act;
 
 reg  s_icb_conv2d_prep;
 
@@ -204,7 +201,7 @@ assign s_ifmap_buf_wr_en = s_conv2d_config_wren & ~w_icb_conv2d_en & (`CONV2D_IF
 assign w_ifmap_buf_data = s_ifmap_buf_wr_en ? conv2d_dat_i[IFMAP_DATA_WIDTH*IFMAP_BUF_SLICE_NUM-1:0] : {IFMAP_DATA_WIDTH*IFMAP_BUF_SLICE_NUM{1'b0}};
 
 //virtual registers for read only
-assign s_ofmap_fifo_rd_en = s_conv2d_config_rden & (`CONV2D_OFRD_ADDR == conv2d_adr_i);
+assign s_ofmap_buf_rd_en = s_conv2d_config_rden & (`CONV2D_OFRD_ADDR == conv2d_adr_i);
 
 conv2d_top
 #(
@@ -227,14 +224,15 @@ u_conv2d_top
 	.stride_sel_i(w_conv2d_cpar_stride_sel),
 	.dilation_sel_i(w_conv2d_cpar_dilation_sel),
 	.conv_mode_sel_i(w_conv2d_cpar_mode_sel),
+	.conv_result_acc_i(w_conv2d_cpar_result_acc),
+	.conv_result_act_i(w_conv2d_cpar_result_act),
 	
 	.ifmap_buf_wr_en_i(s_ifmap_buf_wr_en),
 	.ifmap_data_i(w_ifmap_buf_data),
 	.filter_data_i(w_filter_data),
 	
-	.ofmap_fifo_rd_en_i(s_ofmap_fifo_rd_en),
-	.ofmap_fifo_valid_o(w_ofmap_fifo_valid),
-	.ofmap_fifo_data_o(w_ofmap_fifo_data),
+	.ofmap_obuf_rd_en_i(s_ofmap_buf_rd_en),
+	.ofmap_obuf_data_o(w_ofmap_buf_data),
 	
 	.conv_err(s_conv2d_err),
 	.conv_done(s_conv2d_done)
@@ -247,10 +245,12 @@ assign w_icb_conv2d_rewind 			= ccr[`CONV2D_CCR_IFRWD_OFS];
 assign w_conv2d_cpar_stride_sel 	= cpar[`CONV2D_CPAR_STRSEL_OFS];
 assign w_conv2d_cpar_dilation_sel	= cpar[`CONV2D_CPAR_DILSEL_OFS];
 assign w_conv2d_cpar_mode_sel		= cpar[`CONV2D_CPAR_MODSEL_OFS];
+assign w_conv2d_cpar_result_acc		= cpar[`CONV2D_CPAR_RESACC_OFS];
+assign w_conv2d_cpar_result_act		= cpar[`CONV2D_CPAR_RESACT_OFS];
 
 assign w_filter_data = r_filter[1];
 
-assign conv2d_dat_o 				= r_conv2d_read_type ? w_ofmap_fifo_data : r_conv2d_rd_dat;
+assign conv2d_dat_o 				= r_conv2d_read_type ? w_ofmap_buf_data : r_conv2d_rd_dat;
 assign conv2d_done_o				= s_conv2d_done;
 //assign conv2d_icb_rsp_err_o 		= s_conv2d_err;
 

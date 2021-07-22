@@ -49,7 +49,7 @@ static void _kinpu_set_channel(uint32_t kinpu_channel, uint32_t status)
 
 static void _kinpu_init_channel(KINPU_TypeDef* KINPUx, KINPU_InitTypeDef* KINPU_InitStruct)
 {
-	KINPUx->CPAR = KINPU_InitStruct->stride | (KINPU_InitStruct->dilation << 1) | (KINPU_InitStruct->mode << 3);
+	KINPUx->CPAR = KINPU_InitStruct->stride | (KINPU_InitStruct->dilation << 1) | (KINPU_InitStruct->mode << 3) | (KINPU_InitStruct->accumulate << 4) | (KINPU_InitStruct->activation << 5);
 }
 
 void kinpu_init(uint32_t kinpu_channel, KINPU_InitTypeDef* KINPU_InitStruct)
@@ -75,6 +75,16 @@ void kinpu_clear(uint32_t kinpu_channel)
 	_kinpu_set_channel(kinpu_channel, KINPU_ENABLE);
 	tmp = KINPU->CCR;
 	tmp |= KINPU_CCR_CMD_CLEAR;
+	KINPU->CCR = tmp;
+	_kinpu_set_channel(kinpu_channel, KINPU_DISABLE);
+}
+
+void kinpu_ifmap_rewind(uint32_t kinpu_channel)
+{
+	uint16_t tmp = 0;
+	_kinpu_set_channel(kinpu_channel, KINPU_ENABLE);
+	tmp = KINPU->CCR;
+	tmp |= KINPU_CCR_CMD_REWIND;
 	KINPU->CCR = tmp;
 	_kinpu_set_channel(kinpu_channel, KINPU_DISABLE);
 }

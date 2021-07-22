@@ -727,9 +727,132 @@ u_gnrl_conv2d_ibuf_fabwin_gen
 	
 	.clk(clk), 
 	.rst_n(rst_n), 
-	.clear(clear)
+	.clear(clear | rewind)
 );
 
 assign gnrl_conv2d_ibuf_fab_dat_vld_o = w_gnrl_conv2d_fabwin_dat_vld;
+
+endmodule
+
+module gnrl_conv2d_obuf_fab
+#(
+	parameter OFMAP_DATA_WIDTH 		= 32,
+	parameter OFMAP_BUF_SIZE		= 1024
+)
+(
+	gnrl_conv2d_obuf_acc_i,
+	gnrl_conv2d_obuf_act_i,
+	
+	gnrl_conv2d_obuf_wr_vld_i,
+	gnrl_conv2d_obuf_wdat_i,
+	
+	gnrl_conv2d_obuf_rd_vld_i,
+	gnrl_conv2d_obuf_rd_adr_i,
+	gnrl_conv2d_obuf_rdat_o,
+	
+	clk, rst_n, clear, rewind
+);
+
+function integer clogb2 (input integer bit_depth);
+
+for(clogb2 = 0; bit_depth > 0; clogb2 = clogb2 + 1) begin
+	bit_depth = bit_depth >> 1;
+end
+
+endfunction
+
+localparam OFMAP_BUF_SIZE_WIDTH = clogb2(OFMAP_BUF_SIZE) - 1;
+
+input	gnrl_conv2d_obuf_acc_i;
+input	gnrl_conv2d_obuf_act_i;
+
+input	gnrl_conv2d_obuf_wr_vld_i;
+input	[OFMAP_DATA_WIDTH-1:0]gnrl_conv2d_obuf_wdat_i;
+
+input	gnrl_conv2d_obuf_rd_vld_i;
+input	[OFMAP_BUF_SIZE_WIDTH-1:0]gnrl_conv2d_obuf_rd_adr_i;
+output	[OFMAP_DATA_WIDTH-1:0]gnrl_conv2d_obuf_rdat_o;
+
+input	clk;
+input	rst_n;
+input	clear;
+input	rewind;
+
+wire w_mem_acc_req;
+wire w_mem_acc_addr_change;
+wire w_mem_acc_bypass_addend;
+wire w_mem_acc_activation;
+wire [OFMAP_BUF_SIZE_WIDTH-1:0]w_mem_acc_start_addr;
+wire [OFMAP_DATA_WIDTH-1:0]w_mem_acc_data;
+
+assign w_mem_acc_req 			= gnrl_conv2d_obuf_wr_vld_i;
+assign w_mem_acc_addr_change	= rewind | clear;
+assign w_mem_acc_bypass_addend 	= ~gnrl_conv2d_obuf_acc_i;
+assign w_mem_acc_activation 	= gnrl_conv2d_obuf_act_i;
+assign w_mem_acc_start_addr 	= {OFMAP_BUF_SIZE_WIDTH{1'b0}};
+assign w_mem_acc_data 			= gnrl_conv2d_obuf_wdat_i;
+
+wire w_acc_bram_rd_en;
+wire [OFMAP_BUF_SIZE_WIDTH-1:0]w_acc_bram_rd_adr;
+wire [OFMAP_DATA_WIDTH-1:0]w_acc_bram_rd_dat;
+
+wire w_gnrl_obuf_bram_rd_en;
+wire [OFMAP_BUF_SIZE_WIDTH-1:0]w_gnrl_obuf_bram_rd_adr;
+wire [OFMAP_DATA_WIDTH-1:0]w_gnrl_obuf_bram_rd_dat;
+wire w_gnrl_obuf_bram_wr_en;
+wire [OFMAP_BUF_SIZE_WIDTH-1:0]w_gnrl_obuf_bram_wr_adr;
+wire [OFMAP_DATA_WIDTH-1:0]w_gnrl_obuf_bram_wr_dat;
+
+mem_acc_ctrl
+#(
+	.DATA_WIDTH(OFMAP_DATA_WIDTH),
+	.ADDR_WIDTH(OFMAP_BUF_SIZE_WIDTH)
+)
+u_ofmap_buf_acc_ctrl
+(
+	.clk(clk),
+	.rst_n(rst_n),
+
+	.mem_acc_req_i(w_mem_acc_req),
+	.mem_acc_addr_change_i(w_mem_acc_addr_change),
+	.mem_acc_bypass_addend_i(w_mem_acc_bypass_addend),
+	.mem_acc_activation_i(w_mem_acc_activation),
+	.mem_acc_pooling(),
+	.mem_acc_start_addr_i(w_mem_acc_start_addr),
+	.mem_acc_data_i(w_mem_acc_data),
+	
+	.bram_rd_en_o(w_acc_bram_rd_en),
+	.bram_rd_addr_o(w_acc_bram_rd_adr),
+	.bram_rd_data_i(w_acc_bram_rd_dat),
+	
+	.bram_wr_en_o(w_gnrl_obuf_bram_wr_en),
+	.bram_wr_addr_o(w_gnrl_obuf_bram_wr_adr),
+	.bram_wr_data_o(w_gnrl_obuf_bram_wr_dat)
+);
+
+block_ram_simple_dual_port
+#(
+	.DATA_WIDTH(OFMAP_DATA_WIDTH),
+	.DATA_DEPTH(OFMAP_BUF_SIZE)
+)
+u_ofmap_block_ram
+(
+	/*write port*/
+	.clka(clk),                          
+	.ena(w_gnrl_obuf_bram_wr_en),                           
+	.addra(w_gnrl_obuf_bram_wr_adr), 
+	.dina(w_gnrl_obuf_bram_wr_dat),          
+
+	/*read port*/						   
+	.clkb(clk),                          
+	.enb(w_gnrl_obuf_bram_rd_en),                           
+	.addrb(w_gnrl_obuf_bram_rd_adr), 
+	.doutb(w_gnrl_obuf_bram_rd_dat)          
+);
+
+assign w_gnrl_obuf_bram_rd_en = (gnrl_conv2d_obuf_wr_vld_i) ? w_acc_bram_rd_en : gnrl_conv2d_obuf_rd_vld_i;
+assign w_gnrl_obuf_bram_rd_adr = (gnrl_conv2d_obuf_wr_vld_i) ? w_acc_bram_rd_adr : gnrl_conv2d_obuf_rd_adr_i;
+assign w_acc_bram_rd_dat = w_gnrl_obuf_bram_rd_dat;
+assign gnrl_conv2d_obuf_rdat_o = (~gnrl_conv2d_obuf_wr_vld_i) ? w_gnrl_obuf_bram_rd_dat : {OFMAP_BUF_SIZE_WIDTH{1'b0}};
 
 endmodule
