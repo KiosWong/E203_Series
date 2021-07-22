@@ -18,6 +18,7 @@ module conv2d_top
 	input  prep,
 	input  rewind,
 	
+	input  [1:0]ifsize_sel_i,
 	input  stride_sel_i,
 	input  [1:0]dilation_sel_i,
 	input  conv_mode_sel_i,
@@ -46,6 +47,10 @@ localparam 	OFMAP_BUF_SIZE_WIDTH		= clogb2(OFMAP_BUF_SIZE)-1;
 localparam 	DILATION_NONE 				= 2'b00,
 		   	DILATION_2					= 2'b01,
 			DILATION_4					= 2'b10;
+			
+localparam 	IFSIZE_32 					= 2'b00,
+		   	IFSIZE_16					= 2'b01,
+			IFSIZE_8					= 2'b10;
 
 // decode dilation from sel signal in bits 
 reg  [2:0]conv2d_dilation;
@@ -56,6 +61,17 @@ always @(*) begin
 		DILATION_2:		conv2d_dilation = 3'd2;
 		DILATION_4:		conv2d_dilation = 3'd4;
 		default:		conv2d_dilation = 3'd0;
+	endcase
+end
+
+reg [2:0]gnrl_conv2d_ifmap_size;
+always @(*) begin
+	gnrl_conv2d_ifmap_size = 3'd0;
+	case(ifsize_sel_i)
+		IFSIZE_32: gnrl_conv2d_ifmap_size = 3'd5;
+		IFSIZE_16: gnrl_conv2d_ifmap_size = 3'd4;
+		IFSIZE_8:  gnrl_conv2d_ifmap_size = 3'd3;
+		default:   gnrl_conv2d_ifmap_size = 3'd0;
 	endcase
 end
 			
@@ -69,7 +85,6 @@ wire  gnrl_conv2d_ibuf_wr_en;
 wire [KERNEL_SIZE*KERNEL_SIZE*IFMAP_DATA_WIDTH-1:0]gnrl_conv2d_ibuf_fab_dat;
 wire  gnrl_conv2d_ibuf_cfg_valid;
 
-wire [5:0]gnrl_conv2d_ibuf_slice_size_sel = 3'd5;
 wire [2:0]gnrl_conv2d_ibuf_stride = 3'd1;
 wire [2:0]gnrl_conv2d_ibuf_dilation = 3'd0;
 wire [2:0]gnrl_conv2d_ibuf_sel_num = 3'd3;
@@ -94,7 +109,7 @@ u_gnrl_conv2d_ibuf_fab
 	.gnrl_conv2d_ibuf_fab_dat_vld_o(gnrl_conv2d_ibuf_fab_dat_vld),
 	.gnrl_conv2d_ibuf_fab_dat_o(gnrl_conv2d_ibuf_fab_dat),
 	
-	.gnrl_conv2d_ibuf_slice_size_sel_i(gnrl_conv2d_ibuf_slice_size_sel),
+	.gnrl_conv2d_ibuf_slice_size_sel_i(gnrl_conv2d_ifmap_size),
 	.gnrl_conv2d_ibuf_cfg_valid_i(gnrl_conv2d_ibuf_cfg_valid),
 	
 	.gnrl_conv2d_stride_i(gnrl_conv2d_ibuf_stride),
@@ -141,7 +156,8 @@ conv_ctrl u_conv_ctrl
 	.rst_n(rst_n),
 	.en(en),
 	.clear(clear | rewind),
-
+	
+	.ifmap_size_i(gnrl_conv2d_ifmap_size),
 	.stride_sel_i(stride_sel_i),
 	.dilation_i(conv2d_dilation),
 

@@ -121,6 +121,7 @@ wire [`CONV2D_CPAR_DILSEL_SIZE-1:0]w_conv2d_cpar_dilation_sel;
 wire [`CONV2D_CPAR_MODSEL_SIZE-1:0]w_conv2d_cpar_mode_sel;
 wire [`CONV2D_CPAR_RESACC_SIZE-1:0]w_conv2d_cpar_result_acc;
 wire [`CONV2D_CPAR_RESACT_SIZE-1:0]w_conv2d_cpar_result_act;
+wire [`CONV2D_CPAR_IFSIZE_SIZE-1:0]w_conv2d_cpar_ifsize;
 
 reg  s_icb_conv2d_prep;
 
@@ -221,6 +222,7 @@ u_conv2d_top
 	.prep(s_icb_conv2d_prep),
 	.rewind(w_icb_conv2d_rewind),
 	
+	.ifsize_sel_i(w_conv2d_cpar_ifsize),
 	.stride_sel_i(w_conv2d_cpar_stride_sel),
 	.dilation_sel_i(w_conv2d_cpar_dilation_sel),
 	.conv_mode_sel_i(w_conv2d_cpar_mode_sel),
@@ -247,6 +249,7 @@ assign w_conv2d_cpar_dilation_sel	= cpar[`CONV2D_CPAR_DILSEL_OFS];
 assign w_conv2d_cpar_mode_sel		= cpar[`CONV2D_CPAR_MODSEL_OFS];
 assign w_conv2d_cpar_result_acc		= cpar[`CONV2D_CPAR_RESACC_OFS];
 assign w_conv2d_cpar_result_act		= cpar[`CONV2D_CPAR_RESACT_OFS];
+assign w_conv2d_cpar_ifsize			= cpar[`CONV2D_CPAR_IFSIZE_OFS];
 
 assign w_filter_data = r_filter[1];
 

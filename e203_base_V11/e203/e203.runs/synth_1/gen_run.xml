@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tfgg676-2" LaunchTime="1626936377">
+<GenRun Id="synth_1" LaunchPart="xc7a100tfgg676-2" LaunchTime="1626947741">
   <File Type="PA-TCL" Name="e203_system_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="e203_system_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="e203_system_wrapper_reports.tcl"/>
@@ -1574,9 +1574,5 @@
   <BlockFileSet Type="BlockSrcs" Name="hdmi_ram_2"/>
   <BlockFileSet Type="BlockSrcs" Name="mmcm"/>
   <BlockFileSet Type="BlockSrcs" Name="video_pll"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_ram"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_3"/>
 </GenRun>

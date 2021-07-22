@@ -22,7 +22,7 @@
     <Object name="xc7a100t_0" gui_info="">
       <Properties Property="FULL_PROBES.FILE" value=""/>
       <Properties Property="PROBES.FILE" value=""/>
-      <Properties Property="PROGRAM.HW_BITSTREAM" value=""/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="D:/Program/Vivado/Vivado/2019.1/data/xicom/cfgmem/bitfile/spi_xc7a100t_pullnone.bit"/>
       <Properties Property="PROGRAM.HW_CFGMEM_PART" value="mt25ql128-spi-x1_x2_x4"/>
       <Properties Property="SLR.COUNT" value="1"/>
     </Object>
@@ -11960,7 +11960,7 @@
         <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d_cluster/conv2d_cluster[0].u_conv2d_wrapper/&lt;const0>"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
         <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
@@ -12366,7 +12366,7 @@
         <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d_cluster/conv2d_cluster[0].u_conv2d_wrapper/r_filter[0][0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq72&apos;hXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq72&apos;hXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -12458,7 +12458,7 @@
         <net name="dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_icb_conv2d_cluster/conv2d_cluster[0].u_conv2d_wrapper/r_filter[0]_218[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq72&apos;hXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq72&apos;hXX_XXXX_XXXX_XXXX_XXXX"/>

@@ -49,7 +49,12 @@ static void _kinpu_set_channel(uint32_t kinpu_channel, uint32_t status)
 
 static void _kinpu_init_channel(KINPU_TypeDef* KINPUx, KINPU_InitTypeDef* KINPU_InitStruct)
 {
-	KINPUx->CPAR = KINPU_InitStruct->stride | (KINPU_InitStruct->dilation << 1) | (KINPU_InitStruct->mode << 3) | (KINPU_InitStruct->accumulate << 4) | (KINPU_InitStruct->activation << 5);
+	KINPUx->CPAR = KINPU_InitStruct->stride 	|
+			(KINPU_InitStruct->dilation << 1) 	|
+			(KINPU_InitStruct->mode << 3) 		|
+			(KINPU_InitStruct->accumulate << 4) |
+			(KINPU_InitStruct->activation << 5)	|
+			(KINPU_InitStruct->ifsize << 6);
 }
 
 void kinpu_init(uint32_t kinpu_channel, KINPU_InitTypeDef* KINPU_InitStruct)

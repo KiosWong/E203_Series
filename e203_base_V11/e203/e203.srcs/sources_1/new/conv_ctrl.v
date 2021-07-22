@@ -14,6 +14,7 @@ module conv_ctrl
 	input  en,
 	input  clear,
 	
+	input [2:0]ifmap_size_i,
 	/* 0:stride disable(size 1); 1:stride enable(size 2)*/
 	input stride_sel_i,
 	input [2:0]dilation_i,
@@ -36,13 +37,18 @@ function integer clogb2 (input integer bit_depth);
 	end
 endfunction
 
-reg [5:0]conv_cnt_row;
-reg [5:0]conv_cnt_column;
+localparam IFMAP_SIZE_WIDTH = clogb2(FMAP_TILE_SIZE);
+
+wire [IFMAP_SIZE_WIDTH-1:0]w_ifmap_size;
+assign w_ifmap_size = ({{(IFMAP_SIZE_WIDTH-1){1'b0}}, 1'b1} << ifmap_size_i);
+
+reg [IFMAP_SIZE_WIDTH-1:0]conv_cnt_row;
+reg [IFMAP_SIZE_WIDTH-1:0]conv_cnt_column;
 
 wire s_conv_last_colum_in_row;
 wire s_conv_last_row_in_fmap;
-assign s_conv_last_colum_in_row = (conv_cnt_column == FMAP_TILE_SIZE - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
-assign s_conv_last_row_in_fmap = (conv_cnt_row == FMAP_TILE_SIZE - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
+assign s_conv_last_colum_in_row = (conv_cnt_column == w_ifmap_size - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
+assign s_conv_last_row_in_fmap = (conv_cnt_row == w_ifmap_size - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
 
 always @(posedge clk or negedge rst_n) begin
 	if(!rst_n) begin
@@ -53,10 +59,10 @@ always @(posedge clk or negedge rst_n) begin
 	end
 	else if(en) begin
 		if(conv_data_valid_i) begin
-			if(conv_cnt_column == FMAP_TILE_SIZE - 1) begin
+			if(conv_cnt_column == w_ifmap_size - 1) begin
 				conv_cnt_column <= 6'd0;
 			end
-			else if(conv_cnt_row < FMAP_TILE_SIZE) begin
+			else begin
 				conv_cnt_column <= conv_cnt_column + 6'b1;
 			end
 		end
@@ -72,7 +78,7 @@ always @(posedge clk or negedge rst_n) begin
 	end
 	else if(en) begin
 		if(s_conv_last_colum_in_row) begin
-			if(conv_cnt_row < FMAP_TILE_SIZE) begin
+			if(conv_cnt_row < w_ifmap_size) begin
 				conv_cnt_row <= conv_cnt_row + 6'b1;
 			end
 		end
@@ -82,8 +88,8 @@ end
 wire s_slide_window_column_valid;
 wire s_slide_window_row_valid;
 wire s_slide_window_valid;
-assign s_slide_window_column_valid = (conv_cnt_column < FMAP_TILE_SIZE - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
-assign s_slide_window_row_valid = (conv_cnt_row < FMAP_TILE_SIZE - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
+assign s_slide_window_column_valid = (conv_cnt_column < w_ifmap_size - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
+assign s_slide_window_row_valid = (conv_cnt_row < w_ifmap_size - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
 assign s_slide_window_valid = (s_slide_window_column_valid && s_slide_window_row_valid) ? 1 : 0;
 
 reg stride_valid;

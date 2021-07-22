@@ -84,10 +84,6 @@ set rc [catch {
   read_ip -quiet E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/video_pll_1/video_pll.xci
   read_ip -quiet E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/hdmi_ram_1/hdmi_ram.xci
   read_ip -quiet E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/hdmi_ram_2_1/hdmi_ram_2.xci
-  read_ip -quiet e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci
-  read_ip -quiet e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_1/ila_1.xci
-  read_ip -quiet e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_2/ila_2.xci
-  read_ip -quiet e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_3/ila_3.xci
   read_xdc E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/constrs_1/imports/constrs/nuclei-master.xdc
   link_design -top e203_system_wrapper -part xc7a100tfgg676-2
   close_msg_db -file init_design.pb

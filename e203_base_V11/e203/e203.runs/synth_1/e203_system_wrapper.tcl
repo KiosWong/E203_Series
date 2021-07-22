@@ -245,30 +245,6 @@ set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_s
 read_ip -quiet E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/hdmi_ram_2_1/hdmi_ram_2.xci
 set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/hdmi_ram_2_1/hdmi_ram_2_ooc.xdc]
 
-read_ip -quiet e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci
-set_property used_in_synthesis false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc]
-
-read_ip -quiet e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_1/ila_1.xci
-set_property used_in_synthesis false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_1/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_1/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_1/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_1/ila_1_ooc.xdc]
-
-read_ip -quiet e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_2/ila_2.xci
-set_property used_in_synthesis false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_2/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_2/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_2/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_2/ila_2_ooc.xdc]
-
-read_ip -quiet e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_3/ila_3.xci
-set_property used_in_synthesis false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_3/ila_3_ooc.xdc]
-
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be

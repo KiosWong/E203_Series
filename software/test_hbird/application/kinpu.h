@@ -37,6 +37,12 @@ typedef enum {
 	Act_Disable		= 0
 } KINPU_Act_Type;
 
+typedef enum {
+	IFsize_32		= 0,
+	IFsize_16		= 1,
+	IFsize_8		= 2
+} KINPU_IFsize_Type;
+
 typedef struct {
 	__IOM uint32_t CHSEL;
 	__IOM uint16_t CCR;
@@ -53,6 +59,7 @@ typedef struct {
 	KINPU_Mode_Type			mode;
 	KINPU_Acc_Type			accumulate;
 	KINPU_Act_Type			activation;
+	KINPU_IFsize_Type		ifsize;
 }KINPU_InitTypeDef;
 
 #define KINPU_CCR_START_BIT			(0)

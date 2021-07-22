@@ -23,6 +23,7 @@ int main(void)
 	KINPU_InitStructure.mode = Mode_Normal;
 	KINPU_InitStructure.accumulate = Acc_Disable;
 	KINPU_InitStructure.activation = Act_Disable;
+	KINPU_InitStructure.ifsize = IFsize_32;
 	kinpu_init(KINPU_CHANNEL_ALL, &KINPU_InitStructure);
 	kinpu_load_ifmap(KINPU_CHANNEL_ALL, ifmap_buf, 1024);
 
