@@ -26,10 +26,11 @@ module conv2d_top
 	input  conv_result_act_i,
 	
 	input  ifmap_buf_wr_en_i,
-	input  [IFMAP_DATA_WIDTH*IFMAP_BUF_SLICE_NUM-1:0]ifmap_data_i,
+	input  [IFMAP_DATA_WIDTH-1:0]ifmap_data_i,
 	input  [KERNEL_SIZE*KERNEL_SIZE*IFMAP_DATA_WIDTH-1:0]filter_data_i,
 	input  ofmap_obuf_rd_en_i,
 	output [OFMAP_DATA_WIDTH-1:0]ofmap_obuf_data_o,
+	output [16-1:0]ofmap_valid_cnt_o,
 	
 	output conv_err,
 	output conv_done
@@ -160,6 +161,7 @@ conv_ctrl u_conv_ctrl
 	.ifmap_size_i(gnrl_conv2d_ifmap_size),
 	.stride_sel_i(stride_sel_i),
 	.dilation_i(conv2d_dilation),
+	.mode_sel_i(conv_mode_sel_i),
 
 	.window_valid_i(gnrl_conv2d_ibuf_fab_dat_vld),
 
@@ -171,6 +173,22 @@ conv_ctrl u_conv_ctrl
 	.conv_op_done_o(w_conv_op_done),
 	.conv_op_data_o(w_conv_op_data)
 );
+
+reg [16-1:0]c_obuf_vld_cnt;
+always @(posedge clk or negedge rst_n) begin
+	if(!rst_n) begin
+		c_obuf_vld_cnt <= 16'd0;
+	end
+	else if(clear | rewind) begin
+		c_obuf_vld_cnt <= 16'd0;
+	end
+	else if(w_conv_op_valid) begin
+		c_obuf_vld_cnt <= c_obuf_vld_cnt + 1'b1;
+	end
+	else if(ofmap_obuf_rd_en_i) begin
+		c_obuf_vld_cnt <= c_obuf_vld_cnt - 1'b1;
+	end
+end
 
 reg [OFMAP_BUF_SIZE_WIDTH-1:0]c_obuf_rd_cnt;
 always @(posedge clk or negedge rst_n) begin
@@ -211,6 +229,7 @@ u_gnrl_conv2d_obuf_fab
 	.rewind(w_conv_op_done | rewind)
 );
 
+assign ofmap_valid_cnt_o = c_obuf_vld_cnt;
 assign conv_done = w_conv_op_done;
 
 endmodule

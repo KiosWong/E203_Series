@@ -18,6 +18,7 @@ module conv_ctrl
 	/* 0:stride disable(size 1); 1:stride enable(size 2)*/
 	input stride_sel_i,
 	input [2:0]dilation_i,
+	input mode_sel_i,
 	/*start indicator from window field, indicates data taps are ready*/
 	input  window_valid_i,				
 	/*input control signal*/
@@ -40,15 +41,22 @@ endfunction
 localparam IFMAP_SIZE_WIDTH = clogb2(FMAP_TILE_SIZE);
 
 wire [IFMAP_SIZE_WIDTH-1:0]w_ifmap_size;
+wire [5:0]w_kernel_size;
 assign w_ifmap_size = ({{(IFMAP_SIZE_WIDTH-1){1'b0}}, 1'b1} << ifmap_size_i);
+assign w_kernel_size = mode_sel_i ? 6'd1 : KERNEL_SIZE;
 
 reg [IFMAP_SIZE_WIDTH-1:0]conv_cnt_row;
 reg [IFMAP_SIZE_WIDTH-1:0]conv_cnt_column;
 
+wire [5:0]w_ifmap_kernel_size_probe1;
+wire [5:0]w_ifmap_kernel_size_probe2;
 wire s_conv_last_colum_in_row;
 wire s_conv_last_row_in_fmap;
-assign s_conv_last_colum_in_row = (conv_cnt_column == w_ifmap_size - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
-assign s_conv_last_row_in_fmap = (conv_cnt_row == w_ifmap_size - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
+assign s_conv_last_colum_in_row = (conv_cnt_column == (w_ifmap_size - 1 - (w_kernel_size - 1) * (dilation_i + 1))) ? 1 : 0;
+assign s_conv_last_row_in_fmap = (conv_cnt_row == (w_ifmap_size - (w_kernel_size - 1) * (dilation_i + 1))) ? 1 : 0;
+
+assign w_ifmap_kernel_size_probe1 = (w_kernel_size - 1) * (dilation_i + 1);
+assign w_ifmap_kernel_size_probe2 = w_ifmap_size - (w_kernel_size - 1) * (dilation_i + 1);
 
 always @(posedge clk or negedge rst_n) begin
 	if(!rst_n) begin
@@ -88,8 +96,8 @@ end
 wire s_slide_window_column_valid;
 wire s_slide_window_row_valid;
 wire s_slide_window_valid;
-assign s_slide_window_column_valid = (conv_cnt_column < w_ifmap_size - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
-assign s_slide_window_row_valid = (conv_cnt_row < w_ifmap_size - (KERNEL_SIZE - 1) * (dilation_i + 1)) ? 1 : 0;
+assign s_slide_window_column_valid = (conv_cnt_column < (w_ifmap_size - (w_kernel_size - 1) * (dilation_i + 1))) ? 1 : 0;
+assign s_slide_window_row_valid = (conv_cnt_row < (w_ifmap_size - (w_kernel_size - 1) * (dilation_i + 1))) ? 1 : 0;
 assign s_slide_window_valid = (s_slide_window_column_valid && s_slide_window_row_valid) ? 1 : 0;
 
 reg stride_valid;

@@ -17,9 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 4
-set_param xicom.use_bs_reader 1
 set_msg_config  -id {Project 1-19}  -string {{CRITICAL WARNING: [Project 1-19] Could not find the file 'E:/Projects/SoC/e203_series/e203_base_V10/e203/e203.srcs/sources_1/bd/axi_mig/ip/axi_mig_mig_7series_0_0/mig_a.prj'.}}  -suppress 
 create_project -in_memory -part xc7a100tfgg676-2
 
@@ -210,6 +208,7 @@ read_verilog -library xil_defaultlib {
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/dff_stages.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/mem_ctrl.v
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/gnrl_conv2d_buf_fab.v
+  E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/gnrl_mult.v
 }
 read_vhdl -library xil_defaultlib {
   E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/new/vhd/SyncAsync.vhd
@@ -244,6 +243,12 @@ set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_s
 
 read_ip -quiet E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/hdmi_ram_2_1/hdmi_ram_2.xci
 set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/hdmi_ram_2_1/hdmi_ram_2_ooc.xdc]
+
+read_ip -quiet E:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0.xci
+set_property used_in_synthesis false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all e:/Projects/SoC/e203_series/e203_base_V11/e203/e203.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

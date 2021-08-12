@@ -294,71 +294,48 @@ module mem_acc_ctrl
 	output 			[ADDR_WIDTH-1:0]bram_rd_addr_o,
 	input  signed 	[DATA_WIDTH-1:0]bram_rd_data_i,
 	output 			bram_wr_en_o,
-	output 			[ADDR_WIDTH-1:0]bram_wr_addr_o,
+	output reg		[ADDR_WIDTH-1:0]bram_wr_addr_o,
 	output signed	[DATA_WIDTH-1:0]bram_wr_data_o
 );
-	reg [DATA_WIDTH-1:0]r_acc_data_latched[1:0];
-	wire [DATA_WIDTH-1:0]w_acc_addend;
-	wire signed [DATA_WIDTH-1:0]mem_acc_result;
-	reg [ADDR_WIDTH-1:0]c_acc_cnt;
-	
-	assign w_acc_addend 	= (mem_acc_bypass_addend_i) ? 0 : bram_rd_data_i;
-	assign bram_rd_en_o 	= (mem_acc_req_i) ? 1: 0;
-	assign bram_rd_addr_o 	= mem_acc_start_addr_i + c_acc_cnt;
-	assign mem_acc_result 	= w_acc_addend + r_acc_data_latched[1];
-	assign bram_wr_data_o	= (mem_acc_activation_i) ? ((mem_acc_result < {DATA_WIDTH{1'd0}}) ? {DATA_WIDTH{1'd0}} : mem_acc_result) : mem_acc_result;
-	
-	always @(posedge clk) begin
-		if(rst_n == `RST_ENABLE) begin
-			r_acc_data_latched[0] <= 0;
-			r_acc_data_latched[1] <= 0;
-		end
-		else if(mem_acc_req_i) begin
-			r_acc_data_latched[0] <= mem_acc_data_i;
-			r_acc_data_latched[1] <= r_acc_data_latched[0];
-		end
-	end
-	
-	always @(posedge clk or negedge rst_n) begin
-		if(rst_n == `RST_ENABLE) begin
-			c_acc_cnt <= 0;
-		end
-		else if(mem_acc_addr_change_i) begin
-			c_acc_cnt <= 0;
-		end
-		else if(mem_acc_req_i) begin
-			c_acc_cnt <= c_acc_cnt + 1;
-		end
-	end
-		
-	dff_stages
-	#(
-		.DATA_WIDTH(1),
-		.MAX_STAGE(2)
-	) 
-	u_bram_wr_en_stages
-	(
-		.clk(clk),
-		.rst_n(rst_n),
-		
-		.stage_num_p(2),
-		.stage_in(mem_acc_req_i),
-		.stage_out(bram_wr_en_o)
-	);
 
-	dff_stages
-	#(
-		.DATA_WIDTH(ADDR_WIDTH),
-		.MAX_STAGE(2)
-	) 
-	u_bram_wr_addr_stages
-	(
-		.clk(clk),
-		.rst_n(rst_n),
-		
-		.stage_num_p(2),
-		.stage_in(mem_acc_start_addr_i + c_acc_cnt),
-		.stage_out(bram_wr_addr_o)
-	);
+reg dff_mem_acc_req_1dly;
+reg [DATA_WIDTH-1:0]dff_acc_data_1dly;
+
+wire [DATA_WIDTH-1:0]w_acc_addend;
+wire signed [DATA_WIDTH-1:0]mem_acc_result;
+reg [ADDR_WIDTH-1:0]c_acc_cnt;
+
+assign w_acc_addend 	= (mem_acc_bypass_addend_i) ? 0 : bram_rd_data_i;
+assign bram_rd_en_o 	= (mem_acc_req_i) ? 1: 0;
+assign bram_rd_addr_o 	= mem_acc_start_addr_i + c_acc_cnt;
+assign mem_acc_result 	= w_acc_addend + dff_acc_data_1dly;
+assign bram_wr_en_o		= dff_mem_acc_req_1dly;
+assign bram_wr_data_o	= (mem_acc_activation_i) ? ((mem_acc_result < {DATA_WIDTH{1'd0}}) ? {DATA_WIDTH{1'd0}} : mem_acc_result) : mem_acc_result;
+
+always @(posedge clk) begin
+	dff_mem_acc_req_1dly <= mem_acc_req_i;
+end
+
+always @(posedge clk) begin
+	if(mem_acc_req_i) begin
+		dff_acc_data_1dly <= mem_acc_data_i;
+	end
+end
+
+always @(posedge clk or negedge rst_n) begin
+	if(!rst_n) begin
+		c_acc_cnt <= 0;
+	end
+	else if(mem_acc_addr_change_i) begin
+		c_acc_cnt <= 0;
+	end
+	else if(mem_acc_req_i) begin
+		c_acc_cnt <= c_acc_cnt + 1;
+	end
+end
+	
+always @(posedge clk) begin
+	bram_wr_addr_o <= mem_acc_start_addr_i + c_acc_cnt;
+end
 	
 endmodule

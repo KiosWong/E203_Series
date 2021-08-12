@@ -35,7 +35,7 @@ wire s_conv2d_config_wren;
 wire s_conv2d_config_rden;
 
 wire s_ifmap_buf_wr_en;
-wire [IFMAP_DATA_WIDTH*IFMAP_BUF_SLICE_NUM-1:0]w_ifmap_buf_data;
+wire [IFMAP_DATA_WIDTH-1:0]w_ifmap_buf_data;
 wire s_ofmap_buf_rd_en;
 wire [OFMAP_DATA_WIDTH-1:0]w_ofmap_buf_data;
 
@@ -45,6 +45,7 @@ wire w_icb_conv2d_err;
 wire w_icb_conv2d_done;
 wire w_icb_conv2d_rewind;
 wire w_ofmap_fifo_valid;
+wire [16-1:0]w_ofmap_valid_cnt;
 
 wire [KERNEL_SIZE*KERNEL_SIZE*IFMAP_DATA_WIDTH-1:0]w_filter_data;
 
@@ -147,15 +148,21 @@ always @(posedge clk or negedge rst_n) begin
 	end
 end
 
+//conv2d register read
 always @(posedge clk or negedge rst_n) begin
 	if(!rst_n) begin
 		r_conv2d_rd_dat <= `E203_XLEN'd0;
 	end
-	else if(& s_conv2d_config_rden & (`CONV2D_CCR_ADDR == conv2d_adr_i)) begin
-		r_conv2d_rd_dat[`CONV2D_CCR_SIZE-1:0] <= ccr;
+	else if(s_conv2d_config_rden) begin
+		case(conv2d_adr_i)
+			`CONV2D_CCR_ADDR: 	r_conv2d_rd_dat[`CONV2D_CCR_SIZE-1:0] <= ccr;
+			`CONV2D_OFCNT_ADDR:	r_conv2d_rd_dat[`CONV2D_CCR_SIZE-1:0] <= w_ofmap_valid_cnt;
+			default:			r_conv2d_rd_dat <= `E203_XLEN'd0;
+		endcase
 	end
 end
 
+//conv2d filter load
 always @(posedge clk or negedge rst_n) begin
 	if(!rst_n) begin
 		c_filter_load_cnt <= 4'd0;
@@ -199,7 +206,7 @@ end
 
 //virtual registers for write only
 assign s_ifmap_buf_wr_en = s_conv2d_config_wren & ~w_icb_conv2d_en & (`CONV2D_IFWR_ADDR == conv2d_adr_i);
-assign w_ifmap_buf_data = s_ifmap_buf_wr_en ? conv2d_dat_i[IFMAP_DATA_WIDTH*IFMAP_BUF_SLICE_NUM-1:0] : {IFMAP_DATA_WIDTH*IFMAP_BUF_SLICE_NUM{1'b0}};
+assign w_ifmap_buf_data = s_ifmap_buf_wr_en ? conv2d_dat_i[IFMAP_DATA_WIDTH-1:0] : {IFMAP_DATA_WIDTH{1'b0}};
 
 //virtual registers for read only
 assign s_ofmap_buf_rd_en = s_conv2d_config_rden & (`CONV2D_OFRD_ADDR == conv2d_adr_i);
@@ -235,6 +242,7 @@ u_conv2d_top
 	
 	.ofmap_obuf_rd_en_i(s_ofmap_buf_rd_en),
 	.ofmap_obuf_data_o(w_ofmap_buf_data),
+	.ofmap_valid_cnt_o(w_ofmap_valid_cnt),
 	
 	.conv_err(s_conv2d_err),
 	.conv_done(s_conv2d_done)

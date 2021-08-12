@@ -9,7 +9,7 @@
  *
  * Certainly we can increase BRAM slice number to enhance internal data bandwidth, but that may
  * brings a surge of BRAM ultilization. Pratically we find a cluster with 4 slices is somewhat 
- * a equilibrium.
+ * an equilibrium.
  *
  */
 module gnrl_conv2d_ibuf
@@ -146,11 +146,10 @@ wire [IFMAP_BUF_BLK_NUM_WIDTH*IFMAP_BUF_BLK_SEL_NUM-1:0]gnrl_conv2d_ibuf_blk_sel
 wire [IFMAP_BUF_BLK_NUM_WIDTH-1:0]gnrl_conv2d_ibuf_blk_sel_inspec[IFMAP_BUF_BLK_SEL_NUM-1:0];
 wire [IFMAP_BUF_BLK_NUM_WIDTH-1:0]gnrl_conv2d_ibuf_blk_sel_nxt_inspec[IFMAP_BUF_BLK_SEL_NUM-1:0];
 
-always @(posedge clk) begin
+always @(posedge clk or negedge rst_n) begin
 	if(!rst_n) begin
-		r_gnrl_conv2d_ibuf_blk_sel[(0+1)*IFMAP_BUF_BLK_NUM_WIDTH-1-:IFMAP_BUF_BLK_NUM_WIDTH] <= {IFMAP_BUF_BLK_NUM_WIDTH{1'b0}};
-		for(i = 1; i < IFMAP_BUF_BLK_SEL_NUM; i = i + 1) begin
-			r_gnrl_conv2d_ibuf_blk_sel[(i+1)*IFMAP_BUF_BLK_NUM_WIDTH-1-:IFMAP_BUF_BLK_NUM_WIDTH] <= $unsigned(i + gnrl_conv2d_ibuf_blk_dilation_i * i) & {IFMAP_BUF_BLK_NUM_WIDTH{1'b1}};
+		for(i = 0; i < IFMAP_BUF_BLK_SEL_NUM; i = i + 1) begin
+			r_gnrl_conv2d_ibuf_blk_sel[(i+1)*IFMAP_BUF_BLK_NUM_WIDTH-1-:IFMAP_BUF_BLK_NUM_WIDTH] <= {IFMAP_BUF_BLK_NUM_WIDTH{1'b0}};
 		end
 	end
 	else if(clear | rewind | prep) begin
@@ -469,7 +468,7 @@ localparam 	DILATION_NONE 				= 2'b00,
 			DILATION_4					= 2'b10;
 
 input  																gnrl_conv2d_ibuf_wr_en_i;
-input  [IFMAP_BUF_SLICE_NUM*IFMAP_DATA_WIDTH-1:0]					gnrl_conv2d_ibuf_wr_dat_i;
+input  [IFMAP_DATA_WIDTH-1:0]										gnrl_conv2d_ibuf_wr_dat_i;
 
 input  																gnrl_conv2d_ibuf_rd_en_i;
 output																gnrl_conv2d_ibuf_fab_dat_vld_o;
@@ -506,7 +505,7 @@ always @(*) begin
 	endcase
 end
 
-wire [IFMAP_BUF_DEPTH_WIDTH-1:0]w_gnrl_conv2d_ibuf_slice_size; 
+wire [IFMAP_BLOCK_SIZE_WIDTH-1:0]w_gnrl_conv2d_ibuf_slice_size; 
 assign w_gnrl_conv2d_ibuf_slice_size = {{(IFMAP_BLOCK_SIZE_WIDTH-1){1'b0}}, 1'b1} << gnrl_conv2d_ibuf_slice_size_sel_i;
 
 reg  [IFMAP_BLOCK_SIZE_WIDTH-1:0]c_ibuf_blk_rd_cnt;
@@ -535,17 +534,18 @@ wire [IFMAP_BUF_BLK_NUM_WIDTH*IFMAP_BUF_RD_NUM-1:0]gnrl_conv2d_ibuf_blk_sel;
 
 assign gnrl_conv2d_ibuf_blk_nxt = s_ibuf_slice_rd_new_row;
 
-reg [IFMAP_BUF_DEPTH_WIDTH-1:0]c_ibuf_wr_cnt;
+reg  [IFMAP_BLOCK_SIZE_WIDTH-1:0]c_ibuf_wr_cnt;
+reg  [IFMAP_BUF_BLK_NUM_WIDTH-1:0]c_ibuf_blk_wr_cnt;
 always @(posedge clk or negedge rst_n) begin
 	if(!rst_n) begin
-		c_ibuf_wr_cnt <= {IFMAP_BUF_DEPTH_WIDTH{1'b0}};
+		c_ibuf_wr_cnt <= {IFMAP_BLOCK_SIZE_WIDTH{1'b0}};
 	end
 	else if(clear) begin
-		c_ibuf_wr_cnt <= {IFMAP_BUF_DEPTH_WIDTH{1'b0}};
+		c_ibuf_wr_cnt <= {IFMAP_BLOCK_SIZE_WIDTH{1'b0}};
 	end
 	else if(gnrl_conv2d_ibuf_wr_en_i) begin
-		if(c_ibuf_wr_cnt == IFMAP_BUF_DEPTH-1) begin
-			c_ibuf_wr_cnt <= {IFMAP_BUF_DEPTH_WIDTH{1'b0}};
+		if(c_ibuf_wr_cnt == w_gnrl_conv2d_ibuf_slice_size - 1) begin
+			c_ibuf_wr_cnt <= {IFMAP_BLOCK_SIZE_WIDTH{1'b0}};
 		end
 		else begin
 			c_ibuf_wr_cnt <= c_ibuf_wr_cnt + 1'b1;
@@ -553,11 +553,31 @@ always @(posedge clk or negedge rst_n) begin
 	end
 end
 
+always @(posedge clk or negedge rst_n) begin
+	if(!rst_n) begin
+		c_ibuf_blk_wr_cnt <= {IFMAP_BUF_BLK_NUM_WIDTH{1'b0}};
+	end
+	else if(clear) begin
+		c_ibuf_blk_wr_cnt <= {IFMAP_BUF_BLK_NUM_WIDTH{1'b0}};
+	end
+	else if(gnrl_conv2d_ibuf_wr_en_i & c_ibuf_wr_cnt == w_gnrl_conv2d_ibuf_slice_size - 1) begin
+		c_ibuf_blk_wr_cnt <= c_ibuf_blk_wr_cnt + 1'b1;
+	end
+end
+
+wire [IFMAP_BUF_SLICE_NUM-1:0]gnrl_conv2d_ibuf_wr_en;
+wire [IFMAP_BUF_DEPTH_WIDTH-1:0]gnrl_conv2d_ibuf_slice_wr_adr;
+wire [IFMAP_BUF_SLICE_NUM*IFMAP_BUF_DEPTH_WIDTH-1:0]gnrl_conv2d_ibuf_wr_adr;
+wire [IFMAP_BUF_SLICE_NUM*IFMAP_DATA_WIDTH-1:0]gnrl_conv2d_ibuf_wr_dat;
+
+assign gnrl_conv2d_ibuf_wr_en = {IFMAP_BUF_SLICE_NUM{gnrl_conv2d_ibuf_wr_en_i}} & ({{(IFMAP_BUF_SLICE_NUM-1){1'b0}}, 1'b1} << (c_ibuf_blk_wr_cnt % IFMAP_BUF_SLICE_NUM));
+assign gnrl_conv2d_ibuf_slice_wr_adr = ((c_ibuf_blk_wr_cnt / IFMAP_BUF_SLICE_NUM) << gnrl_conv2d_ibuf_slice_size_sel_i) + c_ibuf_wr_cnt;
+assign gnrl_conv2d_ibuf_wr_adr = {IFMAP_BUF_SLICE_NUM{gnrl_conv2d_ibuf_slice_wr_adr}};
+assign gnrl_conv2d_ibuf_wr_dat = {IFMAP_BUF_SLICE_NUM{gnrl_conv2d_ibuf_wr_dat_i}};
+
 /******************************************sequencer******************************************/
 gnrl_conv2d_ibuf_blk_sequenser
 #(
-	.IFMAP_BUF_SIZE(IFMAP_BUF_SIZE),
-	.IFMAP_BUF_BLK_SIZE(32),
 	.IFMAP_BUF_BLK_SEL_NUM(IFMAP_BUF_RD_NUM)
 )
 u_gnrl_conv2d_ibuf_blk_sequenser
@@ -664,11 +684,7 @@ always @(posedge clk) begin
 end
 
 wire [IFMAP_BUF_SLICE_NUM-1:0]w_gnrl_conv2d_ibuf_slice_rd_en;
-wire [IFMAP_BUF_SLICE_NUM-1:0]w_gnrl_conv2d_ibuf_wr_en;
-wire [IFMAP_BUF_SLICE_NUM*IFMAP_BUF_DEPTH_WIDTH-1:0]w_gnrl_conv2d_ibuf_wr_adr;
 assign w_gnrl_conv2d_ibuf_slice_rd_en = w_gnrl_conv2d_ibuf_router_rd_en & {IFMAP_BUF_SLICE_NUM{dffs_gnrl_conv2d_ibuf_rd_en_3dly}};
-assign w_gnrl_conv2d_ibuf_wr_en = {IFMAP_BUF_SLICE_NUM{gnrl_conv2d_ibuf_wr_en_i}};
-assign w_gnrl_conv2d_ibuf_wr_adr = {IFMAP_BUF_SLICE_NUM{c_ibuf_wr_cnt}};
 
 gnrl_conv2d_ibuf
 #(
@@ -678,9 +694,9 @@ gnrl_conv2d_ibuf
 )
 u_gnrl_conv2d_ibuf
 (
-	.gnrl_conv2d_ibuf_wr_en_i(w_gnrl_conv2d_ibuf_wr_en),
-	.gnrl_conv2d_ibuf_wr_adr_i(w_gnrl_conv2d_ibuf_wr_adr),
-	.gnrl_conv2d_ibuf_wr_dat_i(gnrl_conv2d_ibuf_wr_dat_i),
+	.gnrl_conv2d_ibuf_wr_en_i(gnrl_conv2d_ibuf_wr_en),
+	.gnrl_conv2d_ibuf_wr_adr_i(gnrl_conv2d_ibuf_wr_adr),
+	.gnrl_conv2d_ibuf_wr_dat_i(gnrl_conv2d_ibuf_wr_dat),
 	
 	.gnrl_conv2d_ibuf_rd_en_i(w_gnrl_conv2d_ibuf_slice_rd_en),
 	.gnrl_conv2d_ibuf_rd_adr_i(w_gnrl_conv2d_ibuf_slice_rd_adr),

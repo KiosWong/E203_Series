@@ -41,7 +41,19 @@ wire [PRODUCT_DATA_WIDTH-1:0]w_mult_product[KERNEL_SIZE*KERNEL_SIZE-1:0];
 generate
 	genvar j;
 	for(j = 0; j < KERNEL_SIZE * KERNEL_SIZE; j = j + 1) begin: mult_product_generate
-		assign w_mult_product[j] = w_kerne_data[j] * filter_data_i[(j+1)*KERNEL_DATA_WIDTH-1-:KERNEL_DATA_WIDTH]; 
+		gnrl_mult
+		#(
+			.INPUT_DATA_WIDTH(8),
+			.OUTPUT_DATA_WIDTH(32),
+			.FORCE_DSP48(1)
+		)
+		u_gnrl_mult
+		(
+			.din_a(w_kerne_data[j]),
+			.din_b(filter_data_i[(j+1)*KERNEL_DATA_WIDTH-1-:KERNEL_DATA_WIDTH]),
+			.dout(w_mult_product[j])
+		);
+//		assign w_mult_product[j] = w_kerne_data[j] * filter_data_i[(j+1)*KERNEL_DATA_WIDTH-1-:KERNEL_DATA_WIDTH]; 
 	end
 endgenerate
 

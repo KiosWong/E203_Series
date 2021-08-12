@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Jul 22 18:11:20 2021
+| Date         : Thu Aug 12 11:09:25 2021
 | Host         : DESKTOP-V0OL22A running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file e203_system_wrapper_clock_utilization_routed.rpt
 | Design       : e203_system_wrapper
@@ -69,19 +69,19 @@ Table of Contents
 +-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+---------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | Global Id | Source Id | Driver Type/Pin | Constraint | Site           | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock         | Driver Pin                                                                                                        | Net                                                                                                      |
 +-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+---------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y1  | n/a          |                 8 |       29814 |               0 |       31.250 | clk_out1_mmcm | r_gnrl_conv2d_ibuf_blk_sel_reg[14]_i_3/O                                                                          | u_e203_subsys_top/hfclk                                                                                  |
+| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y1  | n/a          |                 8 |       29314 |               0 |       31.250 | clk_out1_mmcm | r_gnrl_conv2d_ibuf_blk_sel_reg[14]_i_2/O                                                                          | u_e203_subsys_top/hfclk                                                                                  |
 | g1        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |                 2 |        4514 |               0 |       10.000 | clk_pll_i     | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/u_bufg_clkdiv0/O  | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/CLK      |
-| g2        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y2  | n/a          |                 2 |        1437 |               0 |       31.250 | clk_out1_mmcm | qout_r_reg[31]_i_3/O                                                                                              | u_e203_subsys_top/core_csr_clk                                                                           |
-| g3        | src3      | BUFG/O          | None       | BUFGCTRL_X0Y3  | n/a          |                 4 |         989 |               0 |              |               | slowclk_BUFG_inst/O                                                                                               | slowclk_BUFG                                                                                             |
-| g4        | src4      | BUFG/O          | None       | BUFGCTRL_X0Y4  | n/a          |                 1 |         197 |               0 |              |               | dut_io_pads_jtag_TCK_i_ival_BUFG_inst/O                                                                           | dut_io_pads_jtag_TCK_i_ival_BUFG                                                                         |
-| g5        | src5      | BUFG/O          | None       | BUFGCTRL_X0Y5  | n/a          |                 1 |         182 |               0 |       31.250 | clk_out1_mmcm | qout_r_reg[31]_i_2/O                                                                                              | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_ifu                              |
-| g6        | src6      | BUFG/O          | None       | BUFGCTRL_X0Y6  | n/a          |                 2 |         117 |               0 |       31.250 | clk_out1_mmcm | qout_r_reg[0]_i_2__5/O                                                                                            | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_biu                              |
-| g7        | src7      | BUFG/O          | None       | BUFGCTRL_X0Y7  | n/a          |                 2 |          79 |               0 |       31.250 | clk_out1_mmcm | qout_r_reg[0]_i_2__6/O                                                                                            | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_lsu                              |
+| g2        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y2  | n/a          |                 4 |        1437 |               0 |       31.250 | clk_out1_mmcm | qout_r_reg[31]_i_3/O                                                                                              | u_e203_subsys_top/core_csr_clk                                                                           |
+| g3        | src3      | BUFG/O          | None       | BUFGCTRL_X0Y3  | n/a          |                 1 |         989 |               0 |              |               | slowclk_BUFG_inst/O                                                                                               | slowclk_BUFG                                                                                             |
+| g4        | src4      | BUFG/O          | None       | BUFGCTRL_X0Y4  | n/a          |                 2 |         197 |               0 |              |               | dut_io_pads_jtag_TCK_i_ival_BUFG_inst/O                                                                           | dut_io_pads_jtag_TCK_i_ival_BUFG                                                                         |
+| g5        | src5      | BUFG/O          | None       | BUFGCTRL_X0Y5  | n/a          |                 3 |         182 |               0 |       31.250 | clk_out1_mmcm | qout_r_reg[31]_i_2/O                                                                                              | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_ifu                              |
+| g6        | src6      | BUFG/O          | None       | BUFGCTRL_X0Y6  | n/a          |                 4 |         117 |               0 |       31.250 | clk_out1_mmcm | qout_r_reg[0]_i_2__5/O                                                                                            | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_biu                              |
+| g7        | src7      | BUFG/O          | None       | BUFGCTRL_X0Y7  | n/a          |                 3 |          79 |               0 |       31.250 | clk_out1_mmcm | qout_r_reg[0]_i_2__6/O                                                                                            | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_lsu                              |
 | g8        | src8      | BUFG/O          | None       | BUFGCTRL_X0Y0  | n/a          |                 2 |          69 |               0 |        5.000 | clk_out3_mmcm | ip_mmcm/inst/clkout3_buf/O                                                                                        | ip_mmcm/inst/clk_out3                                                                                    |
 | g9        | src9      | BUFG/O          | None       | BUFGCTRL_X0Y9  | n/a          |                 2 |          63 |               0 |       31.250 | clk_out1_mmcm | qout_r_reg[0]_i_2__7/O                                                                                            | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_itcm                                  |
 | g10       | src8      | BUFG/O          | None       | BUFGCTRL_X0Y8  | n/a          |                 4 |          57 |              14 |       31.250 | clk_out1_mmcm | ip_mmcm/inst/clkout1_buf/O                                                                                        | ip_mmcm/inst/clk_out1                                                                                    |
-| g11       | src10     | BUFG/O          | None       | BUFGCTRL_X0Y10 | n/a          |                 2 |          55 |               0 |       31.250 | clk_out1_mmcm | qout_r_reg[0]_i_2__8/O                                                                                            | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_dtcm                                  |
-| g12       | src11     | BUFG/O          | None       | BUFGCTRL_X0Y11 | n/a          |                 3 |          46 |               0 |       31.250 | clk_out1_mmcm | mem[1].non_last.mem_r_reg_0_0_i_1/O                                                                               | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_dtcm_ram                                         |
+| g11       | src10     | BUFG/O          | None       | BUFGCTRL_X0Y10 | n/a          |                 4 |          55 |               0 |       31.250 | clk_out1_mmcm | qout_r_reg[0]_i_2__8/O                                                                                            | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_dtcm                                  |
+| g12       | src11     | BUFG/O          | None       | BUFGCTRL_X0Y11 | n/a          |                 4 |          46 |               0 |       31.250 | clk_out1_mmcm | mem[1].non_last.mem_r_reg_0_0_i_1/O                                                                               | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_dtcm_ram                                         |
 | g13       | src12     | BUFG/O          | None       | BUFGCTRL_X0Y12 | n/a          |                 3 |          45 |               0 |       31.250 | clk_out1_mmcm | mem[1].non_last.mem_r_reg_0_0_i_1__0/O                                                                            | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_itcm_ram                                         |
 | g14       | src8      | BUFG/O          | None       | BUFGCTRL_X0Y13 | n/a          |                 1 |           8 |               0 |      119.000 | clk_out2_mmcm | ip_mmcm/inst/clkout2_buf/O                                                                                        | ip_mmcm/inst/clk_out2                                                                                    |
 | g15       | src13     | BUFH/O          | None       | BUFHCE_X0Y36   | X0Y3         |                 1 |           1 |               0 |       10.000 | pll_clk3_out  | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/u_bufh_pll_clk3/O | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/pll_clk3 |
@@ -98,22 +98,22 @@ Table of Contents
 +-----------+-----------+---------------------+-----------------+-----------------+--------------+-------------+-----------------+---------------------+---------------+------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | Source Id | Global Id | Driver Type/Pin     | Constraint      | Site            | Clock Region | Clock Loads | Non-Clock Loads | Source Clock Period | Source Clock  | Driver Pin                                                                                                                               | Net                                                                                                                    |
 +-----------+-----------+---------------------+-----------------+-----------------+--------------+-------------+-----------------+---------------------+---------------+------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| src0      | g0        | LUT4/O              | None            | SLICE_X50Y96    | X0Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/r_gnrl_conv2d_ibuf_blk_sel[14]_i_5/O    | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_10 |
+| src0      | g0        | LUT4/O              | None            | SLICE_X53Y96    | X1Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/r_gnrl_conv2d_ibuf_blk_sel[14]_i_4/O    | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_10 |
 | src1      | g1        | MMCME2_ADV/CLKFBOUT | MMCME2_ADV_X0Y3 | MMCME2_ADV_X0Y3 | X0Y3         |           1 |               0 |              10.000 | clk_pll_i     | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/gen_mmcm.mmcm_i/CLKFBOUT                 | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/clk_pll_i              |
-| src2      | g2        | LUT5/O              | None            | SLICE_X51Y97    | X0Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/qout_r[31]_i_7__9/O                     | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_1  |
-| src3      | g3        | FDCE/Q              | None            | SLICE_X29Y101   | X0Y2         |           1 |               1 |                     |               | slowclkgen/clk_out_reg/Q                                                                                                                 | slowclkgen/slowclk                                                                                                     |
+| src2      | g2        | LUT5/O              | None            | SLICE_X54Y96    | X1Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/qout_r[31]_i_7__10/O                    | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_1  |
+| src3      | g3        | FDCE/Q              | None            | SLICE_X51Y95    | X0Y1         |           1 |               1 |                     |               | slowclkgen/clk_out_reg/Q                                                                                                                 | slowclkgen/slowclk                                                                                                     |
 | src4      | g4        | IBUF/O              | IOB_X0Y32       | IOB_X0Y32       | X0Y0         |           1 |               0 |                     |               | IOBUF_jtag_TCK/IBUF/O                                                                                                                    | IOBUF_jtag_TCK/O                                                                                                       |
-| src5      | g5        | LUT5/O              | None            | SLICE_X51Y97    | X0Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/qout_r[31]_i_6__10/O                    | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_0  |
-| src6      | g6        | LUT5/O              | None            | SLICE_X51Y96    | X0Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/qout_r[0]_i_4__48/O                     | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_3  |
-| src7      | g7        | LUT5/O              | None            | SLICE_X51Y96    | X0Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/qout_r[0]_i_6__26/O                     | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_2  |
+| src5      | g5        | LUT5/O              | None            | SLICE_X52Y95    | X1Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/qout_r[31]_i_6__10/O                    | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_0  |
+| src6      | g6        | LUT5/O              | None            | SLICE_X52Y95    | X1Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/qout_r[0]_i_4__49/O                     | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_3  |
+| src7      | g7        | LUT5/O              | None            | SLICE_X52Y95    | X1Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/qout_r[0]_i_6__26/O                     | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_2  |
 | src8      | g10       | MMCME2_ADV/CLKOUT0  | None            | MMCME2_ADV_X0Y0 | X0Y0         |           1 |               0 |              31.250 | clk_out1_mmcm | ip_mmcm/inst/mmcm_adv_inst/CLKOUT0                                                                                                       | ip_mmcm/inst/clk_out1_mmcm                                                                                             |
 | src8      | g14       | MMCME2_ADV/CLKOUT1  | None            | MMCME2_ADV_X0Y0 | X0Y0         |           1 |               0 |             119.000 | clk_out2_mmcm | ip_mmcm/inst/mmcm_adv_inst/CLKOUT1                                                                                                       | ip_mmcm/inst/clk_out2_mmcm                                                                                             |
 | src8      | g8        | MMCME2_ADV/CLKOUT2  | None            | MMCME2_ADV_X0Y0 | X0Y0         |           1 |               0 |               5.000 | clk_out3_mmcm | ip_mmcm/inst/mmcm_adv_inst/CLKOUT2                                                                                                       | ip_mmcm/inst/clk_out3_mmcm                                                                                             |
 | src8      | g17       | MMCME2_ADV/CLKFBOUT | None            | MMCME2_ADV_X0Y0 | X0Y0         |           1 |               0 |              20.000 | clkfbout_mmcm | ip_mmcm/inst/mmcm_adv_inst/CLKFBOUT                                                                                                      | ip_mmcm/inst/clkfbout_mmcm                                                                                             |
-| src9      | g9        | LUT5/O              | None            | SLICE_X50Y96    | X0Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/qout_r[0]_i_4__49/O                     | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_6  |
-| src10     | g11       | LUT5/O              | None            | SLICE_X51Y96    | X0Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/qout_r[0]_i_4__50/O                     | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_9  |
-| src11     | g12       | LUT6/O              | None            | SLICE_X51Y97    | X0Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/mem[1].non_last.mem_r_reg_0_0_i_33__0/O | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_8  |
-| src12     | g13       | LUT6/O              | None            | SLICE_X50Y96    | X0Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/mem[1].non_last.mem_r_reg_0_0_i_33/O    | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_5  |
+| src9      | g9        | LUT5/O              | None            | SLICE_X54Y96    | X1Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/qout_r[0]_i_4__50/O                     | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_6  |
+| src10     | g11       | LUT5/O              | None            | SLICE_X52Y95    | X1Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/qout_r[0]_i_4__51/O                     | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_9  |
+| src11     | g12       | LUT6/O              | None            | SLICE_X53Y95    | X1Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/mem[1].non_last.mem_r_reg_0_0_i_33__0/O | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_8  |
+| src12     | g13       | LUT6/O              | None            | SLICE_X54Y96    | X1Y1         |           1 |               0 |              31.250 | clk_out1_mmcm | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/mem[1].non_last.mem_r_reg_0_0_i_33/O    | dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_hclkgen/u_e203_subsys_gfcm/u_clk0_clkgate/clk0_sync_r_reg[1]_5  |
 | src13     | g15       | PLLE2_ADV/CLKOUT3   | PLLE2_ADV_X0Y3  | PLLE2_ADV_X0Y3  | X0Y3         |           1 |               0 |              10.000 | pll_clk3_out  | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/plle2_i/CLKOUT3                          | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/pll_clk3_out           |
 | src14     | g16       | IBUF/O              | IOB_X0Y75       | IOB_X0Y75       | X0Y1         |           1 |               0 |              20.000 | sys_clk_pin   | clk_board_IBUF_inst/O                                                                                                                    | clk_board_IBUF                                                                                                         |
 +-----------+-----------+---------------------+-----------------+-----------------+--------------+-------------+-----------------+---------------------+---------------+------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
@@ -145,14 +145,14 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
-| X0Y0              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 5113 |  2600 | 1225 |   600 |    7 |    20 |    3 |    10 |    0 |    20 |
-| X1Y0              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     0 |    0 |     0 |    0 |     0 | 3607 |  1500 | 1340 |   550 |   12 |    40 |    4 |    20 |    0 |    40 |
-| X0Y1              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 4273 |  2000 | 1333 |   600 |    5 |    20 |    3 |    10 |    0 |    20 |
-| X1Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 4555 |  1900 | 1612 |   650 |   11 |    60 |   10 |    30 |    0 |    40 |
-| X0Y2              |    7 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 4779 |  2000 | 1367 |   600 |    3 |    20 |    5 |    10 |    0 |    20 |
-| X1Y2              |    5 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 4508 |  1900 | 1451 |   650 |   10 |    60 |   15 |    30 |    0 |    40 |
-| X0Y3              |   12 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    1 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    4 |    50 | 7415 |  2600 | 1446 |   600 |    0 |    20 |    2 |    10 |    0 |    20 |
-| X1Y3              |   11 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     1 |    0 |     0 |    0 |     0 | 2729 |  1350 |  924 |   500 |    0 |    30 |   15 |    15 |    0 |    40 |
+| X0Y0              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 5301 |  2600 | 1296 |   600 |    3 |    20 |    7 |    10 |    0 |    20 |
+| X1Y0              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     0 |    0 |     0 |    0 |     0 | 3243 |  1500 | 1301 |   550 |   16 |    40 |    4 |    20 |    0 |    40 |
+| X0Y1              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 3877 |  2000 | 1234 |   600 |    7 |    20 |    2 |    10 |    0 |    20 |
+| X1Y1              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 3345 |  1900 | 1296 |   650 |   12 |    60 |   14 |    30 |    0 |    40 |
+| X0Y2              |   12 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 5638 |  2000 | 1719 |   600 |    2 |    20 |    7 |    10 |    0 |    20 |
+| X1Y2              |   10 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 4504 |  1900 | 1646 |   650 |    8 |    60 |   20 |    30 |    0 |    40 |
+| X0Y3              |   10 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    1 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    4 |    50 | 7348 |  2600 | 1432 |   600 |    0 |    20 |    1 |    10 |    0 |    20 |
+| X1Y3              |    8 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     1 |    0 |     0 |    0 |     0 | 3223 |  1350 | 1264 |   500 |    1 |    30 |    2 |    15 |    0 |    40 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 * Global Clock column represents track count; while other columns represents cell counts
 
@@ -164,9 +164,9 @@ All Modules
 +----+----+----+
 |    | X0 | X1 |
 +----+----+----+
-| Y3 | 12 | 11 |
-| Y2 |  7 |  5 |
-| Y1 |  2 |  1 |
+| Y3 | 10 |  8 |
+| Y2 | 12 | 10 |
+| Y1 |  3 |  3 |
 | Y0 |  3 |  1 |
 +----+----+----+
 
@@ -177,7 +177,7 @@ All Modules
 +-----------+-----------------+-------------------+---------------+-------------+----------------+-------------+----------+----------------+----------+-------------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock         | Period (ns) | Waveform (ns)  | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                     |
 +-----------+-----------------+-------------------+---------------+-------------+----------------+-------------+----------+----------------+----------+-------------------------+
-| g0        | BUFG/O          | n/a               | clk_out1_mmcm |      31.250 | {0.000 15.625} |       29669 |        0 |              0 |        0 | u_e203_subsys_top/hfclk |
+| g0        | BUFG/O          | n/a               | clk_out1_mmcm |      31.250 | {0.000 15.625} |       29169 |        0 |              0 |        0 | u_e203_subsys_top/hfclk |
 +-----------+-----------------+-------------------+---------------+-------------+----------------+-------------+----------+----------------+----------+-------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -188,10 +188,10 @@ All Modules
 +----+-------+-------+
 |    | X0    | X1    |
 +----+-------+-------+
-| Y3 |  2524 |  1141 |
-| Y2 |  4109 |  4129 |
-| Y1 |  4303 |  4622 |
-| Y0 |  5171 |  3670 |
+| Y3 |  3168 |  3035 |
+| Y2 |  4034 |  2932 |
+| Y1 |  3917 |  3407 |
+| Y0 |  5362 |  3314 |
 +----+-------+-------+
 
 
@@ -212,8 +212,8 @@ All Modules
 +----+-------+----+
 |    | X0    | X1 |
 +----+-------+----+
-| Y3 |  4067 |  0 |
-| Y2 |   316 |  0 |
+| Y3 |  4077 |  0 |
+| Y2 |   306 |  0 |
 | Y1 |     0 |  0 |
 | Y0 |     0 |  0 |
 +----+-------+----+
@@ -236,8 +236,8 @@ All Modules
 +----+------+-------+
 |    | X0   | X1    |
 +----+------+-------+
-| Y3 |  392 |  1045 |
-| Y2 |    0 |     0 |
+| Y3 |   22 |    37 |
+| Y2 |  181 |  1197 |
 | Y1 |    0 |     0 |
 | Y0 |    0 |     0 |
 +----+------+-------+
@@ -257,14 +257,14 @@ All Modules
 **** GT Loads column represents load cell count of GT types
 
 
-+----+------+------+
-|    | X0   | X1   |
-+----+------+------+
-| Y3 |  119 |  173 |
-| Y2 |  268 |  429 |
-| Y1 |    0 |    0 |
-| Y0 |    0 |    0 |
-+----+------+------+
++----+------+----+
+|    | X0   | X1 |
++----+------+----+
+| Y3 |    0 |  0 |
+| Y2 |  989 |  0 |
+| Y1 |    0 |  0 |
+| Y0 |    0 |  0 |
++----+------+----+
 
 
 11. Device Cell Placement Summary for Global Clock g4
@@ -281,14 +281,14 @@ All Modules
 **** GT Loads column represents load cell count of GT types
 
 
-+----+------+----+
-|    | X0   | X1 |
-+----+------+----+
-| Y3 |  197 |  0 |
-| Y2 |    0 |  0 |
-| Y1 |    0 |  0 |
-| Y0 |    0 |  0 |
-+----+------+----+
++----+-----+------+
+|    | X0  | X1   |
++----+-----+------+
+| Y3 |  64 |  133 |
+| Y2 |   0 |    0 |
+| Y1 |   0 |    0 |
+| Y0 |   0 |    0 |
++----+-----+------+
 
 
 12. Device Cell Placement Summary for Global Clock g5
@@ -305,14 +305,14 @@ All Modules
 **** GT Loads column represents load cell count of GT types
 
 
-+----+----+------+
-|    | X0 | X1   |
-+----+----+------+
-| Y3 |  0 |  182 |
-| Y2 |  0 |    0 |
-| Y1 |  0 |    0 |
-| Y0 |  0 |    0 |
-+----+----+------+
++----+-----+------+
+|    | X0  | X1   |
++----+-----+------+
+| Y3 |   0 |   15 |
+| Y2 |  16 |  151 |
+| Y1 |   0 |    0 |
+| Y0 |   0 |    0 |
++----+-----+------+
 
 
 13. Device Cell Placement Summary for Global Clock g6
@@ -332,8 +332,8 @@ All Modules
 +----+-----+-----+
 |    | X0  | X1  |
 +----+-----+-----+
-| Y3 |  63 |  54 |
-| Y2 |   0 |   0 |
+| Y3 |  33 |   2 |
+| Y2 |  23 |  59 |
 | Y1 |   0 |   0 |
 | Y0 |   0 |   0 |
 +----+-----+-----+
@@ -353,14 +353,14 @@ All Modules
 **** GT Loads column represents load cell count of GT types
 
 
-+----+-----+-----+
-|    | X0  | X1  |
-+----+-----+-----+
-| Y3 |  43 |  36 |
-| Y2 |   0 |   0 |
-| Y1 |   0 |   0 |
-| Y0 |   0 |   0 |
-+----+-----+-----+
++----+----+-----+
+|    | X0 | X1  |
++----+----+-----+
+| Y3 |  0 |   2 |
+| Y2 |  3 |  74 |
+| Y1 |  0 |   0 |
+| Y0 |  0 |   0 |
++----+----+-----+
 
 
 15. Device Cell Placement Summary for Global Clock g8
@@ -401,14 +401,14 @@ All Modules
 **** GT Loads column represents load cell count of GT types
 
 
-+----+----+-----+
-|    | X0 | X1  |
-+----+----+-----+
-| Y3 |  9 |  54 |
-| Y2 |  0 |   0 |
-| Y1 |  0 |   0 |
-| Y0 |  0 |   0 |
-+----+----+-----+
++----+-----+-----+
+|    | X0  | X1  |
++----+-----+-----+
+| Y3 |   0 |   0 |
+| Y2 |  13 |  50 |
+| Y1 |   0 |   0 |
+| Y0 |   0 |   0 |
++----+-----+-----+
 
 
 17. Device Cell Placement Summary for Global Clock g10
@@ -425,14 +425,14 @@ All Modules
 **** GT Loads column represents load cell count of GT types
 
 
-+----+-----+----+
-|    | X0  | X1 |
-+----+-----+----+
-| Y3 |   0 |  3 |
-| Y2 |  56 |  2 |
-| Y1 |  10 |  0 |
-| Y0 |   0 |  0 |
-+----+-----+----+
++----+-----+-----+
+|    | X0  | X1  |
++----+-----+-----+
+| Y3 |   9 |   0 |
+| Y2 |  26 |  26 |
+| Y1 |   0 |  10 |
+| Y0 |   0 |   0 |
++----+-----+-----+
 
 
 18. Device Cell Placement Summary for Global Clock g11
@@ -452,8 +452,8 @@ All Modules
 +----+-----+-----+
 |    | X0  | X1  |
 +----+-----+-----+
-| Y3 |  27 |  28 |
-| Y2 |   0 |   0 |
+| Y3 |   1 |   1 |
+| Y2 |  17 |  36 |
 | Y1 |   0 |   0 |
 | Y0 |   0 |   0 |
 +----+-----+-----+
@@ -473,14 +473,14 @@ All Modules
 **** GT Loads column represents load cell count of GT types
 
 
-+----+-----+-----+
-|    | X0  | X1  |
-+----+-----+-----+
-| Y3 |   0 |   2 |
-| Y2 |  17 |  11 |
-| Y1 |   0 |   0 |
-| Y0 |   0 |   0 |
-+----+-----+-----+
++----+----+-----+
+|    | X0 | X1  |
++----+----+-----+
+| Y3 |  1 |   2 |
+| Y2 |  4 |  23 |
+| Y1 |  0 |   0 |
+| Y0 |  0 |   0 |
++----+----+-----+
 
 
 20. Device Cell Placement Summary for Global Clock g13
@@ -500,9 +500,9 @@ All Modules
 +----+----+-----+
 |    | X0 | X1  |
 +----+----+-----+
-| Y3 |  2 |  26 |
-| Y2 |  0 |   1 |
-| Y1 |  0 |   0 |
+| Y3 |  0 |   0 |
+| Y2 |  0 |  15 |
+| Y1 |  2 |  12 |
 | Y0 |  0 |   0 |
 +----+----+-----+
 
@@ -525,8 +525,8 @@ All Modules
 |    | X0 | X1 |
 +----+----+----+
 | Y3 |  0 |  0 |
-| Y2 |  8 |  0 |
-| Y1 |  0 |  0 |
+| Y2 |  0 |  0 |
+| Y1 |  8 |  0 |
 | Y0 |  0 |  0 |
 +----+----+----+
 
@@ -609,7 +609,7 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+--------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                            |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+--------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        5171 |               0 | 5113 |     41 |   10 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk        |
+| g0        | n/a   | BUFG/O          | None       |        5362 |               0 | 5301 |     48 |   10 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk        |
 | g16       | n/a   | BUFG/O          | None       |           1 |               0 |    0 |      0 |    0 |   0 |  0 |    1 |   0 |       0 | ip_mmcm/inst/clk_in1_mmcm      |
 | g17       | n/a   | BUFG/O          | None       |           1 |               0 |    0 |      0 |    0 |   0 |  0 |    1 |   0 |       0 | ip_mmcm/inst/clkfbout_buf_mmcm |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+--------------------------------+
@@ -624,7 +624,7 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                     |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-------------------------+
-| g0        | n/a   | BUFG/O          | None       |        3670 |               0 | 3607 |     35 |   16 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk |
+| g0        | n/a   | BUFG/O          | None       |        3314 |               0 | 3243 |     35 |   20 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -634,12 +634,13 @@ All Modules
 27. Clock Region Cell Placement per Global Clock: Region X0Y1
 -------------------------------------------------------------
 
-+-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                     |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-------------------------+
-| g0        | n/a   | BUFG/O          | None       |        4303 |               0 | 4273 |     15 |    8 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk |
-| g10       | n/a   | BUFG/O          | None       |           0 |              10 |    0 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | ip_mmcm/inst/clk_out1   |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-------------------------+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+------------------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                              |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+------------------------------------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |        3917 |               0 | 3869 |     34 |    7 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk                                          |
+| g13       | n/a   | BUFG/O          | None       |           2 |               0 |    0 |      0 |    2 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_itcm_ram |
+| g14       | n/a   | BUFG/O          | None       |           8 |               0 |    8 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | ip_mmcm/inst/clk_out2                                            |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+------------------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
@@ -648,11 +649,13 @@ All Modules
 28. Clock Region Cell Placement per Global Clock: Region X1Y1
 -------------------------------------------------------------
 
-+-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                     |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-------------------------+
-| g0        | n/a   | BUFG/O          | None       |        4622 |               0 | 4555 |     35 |   21 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-------------------------+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+------------------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                              |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+------------------------------------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |        3407 |               0 | 3340 |     34 |   19 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk                                          |
+| g10       | n/a   | BUFG/O          | None       |           0 |              10 |    0 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | ip_mmcm/inst/clk_out1                                            |
+| g13       | n/a   | BUFG/O          | None       |          12 |               0 |    5 |      0 |    7 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_itcm_ram |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+------------------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
@@ -664,13 +667,18 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                                                                 |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        4109 |               0 | 4079 |     21 |    5 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk                                                                             |
-| g1        | n/a   | BUFG/O          | None       |         316 |               0 |  316 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/CLK |
-| g3        | n/a   | BUFG/O          | None       |         268 |               0 |  268 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | slowclk_BUFG                                                                                        |
+| g0        | n/a   | BUFG/O          | None       |        4034 |               0 | 4020 |      7 |    5 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk                                                                             |
+| g1        | n/a   | BUFG/O          | None       |         306 |               0 |  306 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/CLK |
+| g2        | n/a   | BUFG/O          | None       |         181 |               0 |  181 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/core_csr_clk                                                                      |
+| g3        | n/a   | BUFG/O          | None       |         989 |               0 |  989 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | slowclk_BUFG                                                                                        |
+| g5        | n/a   | BUFG/O          | None       |          16 |               0 |   16 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_ifu                         |
+| g6        | n/a   | BUFG/O          | None       |          23 |               0 |   23 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_biu                         |
+| g7        | n/a   | BUFG/O          | None       |           3 |               0 |    3 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_lsu                         |
 | g8        | n/a   | BUFG/O          | None       |          46 |               0 |   45 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | ip_mmcm/inst/clk_out3                                                                               |
-| g10       | n/a   | BUFG/O          | None       |          52 |               4 |   49 |      1 |    0 |   0 |  0 |    0 |   0 |       0 | ip_mmcm/inst/clk_out1                                                                               |
-| g12       | n/a   | BUFG/O          | None       |          17 |               0 |   14 |      0 |    3 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_dtcm_ram                                    |
-| g14       | n/a   | BUFG/O          | None       |           8 |               0 |    8 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | ip_mmcm/inst/clk_out2                                                                               |
+| g9        | n/a   | BUFG/O          | None       |          13 |               0 |   13 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_itcm                             |
+| g10       | n/a   | BUFG/O          | None       |          26 |               0 |   25 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | ip_mmcm/inst/clk_out1                                                                               |
+| g11       | n/a   | BUFG/O          | None       |          17 |               0 |   17 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_dtcm                             |
+| g12       | n/a   | BUFG/O          | None       |           4 |               0 |    0 |      0 |    4 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_dtcm_ram                                    |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -680,15 +688,20 @@ All Modules
 30. Clock Region Cell Placement per Global Clock: Region X1Y2
 -------------------------------------------------------------
 
-+-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+------------------------------------------------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                              |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+------------------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        4129 |               0 | 4077 |     28 |   13 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk                                          |
-| g3        | n/a   | BUFG/O          | None       |         429 |               0 |  429 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | slowclk_BUFG                                                     |
-| g10       | n/a   | BUFG/O          | None       |           2 |               0 |    2 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | ip_mmcm/inst/clk_out1                                            |
-| g12       | n/a   | BUFG/O          | None       |          11 |               0 |    0 |      0 |   11 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_dtcm_ram |
-| g13       | n/a   | BUFG/O          | None       |           1 |               0 |    0 |      0 |    1 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_itcm_ram |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+------------------------------------------------------------------+
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                                         |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |        2932 |               0 | 2895 |     17 |   12 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk                                                     |
+| g2        | n/a   | BUFG/O          | None       |        1197 |               0 | 1197 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/core_csr_clk                                              |
+| g5        | n/a   | BUFG/O          | None       |         151 |               0 |  151 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_ifu |
+| g6        | n/a   | BUFG/O          | None       |          59 |               0 |   59 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_biu |
+| g7        | n/a   | BUFG/O          | None       |          74 |               0 |   74 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_lsu |
+| g9        | n/a   | BUFG/O          | None       |          50 |               0 |   50 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_itcm     |
+| g10       | n/a   | BUFG/O          | None       |          22 |               4 |   20 |      1 |    0 |   0 |  0 |    0 |   0 |       0 | ip_mmcm/inst/clk_out1                                                       |
+| g11       | n/a   | BUFG/O          | None       |          36 |               0 |   36 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_dtcm     |
+| g12       | n/a   | BUFG/O          | None       |          23 |               0 |   14 |      0 |    9 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_dtcm_ram            |
+| g13       | n/a   | BUFG/O          | None       |          15 |               0 |    8 |      0 |    7 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_itcm_ram            |
++-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
@@ -700,17 +713,15 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                                                                      |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        2524 |               0 | 2524 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk                                                                                  |
-| g1        | n/a   | BUFG/O          | None       |        4067 |               0 | 4020 |     17 |    0 |   0 |  0 |    1 |   0 |       0 | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/CLK      |
-| g2        | n/a   | BUFG/O          | None       |         392 |               0 |  392 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/core_csr_clk                                                                           |
-| g3        | n/a   | BUFG/O          | None       |         119 |               0 |  119 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | slowclk_BUFG                                                                                             |
-| g4        | n/a   | BUFG/O          | None       |         197 |               0 |  197 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | dut_io_pads_jtag_TCK_i_ival_BUFG                                                                         |
-| g6        | n/a   | BUFG/O          | None       |          63 |               0 |   63 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_biu                              |
-| g7        | n/a   | BUFG/O          | None       |          43 |               0 |   43 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_lsu                              |
+| g0        | n/a   | BUFG/O          | None       |        3168 |               0 | 3168 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk                                                                                  |
+| g1        | n/a   | BUFG/O          | None       |        4077 |               0 | 4030 |     17 |    0 |   0 |  0 |    1 |   0 |       0 | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/CLK      |
+| g2        | n/a   | BUFG/O          | None       |          22 |               0 |   22 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/core_csr_clk                                                                           |
+| g4        | n/a   | BUFG/O          | None       |          64 |               0 |   64 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | dut_io_pads_jtag_TCK_i_ival_BUFG                                                                         |
+| g6        | n/a   | BUFG/O          | None       |          33 |               0 |   33 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_biu                              |
 | g8        | n/a   | BUFG/O          | None       |          23 |               0 |   21 |      0 |    0 |   0 |  0 |    0 |   1 |       0 | ip_mmcm/inst/clk_out3                                                                                    |
-| g9        | n/a   | BUFG/O          | None       |           9 |               0 |    9 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_itcm                                  |
-| g11       | n/a   | BUFG/O          | None       |          27 |               0 |   27 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_dtcm                                  |
-| g13       | n/a   | BUFG/O          | None       |           2 |               0 |    0 |      0 |    2 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_itcm_ram                                         |
+| g10       | n/a   | BUFG/O          | None       |           9 |               0 |    9 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | ip_mmcm/inst/clk_out1                                                                                    |
+| g11       | n/a   | BUFG/O          | None       |           1 |               0 |    1 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_dtcm                                  |
+| g12       | n/a   | BUFG/O          | None       |           1 |               0 |    0 |      0 |    1 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_dtcm_ram                                         |
 | g15       | n/a   | BUFH/O          | None       |           1 |               0 |    0 |      0 |    0 |   0 |  0 |    1 |   0 |       0 | dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/pll_clk3 |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
@@ -724,17 +735,14 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                                         |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        1141 |               0 | 1141 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk                                                     |
-| g2        | n/a   | BUFG/O          | None       |        1045 |               0 | 1045 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/core_csr_clk                                              |
-| g3        | n/a   | BUFG/O          | None       |         173 |               0 |  173 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | slowclk_BUFG                                                                |
-| g5        | n/a   | BUFG/O          | None       |         182 |               0 |  182 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_ifu |
-| g6        | n/a   | BUFG/O          | None       |          54 |               0 |   54 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_biu |
-| g7        | n/a   | BUFG/O          | None       |          36 |               0 |   36 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_lsu |
-| g9        | n/a   | BUFG/O          | None       |          54 |               0 |   54 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_itcm     |
-| g10       | n/a   | BUFG/O          | None       |           3 |               0 |    3 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | ip_mmcm/inst/clk_out1                                                       |
-| g11       | n/a   | BUFG/O          | None       |          28 |               0 |   28 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_dtcm     |
+| g0        | n/a   | BUFG/O          | None       |        3035 |               0 | 3033 |      0 |    1 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/hfclk                                                     |
+| g2        | n/a   | BUFG/O          | None       |          37 |               0 |   37 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/core_csr_clk                                              |
+| g4        | n/a   | BUFG/O          | None       |         133 |               0 |  133 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | dut_io_pads_jtag_TCK_i_ival_BUFG                                            |
+| g5        | n/a   | BUFG/O          | None       |          15 |               0 |   15 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_ifu |
+| g6        | n/a   | BUFG/O          | None       |           2 |               0 |    2 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_biu |
+| g7        | n/a   | BUFG/O          | None       |           2 |               0 |    2 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_lsu |
+| g11       | n/a   | BUFG/O          | None       |           1 |               0 |    1 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_dtcm     |
 | g12       | n/a   | BUFG/O          | None       |           2 |               0 |    0 |      0 |    2 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_dtcm_ram            |
-| g13       | n/a   | BUFG/O          | None       |          26 |               0 |   13 |      0 |   13 |   0 |  0 |    0 |   0 |       0 | u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_itcm_ram            |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -750,7 +758,7 @@ set_property LOC BUFGCTRL_X0Y5 [get_cells qout_r_reg[31]_i_2]
 set_property LOC BUFGCTRL_X0Y6 [get_cells qout_r_reg[0]_i_2__5]
 set_property LOC BUFGCTRL_X0Y12 [get_cells mem[1].non_last.mem_r_reg_0_0_i_1__0]
 set_property LOC BUFGCTRL_X0Y11 [get_cells mem[1].non_last.mem_r_reg_0_0_i_1]
-set_property LOC BUFGCTRL_X0Y1 [get_cells r_gnrl_conv2d_ibuf_blk_sel_reg[14]_i_3]
+set_property LOC BUFGCTRL_X0Y1 [get_cells r_gnrl_conv2d_ibuf_blk_sel_reg[14]_i_2]
 set_property LOC BUFGCTRL_X0Y2 [get_cells qout_r_reg[31]_i_3]
 set_property LOC BUFGCTRL_X0Y3 [get_cells slowclk_BUFG_inst]
 set_property LOC BUFGCTRL_X0Y14 [get_cells ip_mmcm/inst/clkf_buf]
@@ -773,52 +781,52 @@ set_property LOC IOB_X0Y75 [get_ports clk_board]
 #startgroup
 create_pblock {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_itcm}
 add_cells_to_pblock [get_pblocks  {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_itcm}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_itcm"}]]]
-resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_itcm}] -add {CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
+resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_itcm}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
 #endgroup
 
 # Clock net "u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_dtcm" driven by instance "qout_r_reg[0]_i_2__8" located at site "BUFGCTRL_X0Y10"
 #startgroup
 create_pblock {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_dtcm}
 add_cells_to_pblock [get_pblocks  {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_dtcm}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_dtcm"}]]]
-resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_dtcm}] -add {CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
+resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_dtcm}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
 #endgroup
 
 # Clock net "u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_lsu" driven by instance "qout_r_reg[0]_i_2__6" located at site "BUFGCTRL_X0Y7"
 #startgroup
 create_pblock {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_lsu}
 add_cells_to_pblock [get_pblocks  {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_lsu}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_lsu"}]]]
-resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_lsu}] -add {CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
+resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_lsu}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
 #endgroup
 
 # Clock net "u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_ifu" driven by instance "qout_r_reg[31]_i_2" located at site "BUFGCTRL_X0Y5"
 #startgroup
 create_pblock {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_ifu}
 add_cells_to_pblock [get_pblocks  {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_ifu}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_ifu"}]]]
-resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_ifu}] -add {CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
+resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_ifu}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
 #endgroup
 
 # Clock net "u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_biu" driven by instance "qout_r_reg[0]_i_2__5" located at site "BUFGCTRL_X0Y6"
 #startgroup
 create_pblock {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_biu}
 add_cells_to_pblock [get_pblocks  {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_biu}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_biu"}]]]
-resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_biu}] -add {CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
+resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/clk_core_biu}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
 #endgroup
 
 # Clock net "u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_itcm_ram" driven by instance "mem[1].non_last.mem_r_reg_0_0_i_1__0" located at site "BUFGCTRL_X0Y12"
 #startgroup
 create_pblock {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_itcm_ram}
 add_cells_to_pblock [get_pblocks  {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_itcm_ram}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_itcm_ram"}]]]
-resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_itcm_ram}] -add {CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
+resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_itcm_ram}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
 #endgroup
 
 # Clock net "u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_dtcm_ram" driven by instance "mem[1].non_last.mem_r_reg_0_0_i_1" located at site "BUFGCTRL_X0Y11"
 #startgroup
 create_pblock {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_dtcm_ram}
 add_cells_to_pblock [get_pblocks  {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_dtcm_ram}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_dtcm_ram"}]]]
-resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_dtcm_ram}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
+resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/clk_dtcm_ram}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
 #endgroup
 
-# Clock net "u_e203_subsys_top/hfclk" driven by instance "r_gnrl_conv2d_ibuf_blk_sel_reg[14]_i_3" located at site "BUFGCTRL_X0Y1"
+# Clock net "u_e203_subsys_top/hfclk" driven by instance "r_gnrl_conv2d_ibuf_blk_sel_reg[14]_i_2" located at site "BUFGCTRL_X0Y1"
 #startgroup
 create_pblock {CLKAG_u_e203_subsys_top/hfclk}
 add_cells_to_pblock [get_pblocks  {CLKAG_u_e203_subsys_top/hfclk}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="u_e203_subsys_top/hfclk"}]]]
@@ -829,14 +837,14 @@ resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/hfclk}] -add {CLOCKREGION_X0
 #startgroup
 create_pblock {CLKAG_u_e203_subsys_top/core_csr_clk}
 add_cells_to_pblock [get_pblocks  {CLKAG_u_e203_subsys_top/core_csr_clk}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="u_e203_subsys_top/core_csr_clk"}]]]
-resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/core_csr_clk}] -add {CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
+resize_pblock [get_pblocks {CLKAG_u_e203_subsys_top/core_csr_clk}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
 #endgroup
 
 # Clock net "slowclk_BUFG" driven by instance "slowclk_BUFG_inst" located at site "BUFGCTRL_X0Y3"
 #startgroup
 create_pblock {CLKAG_slowclk_BUFG}
 add_cells_to_pblock [get_pblocks  {CLKAG_slowclk_BUFG}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="slowclk_BUFG"}]]]
-resize_pblock [get_pblocks {CLKAG_slowclk_BUFG}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
+resize_pblock [get_pblocks {CLKAG_slowclk_BUFG}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2}
 #endgroup
 
 # Clock net "ip_mmcm/inst/clk_out3" driven by instance "ip_mmcm/inst/clkout3_buf" located at site "BUFGCTRL_X0Y0"
@@ -850,21 +858,21 @@ resize_pblock [get_pblocks {CLKAG_ip_mmcm/inst/clk_out3}] -add {CLOCKREGION_X0Y2
 #startgroup
 create_pblock {CLKAG_ip_mmcm/inst/clk_out2}
 add_cells_to_pblock [get_pblocks  {CLKAG_ip_mmcm/inst/clk_out2}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="ip_mmcm/inst/clk_out2"}]]]
-resize_pblock [get_pblocks {CLKAG_ip_mmcm/inst/clk_out2}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2}
+resize_pblock [get_pblocks {CLKAG_ip_mmcm/inst/clk_out2}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1}
 #endgroup
 
 # Clock net "ip_mmcm/inst/clk_out1" driven by instance "ip_mmcm/inst/clkout1_buf" located at site "BUFGCTRL_X0Y8"
 #startgroup
 create_pblock {CLKAG_ip_mmcm/inst/clk_out1}
 add_cells_to_pblock [get_pblocks  {CLKAG_ip_mmcm/inst/clk_out1}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="ip_mmcm/inst/clk_out1"}]]]
-resize_pblock [get_pblocks {CLKAG_ip_mmcm/inst/clk_out1}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
+resize_pblock [get_pblocks {CLKAG_ip_mmcm/inst/clk_out1}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
 #endgroup
 
 # Clock net "dut_io_pads_jtag_TCK_i_ival_BUFG" driven by instance "dut_io_pads_jtag_TCK_i_ival_BUFG_inst" located at site "BUFGCTRL_X0Y4"
 #startgroup
 create_pblock {CLKAG_dut_io_pads_jtag_TCK_i_ival_BUFG}
 add_cells_to_pblock [get_pblocks  {CLKAG_dut_io_pads_jtag_TCK_i_ival_BUFG}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="dut_io_pads_jtag_TCK_i_ival_BUFG"}]]]
-resize_pblock [get_pblocks {CLKAG_dut_io_pads_jtag_TCK_i_ival_BUFG}] -add {CLOCKREGION_X0Y3:CLOCKREGION_X0Y3}
+resize_pblock [get_pblocks {CLKAG_dut_io_pads_jtag_TCK_i_ival_BUFG}] -add {CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
 #endgroup
 
 # Clock net "dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/CLK" driven by instance "dut/u_custom_icb_mig/u_custom_icb_mig/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/u_bufg_clkdiv0" located at site "BUFGCTRL_X0Y16"
